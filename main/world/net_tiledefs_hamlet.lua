@@ -3,8 +3,15 @@ local WORLD_TILES = _G.WORLD_TILES
 
 modimport("main/misc/net_tuning")
 
--- Don't create these turfs if these two mods are enabled.
-if TUNING.NET_IS_IAS_ENABLED and TUNING.NET_IS_IAC_ENABLED then
+-- Don't create these turfs if these mods are enabled.
+-- if TUNING.NET_IS_IAS_ENABLED or TUNING.NET_IS_ABC_ENABLED then
+-- Remember to update this when IA launches their Hamlet Mod.
+if TUNING.NET_IS_ABC_ENABLED or WORLD_TILES.COBBLEROAD ~= nil then
+	if TUNING.NET_DEBUG_MODE then
+		print("Not Enough Turfs Mod - WARNING: Some turfs already exists.")
+		print("Not Enough Turfs Mod - Skipping AddTile() for Hamlet Turfs.")
+	end
+
 	return
 end
 
@@ -12,6 +19,7 @@ local HAMLET_TURFS =
 {
 	"COBBLEROAD",
 	"PIGRUINS",
+	"PIGRUINS_BLUE",
 	"FIELDS",
 	"FOUNDATION",
 	"LAWN",
@@ -82,6 +90,33 @@ AddTile("PIGRUINS", "LAND",
 	{
 		name            = "pigruins",
 		anim            = "pigruins",
+		bank_build      = "kyno_turfs_hamlet",
+		pickupsound     = "rock",
+	}
+)
+
+AddTile("PIGRUINS_BLUE", "LAND",
+	{
+		ground_name     = "HAMLET_PIGRUINS_BLUE",
+	},
+	{
+		name            = "blocky",
+		noise_texture   = "levels/textures/hamlet/hamlet_noise_pigruins_blue.tex",
+		runsound        = "dontstarve/movement/run_dirt",
+		walksound       = "dontstarve/movement/walk_dirt",
+		snowsound       = "dontstarve/movement/run_ice",
+		mudsound        = "dontstarve/movement/run_mud",
+		flooring        = true,
+		hard            = true,
+		roadways        = true,
+	},
+	{
+		name            = "map_edge",
+		noise_texture   = "levels/textures/hamlet/hamlet_mini_noise_pigruins_blue.tex",
+	},
+	{
+		name            = "pigruins_blue",
+		anim            = "pigruins_blue",
 		bank_build      = "kyno_turfs_hamlet",
 		pickupsound     = "rock",
 	}
@@ -272,7 +307,7 @@ AddTile("BOG", "LAND",
 		name            = "bog",
 		anim            = "bog",
 		bank_build      = "kyno_turfs_hamlet",
-		pickupsound     = "vegetation_firm",
+		pickupsound     = "grainy",
 	}
 )
 

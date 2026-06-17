@@ -66,6 +66,7 @@ local MODDED_TURFS =
 	turf_foundation          = "STONE",
 	turf_lawn                = "CARPET",
 	turf_pigruins            = "ANCIENT",
+	turf_pigruins_blue       = "ANCIENT",
 	turf_mossy_blossom       = "SOIL",
 	turf_rainforest          = "FOREST",
 	turf_deepjungle          = "FOREST",
@@ -107,14 +108,37 @@ local MODDED_TURFS =
 	turf_vaultmossy          = "ANCIENT",
 	turf_wagpunkfloor        = "WOOD",
 	turf_chilledfloor        = "FROZEN",
+	turf_circlescarpet       = "CARPET",
+	turf_moroccarpet         = "CARPET",
+	turf_whitecracked        = "ROCKY",
+	turf_coal                = "ROCKY",
+	turf_hotcoal             = "ROCKY",
+	turf_livinglog           = "WOOD",
+	turf_greyroad            = "ROAD",
+	turf_whitebrick          = "ROAD",
+	turf_bluelawn            = "CARPET",
+	turf_redlawn             = "CARPET",
+	turf_purplerainforest    = "FOREST",
+	turf_blueplains          = "GRASS",
+	turf_gloomycarpet        = "CARPET",
+	turf_upholdercarpet      = "CARPET",
+	turf_meadowyellow        = "GRASS",
+	turf_hardwood            = "WOOD",
 
 	turf_woodpanel           = "WOOD",
+	turf_driftwoodpanel      = "WOOD",
 	turf_marbletile          = "MARBLE",
 	turf_chess               = "MARBLE",
 	turf_slate               = "MARBLE",
+	turf_metalwood           = "METAL",
 	turf_metalsheet          = "METAL",
+	turf_gardenpath          = "GARDEN",
 	turf_garden              = "GARDEN",
 	turf_geometric           = "MARBLE",
+	turf_redgeometric        = "MARBLE",
+	turf_yellowgeometric     = "MARBLE",
+	turf_greengeometric      = "MARBLE",
+	turf_bwgeometric         = "MARBLE",
 	turf_shagcarpet          = "CARPET",
 	turf_transitional        = "WOOD",
 	turf_herring             = "STONE",
@@ -123,14 +147,48 @@ local MODDED_TURFS =
 	turf_octagon             = "MARBLE",
 }
 
-for turf, data in pairs(MODDED_TURFS) do
-	AddPrefabPostInit(turf, function(inst)
-		if not _G.TheWorld.ismastersim then
-			return inst
-		end
+-- The turfs below won't have their strings changed.
+-- Their own mods already have strings defined and does not need ours.
+local IA_TURFS =
+{
+	turf_magmafield          = true,
+	turf_volcano             = true,
+	turf_volcano_rock        = true,
+	turf_beach               = true,
+	turf_meadow              = true,
+	turf_jungle              = true,
+	turf_tidalmarsh          = true,
+	turf_snakeskinfloor      = true,
+}
 
-		if inst.components.inspectable ~= nil then
-			inst.components.inspectable.nameoverride = "TURF_TYPE_"..data
-		end
-	end)
+local ABC_TURFS =
+{
+	turf_cobbleroad          = true,
+	turf_foundation          = true,
+	turf_lawn                = true,
+	turf_pigruins            = true,
+	turf_pigruins_blue       = true,
+	turf_mossy_blossom       = true,
+	turf_rainforest          = true,
+	turf_deepjungle          = true,
+	turf_gasjungle           = true,
+	turf_plains              = true,
+	turf_bog                 = true,
+	turf_antcave             = true,
+	turf_batcave             = true,
+}
+
+for turf, data in pairs(MODDED_TURFS) do
+	if not (TUNING.NET_IS_IAS_ENABLED and IA_TURFS[turf]) 
+	and not (TUNING.NET_IS_ABC_ENABLED and ABC_TURFS[turf]) then
+		AddPrefabPostInit(turf, function(inst)
+			if not _G.TheWorld.ismastersim then
+				return inst
+			end
+
+			if inst.components.inspectable ~= nil then
+				inst.components.inspectable.nameoverride = "TURF_TYPE_"..data
+			end
+		end)
+	end
 end

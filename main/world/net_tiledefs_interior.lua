@@ -4,12 +4,19 @@ local WORLD_TILES = _G.WORLD_TILES
 local INTERIOR_TURFS =
 {
 	"WOODPANEL",
+	"DRIFTWOODPANEL",
 	"MARBLETILE",
 	"CHESS",
 	"SLATE",
+	"METALWOOD",
 	"METALSHEET",
+	"GARDENPATH",
 	"GARDEN",
 	"GEOMETRIC",
+	"REDGEOMETRIC",
+	"YELLOWGEOMETRIC",
+	"GREENGEOMETRIC",
+	"BWGEOMETRIC",
 	"SHAGCARPET",
 	"TRANSITIONAL",
 	"HERRING",
@@ -46,6 +53,32 @@ AddTile("WOODPANEL", "LAND",
 	{
 		name            = "woodpanel",
 		anim            = "woodpanel",
+		bank_build      = "kyno_turfs_interior",
+		pickupsound     = "wood",
+	}
+)
+
+AddTile("DRIFTWOODPANEL", "LAND",
+	{
+		ground_name     = "INTERIOR_DRIFTWOODPANEL",
+	},
+	{
+		name            = "blocky",
+		noise_texture   = "levels/textures/interior/interior_noise_driftwoodpanel.tex",
+		runsound        = "dontstarve/movement/run_wood",
+		walksound       = "dontstarve/movement/walk_wood",
+		snowsound       = "dontstarve/movement/run_ice",
+		mudsound        = "dontstarve/movement/run_mud",
+		flooring        = true,
+		hard            = true,
+	},
+	{
+		name            = "map_edge",
+		noise_texture   = "levels/textures/interior/interior_mini_noise_driftwoodpanel.tex",
+	},
+	{
+		name            = "driftwoodpanel",
+		anim            = "driftwoodpanel",
 		bank_build      = "kyno_turfs_interior",
 		pickupsound     = "wood",
 	}
@@ -133,6 +166,32 @@ AddTile("SLATE", "LAND",
 	}
 )
 
+AddTile("METALWOOD", "LAND",
+	{
+		ground_name     = "INTERIOR_METALWOOD",
+	},
+	{
+		name            = "blocky",
+		noise_texture   = "levels/textures/interior/interior_noise_metalwood.tex",
+		runsound        = "dontstarve/movement/run_marble",
+		walksound       = "dontstarve/movement/walk_marble",
+		snowsound       = "dontstarve/movement/run_ice",
+		mudsound        = "dontstarve/movement/run_mud",
+		flooring        = true,
+		hard            = true,
+	},
+	{
+		name            = "map_edge",
+		noise_texture   = "levels/textures/interior/interior_mini_noise_metalwood.tex",
+	},
+	{
+		name            = "metalwood",
+		anim            = "metalwood",
+		bank_build      = "kyno_turfs_interior",
+		pickupsound     = "metal",
+	}
+)
+
 AddTile("METALSHEET", "LAND",
 	{
 		ground_name     = "INTERIOR_METALSHEET",
@@ -157,6 +216,32 @@ AddTile("METALSHEET", "LAND",
 		anim            = "metalsheet",
 		bank_build      = "kyno_turfs_interior",
 		pickupsound     = "metal",
+	}
+)
+
+AddTile("GARDENPATH", "LAND",
+	{
+		ground_name     = "INTERIOR_GARDENPATH",
+	},
+	{
+		name            = "deciduous",
+		noise_texture   = "levels/textures/interior/interior_noise_gardenpath.tex",
+		runsound        = "dontstarve/movement/run_marble",
+		walksound       = "dontstarve/movement/walk_marble",
+		snowsound       = "dontstarve/movement/run_ice",
+		mudsound        = "dontstarve/movement/run_mud",
+		flooring        = false,
+		hard            = false,
+	},
+	{
+		name            = "map_edge",
+		noise_texture   = "levels/textures/interior/interior_mini_noise_gardenpath.tex",
+	},
+	{
+		name            = "gardenpath",
+		anim            = "gardenpath",
+		bank_build      = "kyno_turfs_interior",
+		pickupsound     = "rock",
 	}
 )
 
@@ -209,6 +294,110 @@ AddTile("GEOMETRIC", "LAND",
 	{
 		name            = "geometric",
 		anim            = "geometric",
+		bank_build      = "kyno_turfs_interior",
+		pickupsound     = "rock",
+	}
+)
+
+AddTile("REDGEOMETRIC", "LAND",
+	{
+		ground_name     = "INTERIOR_REDGEOMETRIC",
+	},
+	{
+		name            = "blocky",
+		noise_texture   = "levels/textures/interior/interior_noise_redgeometric.tex",
+		runsound        = "dontstarve/movement/run_marble",
+		walksound       = "dontstarve/movement/walk_marble",
+		snowsound       = "dontstarve/movement/run_ice",
+		mudsound        = "dontstarve/movement/run_mud",
+		flooring        = true,
+		hard            = true,
+	},
+	{
+		name            = "map_edge",
+		noise_texture   = "levels/textures/interior/interior_mini_noise_redgeometric.tex",
+	},
+	{
+		name            = "redgeometric",
+		anim            = "redgeometric",
+		bank_build      = "kyno_turfs_interior",
+		pickupsound     = "rock",
+	}
+)
+
+AddTile("YELLOWGEOMETRIC", "LAND",
+	{
+		ground_name     = "INTERIOR_YELLOWGEOMETRIC",
+	},
+	{
+		name            = "blocky",
+		noise_texture   = "levels/textures/interior/interior_noise_yellowgeometric.tex",
+		runsound        = "dontstarve/movement/run_marble",
+		walksound       = "dontstarve/movement/walk_marble",
+		snowsound       = "dontstarve/movement/run_ice",
+		mudsound        = "dontstarve/movement/run_mud",
+		flooring        = true,
+		hard            = true,
+	},
+	{
+		name            = "map_edge",
+		noise_texture   = "levels/textures/interior/interior_mini_noise_yellowgeometric.tex",
+	},
+	{
+		name            = "yellowgeometric",
+		anim            = "yellowgeometric",
+		bank_build      = "kyno_turfs_interior",
+		pickupsound     = "rock",
+	}
+)
+
+AddTile("GREENGEOMETRIC", "LAND",
+	{
+		ground_name     = "INTERIOR_GREENGEOMETRIC",
+	},
+	{
+		name            = "blocky",
+		noise_texture   = "levels/textures/interior/interior_noise_greengeometric.tex",
+		runsound        = "dontstarve/movement/run_marble",
+		walksound       = "dontstarve/movement/walk_marble",
+		snowsound       = "dontstarve/movement/run_ice",
+		mudsound        = "dontstarve/movement/run_mud",
+		flooring        = true,
+		hard            = true,
+	},
+	{
+		name            = "map_edge",
+		noise_texture   = "levels/textures/interior/interior_mini_noise_greengeometric.tex",
+	},
+	{
+		name            = "greengeometric",
+		anim            = "greengeometric",
+		bank_build      = "kyno_turfs_interior",
+		pickupsound     = "rock",
+	}
+)
+
+AddTile("BWGEOMETRIC", "LAND",
+	{
+		ground_name     = "INTERIOR_BWGEOMETRIC",
+	},
+	{
+		name            = "blocky",
+		noise_texture   = "levels/textures/interior/interior_noise_bwgeometric.tex",
+		runsound        = "dontstarve/movement/run_marble",
+		walksound       = "dontstarve/movement/walk_marble",
+		snowsound       = "dontstarve/movement/run_ice",
+		mudsound        = "dontstarve/movement/run_mud",
+		flooring        = true,
+		hard            = true,
+	},
+	{
+		name            = "map_edge",
+		noise_texture   = "levels/textures/interior/interior_mini_noise_bwgeometric.tex",
+	},
+	{
+		name            = "bwgeometric",
+		anim            = "bwgeometric",
 		bank_build      = "kyno_turfs_interior",
 		pickupsound     = "rock",
 	}

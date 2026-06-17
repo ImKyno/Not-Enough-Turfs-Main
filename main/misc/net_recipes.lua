@@ -9,10 +9,6 @@ local RecipeFilter         = require("recipes_filter")
 
 local AMOUNT_GIVEN_MODDED  = GetModConfigData("AMOUNT_GIVEN_MODDED")
 
--- Client-side checks for Island Adventures Mod.
-local SHIPWRECKED_ENABLED  = AllRecipes["chiminea"] and AllRecipes["limestone"]
-local HAMLET_ENABLED       = AllRecipes["cork_bat"] and AllRecipes["corkchest"]
-
 local ModAtlas             = "images/inventoryimages/net_inventoryimages.xml"
 local DefaultAtlas3        = "images/inventoryimages3.xml"
 local CraftingFilterAtlas  = "images/tabimages/net_tabimages.xml"
@@ -35,32 +31,26 @@ AllRecipes["merm_toolshed_upgraded"].testfn  = IsTidalMarshLand
 AllRecipes["merm_armory"].testfn             = IsTidalMarshLand
 AllRecipes["merm_armory_upgraded"].testfn    = IsTidalMarshLand
 
--- Custom TechTree for The Terraformer.
+-- Custom TechTree for the Terra Former Tamper.
+TECH.TURFMAKER     = { TURFMAKER = 1 }
+TECH.TURFMAKER_ONE = { TURFMAKER = 1 }
+TECH.TURFMAKER_TWO = { TURFMAKER = 2 }
+
+local function ResetAllTech()
+	TECH.NONE = TechTree.Create()
+
+	for k, v in pairs(AllRecipes) do
+		AllRecipes[k].level = TechTree.Create(v.level)
+	end
+
+	for k, v in pairs(TUNING.PROTOTYPER_TREES) do
+		TUNING.PROTOTYPER_TREES[k] = TechTree.Create(v)
+	end
+end
+
 table.insert(TechTree.AVAILABLE_TECH, "TURFMAKER")
 
-TechTree.Create = function(t)
-	t = t or {}
-
-	for i, v in ipairs(TechTree.AVAILABLE_TECH) do
-		t[v] = t[v] or 0
-	end
-
-	return t
-end
-
-_G.TECH.NONE.TURFMAKER = 0
-_G.TECH.TURFMAKER_ONE  = { TURFMAKER = 1 }
-_G.TECH.TURFMAKER_TWO  = { TURFMAKER = 2 }
-
-for k,v in pairs(TUNING.PROTOTYPER_TREES) do
-	v.TURFMAKER = 0
-end
-
-for i, v in pairs(_G.AllRecipes) do
-	if v.level.TURFMAKER == nil then
-		v.level.TURFMAKER = 0
-	end
-end
+ResetAllTech()
 
 local NET_PROTOTYPERS       =
 {
@@ -89,10 +79,10 @@ AddRecipe2("kyno_terraformer", {Ingredient("moonrocknugget", 1), Ingredient("cut
 )
 
 -- Shipwrecked Turf Recipes.
-if not SHIPWRECKED_ENABLED then
-	AddRecipe2("turf_magmafield", {Ingredient("turf_underrock", 1), Ingredient("charcoal", 1)}, TECH.TURFMAKER_ONE,
+if not _G.NETRecipeAlreadyExists("chiminea", "limestone") and not TUNING.NET_IS_IAS_ENABLED then
+	AddRecipe2("turf_magmafield", {Ingredient("rocks", 1), Ingredient("nitre", 1)}, TECH.TURFMAKER_ONE,
 		{
-			hint_msg    = "NEEDTURFMAKER",
+			hint_msg    = "NEEDSTURFMAKER",
 			numtogive   = AMOUNT_GIVEN_MODDED,
 			atlas       = ModAtlas,
 			image       = "turf_magmafield.tex",
@@ -100,9 +90,9 @@ if not SHIPWRECKED_ENABLED then
 		{"DECOR"}
 	)
 
-	AddRecipe2("turf_volcano", {Ingredient("turf_magmafield", 1, ModAtlas), Ingredient("rocks", 1)}, TECH.TURFMAKER_ONE,
+	AddRecipe2("turf_volcano", {Ingredient("rocks", 1), Ingredient("charcoal", 1)}, TECH.TURFMAKER_ONE,
 		{
-			hint_msg    = "NEEDTURFMAKER",
+			hint_msg    = "NEEDSTURFMAKER",
 			numtogive   = AMOUNT_GIVEN_MODDED,
 			atlas       = ModAtlas,
 			image       = "turf_volcano.tex",
@@ -110,9 +100,9 @@ if not SHIPWRECKED_ENABLED then
 		{"DECOR"}
 	)
 
-	AddRecipe2("turf_volcano_rock", {Ingredient("turf_volcano", 1, ModAtlas), Ingredient("rocks", 1)}, TECH.TURFMAKER_ONE,
+	AddRecipe2("turf_volcano_rock", {Ingredient("rocks", 1), Ingredient("charcoal", 1)}, TECH.TURFMAKER_ONE,
 		{
-			hint_msg    = "NEEDTURFMAKER",
+			hint_msg    = "NEEDSTURFMAKER",
 			numtogive   = AMOUNT_GIVEN_MODDED,
 			atlas       = ModAtlas,
 			image       = "turf_volcano_rock.tex",
@@ -120,9 +110,9 @@ if not SHIPWRECKED_ENABLED then
 		{"DECOR"}
 	)
 
-	AddRecipe2("turf_ash", {Ingredient("ash", 2)}, TECH.TURFMAKER_ONE,
+	AddRecipe2("turf_ash", {Ingredient("ash", 1), Ingredient("charcoal", 1)}, TECH.TURFMAKER_ONE,
 		{
-			hint_msg    = "NEEDTURFMAKER",
+			hint_msg    = "NEEDSTURFMAKER",
 			numtogive   = AMOUNT_GIVEN_MODDED,
 			atlas       = ModAtlas,
 			image       = "turf_ash.tex",
@@ -130,9 +120,9 @@ if not SHIPWRECKED_ENABLED then
 		{"DECOR"}
 	)
 
-	AddRecipe2("turf_beach", {Ingredient("turf_desertdirt", 1)}, TECH.TURFMAKER_ONE,
+	AddRecipe2("turf_beach", {Ingredient("rocks", 1), Ingredient("nitre", 1)}, TECH.TURFMAKER_ONE,
 		{
-			hint_msg    = "NEEDTURFMAKER",
+			hint_msg    = "NEEDSTURFMAKER",
 			numtogive   = AMOUNT_GIVEN_MODDED,
 			atlas       = ModAtlas,
 			image       = "turf_beach.tex",
@@ -140,9 +130,9 @@ if not SHIPWRECKED_ENABLED then
 		{"DECOR"}
 	)
 
-	AddRecipe2("turf_meadow", {Ingredient("turf_grass", 1), Ingredient("cutgrass", 1)}, TECH.TURFMAKER_ONE,
+	AddRecipe2("turf_meadow", {Ingredient("cutgrass", 1), Ingredient("petals", 1)}, TECH.TURFMAKER_ONE,
 		{
-			hint_msg    = "NEEDTURFMAKER",
+			hint_msg    = "NEEDSTURFMAKER",
 			numtogive   = AMOUNT_GIVEN_MODDED,
 			atlas       = ModAtlas,
 			image       = "turf_meadow.tex",
@@ -150,9 +140,9 @@ if not SHIPWRECKED_ENABLED then
 		{"DECOR"}
 	)
 
-	AddRecipe2("turf_jungle", {Ingredient("turf_forest", 1), Ingredient("twigs", 1)}, TECH.TURFMAKER_ONE,
+	AddRecipe2("turf_jungle", {Ingredient("pinecone", 1), Ingredient("twigs", 1)}, TECH.TURFMAKER_ONE,
 		{
-			hint_msg    = "NEEDTURFMAKER",
+			hint_msg    = "NEEDSTURFMAKER",
 			numtogive   = AMOUNT_GIVEN_MODDED,
 			atlas       = ModAtlas,
 			image       = "turf_jungle.tex",
@@ -160,9 +150,9 @@ if not SHIPWRECKED_ENABLED then
 		{"DECOR"}
 	)
 
-	AddRecipe2("turf_tidalmarsh", {Ingredient("turf_mud", 1), Ingredient("ice", 1)}, TECH.TURFMAKER_ONE,
+	AddRecipe2("turf_tidalmarsh", {Ingredient("cutreeds", 1), Ingredient("spoiled_food", 2)}, TECH.TURFMAKER_ONE,
 		{
-			hint_msg    = "NEEDTURFMAKER",
+			hint_msg    = "NEEDSTURFMAKER",
 			numtogive   = AMOUNT_GIVEN_MODDED,
 			atlas       = ModAtlas,
 			image       = "turf_tidalmarsh.tex",
@@ -170,9 +160,9 @@ if not SHIPWRECKED_ENABLED then
 		{"DECOR"}
 	)
 
-	AddRecipe2("turf_snakeskinfloor", {Ingredient("turf_carpetfloor", 1)}, TECH.TURFMAKER_ONE,
+	AddRecipe2("turf_snakeskinfloor", {Ingredient("boards", 1), Ingredient("beefalowool", 1), Ingredient("feather_robin", 1)}, TECH.TURFMAKER_ONE,
 		{
-			hint_msg    = "NEEDTURFMAKER",
+			hint_msg    = "NEEDSTURFMAKER",
 			numtogive   = AMOUNT_GIVEN_MODDED,
 			atlas       = ModAtlas,
 			image       = "turf_snakeskinfloor.tex",
@@ -182,10 +172,10 @@ if not SHIPWRECKED_ENABLED then
 end
 
 -- Hamlet Turf Recipes.
-if not HAMLET_ENABLED then
+if not _G.NETRecipeAlreadyExists("cork_bat", "corkchest") and not TUNING.NET_IS_ABC_ENABLED then
 	AddRecipe2("turf_cobbleroad", {Ingredient("cutstone", 1), Ingredient("flint", 2)}, TECH.TURFMAKER_ONE,
 		{
-			hint_msg    = "NEEDTURFMAKER",
+			hint_msg    = "NEEDSTURFMAKER",
 			numtogive   = AMOUNT_GIVEN_MODDED,
 			atlas       = ModAtlas,
 			image       = "turf_cobbleroad.tex",
@@ -195,7 +185,7 @@ if not HAMLET_ENABLED then
 
 	AddRecipe2("turf_foundation", {Ingredient("cutstone", 1)}, TECH.TURFMAKER_ONE,
 		{
-			hint_msg    = "NEEDTURFMAKER",
+			hint_msg    = "NEEDSTURFMAKER",
 			numtogive   = AMOUNT_GIVEN_MODDED,
 			atlas       = ModAtlas,
 			image       = "turf_foundation.tex",
@@ -203,9 +193,9 @@ if not HAMLET_ENABLED then
 		{"DECOR"}
 	)
 
-	AddRecipe2("turf_lawn", {Ingredient("cutgrass", 2), Ingredient("nitre", 1)}, TECH.TURFMAKER_ONE,
+	AddRecipe2("turf_lawn", {Ingredient("cutgrass", 1), Ingredient("nitre", 1)}, TECH.TURFMAKER_ONE,
 		{
-			hint_msg    = "NEEDTURFMAKER",
+			hint_msg    = "NEEDSTURFMAKER",
 			numtogive   = AMOUNT_GIVEN_MODDED,
 			atlas       = ModAtlas,
 			image       = "turf_lawn.tex",
@@ -215,7 +205,7 @@ if not HAMLET_ENABLED then
 
 	AddRecipe2("turf_pigruins", {Ingredient("cutstone", 1), Ingredient("flint", 2)}, TECH.TURFMAKER_ONE,
 		{
-			hint_msg    = "NEEDTURFMAKER",
+			hint_msg    = "NEEDSTURFMAKER",
 			numtogive   = AMOUNT_GIVEN_MODDED,
 			atlas       = ModAtlas,
 			image       = "turf_pigruins.tex",
@@ -223,9 +213,19 @@ if not HAMLET_ENABLED then
 		{"DECOR"}
 	)
 
-	AddRecipe2("turf_fields", {Ingredient("turf_rainforest", 1, ModAtlas), Ingredient("ash", 1)}, TECH.TURFMAKER_ONE,
+	AddRecipe2("turf_pigruins_blue", {Ingredient("cutstone", 1), Ingredient("flint", 2)}, TECH.TURFMAKER_ONE,
 		{
-			hint_msg    = "NEEDTURFMAKER",
+			hint_msg    = "NEEDSTURFMAKER",
+			numtogive   = AMOUNT_GIVEN_MODDED,
+			atlas       = ModAtlas,
+			image       = "turf_pigruins_blue.tex",
+		},
+		{"DECOR"}
+	)
+
+	AddRecipe2("turf_fields", {Ingredient("cutgrass", 1), Ingredient("ash", 1)}, TECH.TURFMAKER_ONE,
+		{
+			hint_msg    = "NEEDSTURFMAKER",
 			numtogive   = AMOUNT_GIVEN_MODDED,
 			atlas       = ModAtlas,
 			image       = "turf_fields.tex",
@@ -233,9 +233,9 @@ if not HAMLET_ENABLED then
 		{"DECOR"}
 	)
 
-	AddRecipe2("turf_mossy_blossom", {Ingredient("turf_deciduous", 1)}, TECH.TURFMAKER_ONE,
+	AddRecipe2("turf_mossy_blossom", {Ingredient("twigs", 1), Ingredient("ash", 1)}, TECH.TURFMAKER_ONE,
 		{
-			hint_msg    = "NEEDTURFMAKER",
+			hint_msg    = "NEEDSTURFMAKER",
 			numtogive   = AMOUNT_GIVEN_MODDED,
 			atlas       = ModAtlas,
 			image       = "turf_mossy_blossom.tex",
@@ -243,9 +243,9 @@ if not HAMLET_ENABLED then
 		{"DECOR"}
 	)
 
-	AddRecipe2("turf_rainforest", {Ingredient("turf_grass", 1)}, TECH.TURFMAKER_ONE,
+	AddRecipe2("turf_rainforest", {Ingredient("cutgrass", 1), Ingredient("twigs", 1)}, TECH.TURFMAKER_ONE,
 		{
-			hint_msg    = "NEEDTURFMAKER",
+			hint_msg    = "NEEDSTURFMAKER",
 			numtogive   = AMOUNT_GIVEN_MODDED,
 			atlas       = ModAtlas,
 			image       = "turf_rainforest.tex",
@@ -253,9 +253,9 @@ if not HAMLET_ENABLED then
 		{"DECOR"}
 	)
 
-	AddRecipe2("turf_deepjungle", {Ingredient("turf_forest", 1)}, TECH.TURFMAKER_ONE,
+	AddRecipe2("turf_deepjungle", {Ingredient("pinecone", 1), Ingredient("cutgrass", 1)}, TECH.TURFMAKER_ONE,
 		{
-			hint_msg    = "NEEDTURFMAKER",
+			hint_msg    = "NEEDSTURFMAKER",
 			numtogive   = AMOUNT_GIVEN_MODDED,
 			atlas       = ModAtlas,
 			image       = "turf_deepjungle.tex",
@@ -263,9 +263,9 @@ if not HAMLET_ENABLED then
 		{"DECOR"}
 	)
 
-	AddRecipe2("turf_gasjungle", {Ingredient("turf_deepjungle", 1, ModAtlas), Ingredient("spoiled_food", 1)}, TECH.TURFMAKER_ONE,
+	AddRecipe2("turf_gasjungle", {Ingredient("ash", 1), Ingredient("spoiled_food", 1)}, TECH.TURFMAKER_ONE,
 		{
-			hint_msg    = "NEEDTURFMAKER",
+			hint_msg    = "NEEDSTURFMAKER",
 			numtogive   = AMOUNT_GIVEN_MODDED,
 			atlas       = ModAtlas,
 			image       = "turf_gasjungle.tex",
@@ -273,9 +273,9 @@ if not HAMLET_ENABLED then
 		{"DECOR"}
 	)
 
-	AddRecipe2("turf_plains", {Ingredient("turf_savanna", 1)}, TECH.TURFMAKER_ONE,
+	AddRecipe2("turf_plains", {Ingredient("cutgrass", 1), Ingredient("poop", 1)}, TECH.TURFMAKER_ONE,
 		{
-			hint_msg    = "NEEDTURFMAKER",
+			hint_msg    = "NEEDSTURFMAKER",
 			numtogive   = AMOUNT_GIVEN_MODDED,
 			atlas       = ModAtlas,
 			image       = "turf_plains.tex",
@@ -283,9 +283,9 @@ if not HAMLET_ENABLED then
 		{"DECOR"}
 	)
 
-	AddRecipe2("turf_bog", {Ingredient("turf_desertdirt", 1)}, TECH.TURFMAKER_ONE,
+	AddRecipe2("turf_bog", {Ingredient("rocks", 1), Ingredient("nitre", 1)}, TECH.TURFMAKER_ONE,
 		{
-			hint_msg    = "NEEDTURFMAKER",
+			hint_msg    = "NEEDSTURFMAKER",
 			numtogive   = AMOUNT_GIVEN_MODDED,
 			atlas       = ModAtlas,
 			image       = "turf_bog.tex",
@@ -293,9 +293,9 @@ if not HAMLET_ENABLED then
 		{"DECOR"}
 	)
 
-	AddRecipe2("turf_antcave", {Ingredient("turf_mud", 1)}, TECH.TURFMAKER_ONE,
+	AddRecipe2("turf_antcave", {Ingredient("rocks", 1), Ingredient("nitre", 1)}, TECH.TURFMAKER_ONE,
 		{
-			hint_msg    = "NEEDTURFMAKER",
+			hint_msg    = "NEEDSTURFMAKER",
 			numtogive   = AMOUNT_GIVEN_MODDED,
 			atlas       = ModAtlas,
 			image       = "turf_antcave.tex",
@@ -303,9 +303,9 @@ if not HAMLET_ENABLED then
 		{"DECOR"}
 	)
 
-	AddRecipe2("turf_batcave", {Ingredient("turf_cave", 1)}, TECH.TURFMAKER_ONE,
+	AddRecipe2("turf_batcave", {Ingredient("rocks", 1), Ingredient("guano", 1)}, TECH.TURFMAKER_ONE,
 		{
-			hint_msg    = "NEEDTURFMAKER",
+			hint_msg    = "NEEDSTURFMAKER",
 			numtogive   = AMOUNT_GIVEN_MODDED,
 			atlas       = ModAtlas,
 			image       = "turf_batcave.tex",
@@ -317,7 +317,7 @@ end
 -- Event Turf Recipes.
 AddRecipe2("turf_pinkstone", {Ingredient("cutstone", 1), Ingredient("flint", 2)}, TECH.TURFMAKER_ONE,
 	{
-		hint_msg    = "NEEDTURFMAKER",
+		hint_msg    = "NEEDSTURFMAKER",
 		numtogive   = AMOUNT_GIVEN_MODDED,
 		atlas       = ModAtlas,
 		image       = "turf_pinkstone.tex",
@@ -327,7 +327,7 @@ AddRecipe2("turf_pinkstone", {Ingredient("cutstone", 1), Ingredient("flint", 2)}
 
 AddRecipe2("turf_stonecity", {Ingredient("cutstone", 1), Ingredient("flint", 2)}, TECH.TURFMAKER_ONE,
 	{
-		hint_msg    = "NEEDTURFMAKER",
+		hint_msg    = "NEEDSTURFMAKER",
 		numtogive   = AMOUNT_GIVEN_MODDED,
 		atlas       = ModAtlas,
 		image       = "turf_stonecity.tex",
@@ -335,9 +335,9 @@ AddRecipe2("turf_stonecity", {Ingredient("cutstone", 1), Ingredient("flint", 2)}
 	{"DECOR"}
 )
 
-AddRecipe2("turf_pinkpark", {Ingredient("turf_deciduous", 1)}, TECH.TURFMAKER_ONE,
+AddRecipe2("turf_pinkpark", {Ingredient("cutgrass", 1), Ingredient("petals", 1)}, TECH.TURFMAKER_ONE,
 	{
-		hint_msg    = "NEEDTURFMAKER",
+		hint_msg    = "NEEDSTURFMAKER",
 		numtogive   = AMOUNT_GIVEN_MODDED,
 		atlas       = ModAtlas,
 		image       = "turf_pinkpark.tex",
@@ -345,9 +345,9 @@ AddRecipe2("turf_pinkpark", {Ingredient("turf_deciduous", 1)}, TECH.TURFMAKER_ON
 	{"DECOR"}
 )
 
-AddRecipe2("turf_greyforest", {Ingredient("turf_forest", 1), Ingredient("twigs", 2)}, TECH.TURFMAKER_ONE,
+AddRecipe2("turf_greyforest", {Ingredient("ash", 1), Ingredient("twigs", 1)}, TECH.TURFMAKER_ONE,
 	{
-		hint_msg    = "NEEDTURFMAKER",
+		hint_msg    = "NEEDSTURFMAKER",
 		numtogive   = AMOUNT_GIVEN_MODDED,
 		atlas       = ModAtlas,
 		image       = "turf_greyforest.tex",
@@ -355,9 +355,9 @@ AddRecipe2("turf_greyforest", {Ingredient("turf_forest", 1), Ingredient("twigs",
 	{"DECOR"}
 )
 
-AddRecipe2("turf_browncarpet", {Ingredient("poop", 2), Ingredient("seeds", 1)}, TECH.TURFMAKER_ONE,
+AddRecipe2("turf_browncarpet", {Ingredient("poop", 1), Ingredient("seeds", 1)}, TECH.TURFMAKER_ONE,
 	{
-		hint_msg    = "NEEDTURFMAKER",
+		hint_msg    = "NEEDSTURFMAKER",
 		numtogive   = AMOUNT_GIVEN_MODDED,
 		atlas       = ModAtlas,
 		image       = "turf_browncarpet.tex",
@@ -365,9 +365,9 @@ AddRecipe2("turf_browncarpet", {Ingredient("poop", 2), Ingredient("seeds", 1)}, 
 	{"DECOR"}
 )
 
-AddRecipe2("turf_forgerock", {Ingredient("turf_underrock", 1)}, TECH.TURFMAKER_ONE,
+AddRecipe2("turf_forgerock", {Ingredient("rocks", 1), Ingredient("flint", 1)}, TECH.TURFMAKER_ONE,
 	{
-		hint_msg    = "NEEDTURFMAKER",
+		hint_msg    = "NEEDSTURFMAKER",
 		numtogive   = AMOUNT_GIVEN_MODDED,
 		atlas       = ModAtlas,
 		image       = "turf_forgerock.tex",
@@ -375,9 +375,9 @@ AddRecipe2("turf_forgerock", {Ingredient("turf_underrock", 1)}, TECH.TURFMAKER_O
 	{"DECOR"}
 )
 
-AddRecipe2("turf_forgeroad", {Ingredient("turf_forgerock", 1, ModAtlas), Ingredient("redgem", 1)}, TECH.TURFMAKER_ONE,
+AddRecipe2("turf_forgeroad", {Ingredient("cutstone", 1), Ingredient("flint", 2)}, TECH.TURFMAKER_ONE,
 	{
-		hint_msg    = "NEEDTURFMAKER",
+		hint_msg    = "NEEDSTURFMAKER",
 		numtogive   = AMOUNT_GIVEN_MODDED,
 		atlas       = ModAtlas,
 		image       = "turf_forgeroad.tex",
@@ -386,9 +386,9 @@ AddRecipe2("turf_forgeroad", {Ingredient("turf_forgerock", 1, ModAtlas), Ingredi
 )
 
 -- Custom Turf Recipes.
-AddRecipe2("turf_legacyrainforest", {Ingredient("turf_rainforest", 1, ModAtlas)}, TECH.TURFMAKER_ONE,
+AddRecipe2("turf_legacyrainforest", {Ingredient("cutgrass", 1), Ingredient("twigs", 1)}, TECH.TURFMAKER_ONE,
 	{
-		hint_msg    = "NEEDTURFMAKER",
+		hint_msg    = "NEEDSTURFMAKER",
 		numtogive   = AMOUNT_GIVEN_MODDED,
 		atlas       = ModAtlas,
 		image       = "turf_legacyrainforest.tex",
@@ -396,9 +396,9 @@ AddRecipe2("turf_legacyrainforest", {Ingredient("turf_rainforest", 1, ModAtlas)}
 	{"DECOR"}
 )
 
-AddRecipe2("turf_legacydeepjungle", {Ingredient("turf_deepjungle", 1, ModAtlas)}, TECH.TURFMAKER_ONE,
+AddRecipe2("turf_legacydeepjungle", {Ingredient("pinecone", 1), Ingredient("cutgrass", 1)}, TECH.TURFMAKER_ONE,
 	{
-		hint_msg    = "NEEDTURFMAKER",
+		hint_msg    = "NEEDSTURFMAKER",
 		numtogive   = AMOUNT_GIVEN_MODDED,
 		atlas       = ModAtlas,
 		image       = "turf_legacydeepjungle.tex",
@@ -406,9 +406,9 @@ AddRecipe2("turf_legacydeepjungle", {Ingredient("turf_deepjungle", 1, ModAtlas)}
 	{"DECOR"}
 )
 
-AddRecipe2("turf_legacybog", {Ingredient("turf_bog", 1, ModAtlas), Ingredient("turf_marsh", 1)}, TECH.TURFMAKER_ONE,
+AddRecipe2("turf_legacybog", {Ingredient("rocks", 1), Ingredient("nitre", 1)}, TECH.TURFMAKER_ONE,
 	{
-		hint_msg    = "NEEDTURFMAKER",
+		hint_msg    = "NEEDSTURFMAKER",
 		numtogive   = AMOUNT_GIVEN_MODDED,
 		atlas       = ModAtlas,
 		image       = "turf_legacybog.tex",
@@ -416,9 +416,9 @@ AddRecipe2("turf_legacybog", {Ingredient("turf_bog", 1, ModAtlas), Ingredient("t
 	{"DECOR"}
 )
 
-AddRecipe2("turf_greenmarsh", {Ingredient("turf_marsh", 1), Ingredient("turf_grass", 1)}, TECH.TURFMAKER_ONE,
+AddRecipe2("turf_greenmarsh", {Ingredient("cutreeds", 1), Ingredient("cutgrass", 2)}, TECH.TURFMAKER_ONE,
 	{
-		hint_msg    = "NEEDTURFMAKER",
+		hint_msg    = "NEEDSTURFMAKER",
 		numtogive   = AMOUNT_GIVEN_MODDED,
 		atlas       = ModAtlas,
 		image       = "turf_greenmarsh.tex",
@@ -426,9 +426,9 @@ AddRecipe2("turf_greenmarsh", {Ingredient("turf_marsh", 1), Ingredient("turf_gra
 	{"DECOR"}
 )
 
-AddRecipe2("turf_ivygrass", {Ingredient("turf_grass", 1), Ingredient("turf_forest", 1)}, TECH.TURFMAKER_ONE,
+AddRecipe2("turf_ivygrass", {Ingredient("cutgrass", 1), Ingredient("twigs", 1)}, TECH.TURFMAKER_ONE,
 	{
-		hint_msg    = "NEEDTURFMAKER",
+		hint_msg    = "NEEDSTURFMAKER",
 		numtogive   = AMOUNT_GIVEN_MODDED,
 		atlas       = ModAtlas,
 		image       = "turf_ivygrass.tex",
@@ -436,9 +436,9 @@ AddRecipe2("turf_ivygrass", {Ingredient("turf_grass", 1), Ingredient("turf_fores
 	{"DECOR"}
 )
 
-AddRecipe2("turf_swirlgrass", {Ingredient("turf_forest", 1), Ingredient("cutgrass", 2)}, TECH.TURFMAKER_ONE,
+AddRecipe2("turf_swirlgrass", {Ingredient("cutgrass", 1), Ingredient("cutreeds", 1)}, TECH.TURFMAKER_ONE,
 	{
-		hint_msg    = "NEEDTURFMAKER",
+		hint_msg    = "NEEDSTURFMAKER",
 		numtogive   = AMOUNT_GIVEN_MODDED,
 		atlas       = ModAtlas,
 		image       = "turf_swirlgrass.tex",
@@ -446,9 +446,9 @@ AddRecipe2("turf_swirlgrass", {Ingredient("turf_forest", 1), Ingredient("cutgras
 	{"DECOR"}
 )
 
-AddRecipe2("turf_swirlgrassmono", {Ingredient("turf_grass", 1), Ingredient("twigs", 2)}, TECH.TURFMAKER_ONE,
+AddRecipe2("turf_swirlgrassmono", {Ingredient("cutgrass", 1), Ingredient("cutreeds", 1)}, TECH.TURFMAKER_ONE,
 	{
-		hint_msg    = "NEEDTURFMAKER",
+		hint_msg    = "NEEDSTURFMAKER",
 		numtogive   = AMOUNT_GIVEN_MODDED,
 		atlas       = ModAtlas,
 		image       = "turf_swirlgrassmono.tex",
@@ -456,9 +456,9 @@ AddRecipe2("turf_swirlgrassmono", {Ingredient("turf_grass", 1), Ingredient("twig
 	{"DECOR"}
 )
 
-AddRecipe2("turf_snowfall", {Ingredient("ice", 2)}, TECH.TURFMAKER_ONE,
+AddRecipe2("turf_snowfall", {Ingredient("rocks", 1),Ingredient("ice", 1)}, TECH.TURFMAKER_ONE,
 	{
-		hint_msg    = "NEEDTURFMAKER",
+		hint_msg    = "NEEDSTURFMAKER",
 		numtogive   = AMOUNT_GIVEN_MODDED,
 		atlas       = ModAtlas,
 		image       = "turf_snowfall.tex",
@@ -466,9 +466,9 @@ AddRecipe2("turf_snowfall", {Ingredient("ice", 2)}, TECH.TURFMAKER_ONE,
 	{"DECOR"}
 )
 
-AddRecipe2("turf_redcarpet", {Ingredient("turf_carpetfloor", 1), Ingredient("feather_robin", 1)}, TECH.TURFMAKER_ONE,
+AddRecipe2("turf_redcarpet", {Ingredient("boards", 1), Ingredient("beefalowool", 1), Ingredient("feather_robin", 1)}, TECH.TURFMAKER_ONE,
 	{
-		hint_msg    = "NEEDTURFMAKER",
+		hint_msg    = "NEEDSTURFMAKER",
 		numtogive   = AMOUNT_GIVEN_MODDED,
 		atlas       = ModAtlas,
 		image       = "turf_redcarpet.tex",
@@ -476,9 +476,9 @@ AddRecipe2("turf_redcarpet", {Ingredient("turf_carpetfloor", 1), Ingredient("fea
 	{"DECOR"}
 )
 
-AddRecipe2("turf_pinkcarpet", {Ingredient("turf_carpetfloor", 1), Ingredient("spidergland", 1)}, TECH.TURFMAKER_ONE,
+AddRecipe2("turf_pinkcarpet", {Ingredient("boards", 1), Ingredient("beefalowool", 1), Ingredient("spidergland", 1)}, TECH.TURFMAKER_ONE,
 	{
-		hint_msg    = "NEEDTURFMAKER",
+		hint_msg    = "NEEDSTURFMAKER",
 		numtogive   = AMOUNT_GIVEN_MODDED,
 		atlas       = ModAtlas,
 		image       = "turf_pinkcarpet.tex",
@@ -486,9 +486,9 @@ AddRecipe2("turf_pinkcarpet", {Ingredient("turf_carpetfloor", 1), Ingredient("sp
 	{"DECOR"}
 )
 
-AddRecipe2("turf_cyancarpet", {Ingredient("turf_carpetfloor", 1), Ingredient("cutlichen", 1)}, TECH.TURFMAKER_ONE,
+AddRecipe2("turf_cyancarpet", {Ingredient("boards", 1), Ingredient("beefalowool", 1), Ingredient("cutlichen", 1)}, TECH.TURFMAKER_ONE,
 	{
-		hint_msg    = "NEEDTURFMAKER",
+		hint_msg    = "NEEDSTURFMAKER",
 		numtogive   = AMOUNT_GIVEN_MODDED,
 		atlas       = ModAtlas,
 		image       = "turf_cyancarpet.tex",
@@ -496,9 +496,9 @@ AddRecipe2("turf_cyancarpet", {Ingredient("turf_carpetfloor", 1), Ingredient("cu
 	{"DECOR"}
 )
 
-AddRecipe2("turf_whitecarpet", {Ingredient("turf_carpetfloor", 1), Ingredient("silk", 1)}, TECH.TURFMAKER_ONE,
+AddRecipe2("turf_whitecarpet", {Ingredient("boards", 1), Ingredient("beefalowool", 1), Ingredient("silk", 1)}, TECH.TURFMAKER_ONE,
 	{
-		hint_msg    = "NEEDTURFMAKER",
+		hint_msg    = "NEEDSTURFMAKER",
 		numtogive   = AMOUNT_GIVEN_MODDED,
 		atlas       = ModAtlas,
 		image       = "turf_whitecarpet.tex",
@@ -506,9 +506,9 @@ AddRecipe2("turf_whitecarpet", {Ingredient("turf_carpetfloor", 1), Ingredient("s
 	{"DECOR"}
 )
 
-AddRecipe2("turf_yellowcarpet", {Ingredient("turf_carpetfloor", 1), Ingredient("cutgrass", 1)}, TECH.TURFMAKER_ONE,
+AddRecipe2("turf_yellowcarpet", {Ingredient("boards", 1), Ingredient("beefalowool", 1), Ingredient("feather_canary", 1)}, TECH.TURFMAKER_ONE,
 	{
-		hint_msg    = "NEEDTURFMAKER",
+		hint_msg    = "NEEDSTURFMAKER",
 		numtogive   = AMOUNT_GIVEN_MODDED,
 		atlas       = ModAtlas,
 		image       = "turf_yellowcarpet.tex",
@@ -516,9 +516,9 @@ AddRecipe2("turf_yellowcarpet", {Ingredient("turf_carpetfloor", 1), Ingredient("
 	{"DECOR"}
 )
 
-AddRecipe2("turf_greencarpet", {Ingredient("turf_carpetfloor", 1), Ingredient("succulent_picked", 1)}, TECH.TURFMAKER_ONE,
+AddRecipe2("turf_greencarpet", {Ingredient("boards", 1), Ingredient("beefalowool", 1), Ingredient("cutreeds", 1)}, TECH.TURFMAKER_ONE,
 	{
-		hint_msg    = "NEEDTURFMAKER",
+		hint_msg    = "NEEDSTURFMAKER",
 		numtogive   = AMOUNT_GIVEN_MODDED,
 		atlas       = ModAtlas,
 		image       = "turf_greencarpet.tex",
@@ -526,9 +526,9 @@ AddRecipe2("turf_greencarpet", {Ingredient("turf_carpetfloor", 1), Ingredient("s
 	{"DECOR"}
 )
 
-AddRecipe2("turf_orangecarpet", {Ingredient("turf_carpetfloor", 1), Ingredient("pumpkin", 1)}, TECH.TURFMAKER_ONE,
+AddRecipe2("turf_orangecarpet", {Ingredient("boards", 1), Ingredient("beefalowool", 1), Ingredient("pumpkin", 1)}, TECH.TURFMAKER_ONE,
 	{
-		hint_msg    = "NEEDTURFMAKER",
+		hint_msg    = "NEEDSTURFMAKER",
 		numtogive   = AMOUNT_GIVEN_MODDED,
 		atlas       = ModAtlas,
 		image       = "turf_orangecarpet.tex",
@@ -536,9 +536,19 @@ AddRecipe2("turf_orangecarpet", {Ingredient("turf_carpetfloor", 1), Ingredient("
 	{"DECOR"}
 )
 
-AddRecipe2("turf_blueyellow", {Ingredient("turf_carpetfloor", 1), Ingredient("cutgrass", 1), Ingredient("cutlichen", 1)}, TECH.TURFMAKER_ONE,
+AddRecipe2("turf_gloomycarpet", {Ingredient("boards", 1), Ingredient("beefalowool", 1), Ingredient("charcoal", 1)}, TECH.TURFMAKER_ONE,
 	{
-		hint_msg    = "NEEDTURFMAKER",
+		hint_msg    = "NEEDSTURFMAKER",
+		numtogive   = AMOUNT_GIVEN_MODDED,
+		atlas       = ModAtlas,
+		image       = "turf_gloomycarpet.tex",
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_blueyellow", {Ingredient("boards", 1), Ingredient("beefalowool", 1), Ingredient("goldnugget", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg    = "NEEDSTURFMAKER",
 		numtogive   = AMOUNT_GIVEN_MODDED,
 		atlas       = ModAtlas,
 		image       = "turf_blueyellow.tex",
@@ -546,9 +556,9 @@ AddRecipe2("turf_blueyellow", {Ingredient("turf_carpetfloor", 1), Ingredient("cu
 	{"DECOR"}
 )
 
-AddRecipe2("turf_leakproofcarpet", {Ingredient("turf_carpetfloor", 1), Ingredient("cutlichen", 1)}, TECH.TURFMAKER_ONE,
+AddRecipe2("turf_leakproofcarpet", {Ingredient("boards", 1), Ingredient("beefalowool", 1), Ingredient("silk", 1)}, TECH.TURFMAKER_ONE,
 	{
-		hint_msg    = "NEEDTURFMAKER",
+		hint_msg    = "NEEDSTURFMAKER",
 		numtogive   = AMOUNT_GIVEN_MODDED,
 		atlas       = ModAtlas,
 		image       = "turf_leakproofcarpet.tex",
@@ -556,9 +566,39 @@ AddRecipe2("turf_leakproofcarpet", {Ingredient("turf_carpetfloor", 1), Ingredien
 	{"DECOR"}
 )
 
-AddRecipe2("turf_modern_cobblestones", {Ingredient("turf_road", 1), Ingredient("flint", 1)}, TECH.TURFMAKER_ONE,
+AddRecipe2("turf_circlescarpet", {Ingredient("boards", 1), Ingredient("beefalowool", 1), Ingredient("feather_robin_winter", 1)}, TECH.TURFMAKER_ONE,
 	{
-		hint_msg    = "NEEDTURFMAKER",
+		hint_msg    = "NEEDSTURFMAKER",
+		numtogive   = AMOUNT_GIVEN_MODDED,
+		atlas       = ModAtlas,
+		image       = "turf_circlescarpet.tex",
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_moroccarpet", {Ingredient("boards", 1), Ingredient("beefalowool", 1), Ingredient("feather_robin_winter", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg    = "NEEDSTURFMAKER",
+		numtogive   = AMOUNT_GIVEN_MODDED,
+		atlas       = ModAtlas,
+		image       = "turf_moroccarpet.tex",
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_upholdercarpet", {Ingredient("boards", 1), Ingredient("beefalowool", 1), Ingredient("goose_feather", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg    = "NEEDSTURFMAKER",
+		numtogive   = AMOUNT_GIVEN_MODDED,
+		atlas       = ModAtlas,
+		image       = "turf_upholdercarpet.tex",
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_modern_cobblestones", {Ingredient("cutstone", 1), Ingredient("flint", 2)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg    = "NEEDSTURFMAKER",
 		numtogive   = AMOUNT_GIVEN_MODDED,
 		atlas       = ModAtlas,
 		image       = "turf_modern_cobblestones.tex",
@@ -568,7 +608,7 @@ AddRecipe2("turf_modern_cobblestones", {Ingredient("turf_road", 1), Ingredient("
 
 AddRecipe2("turf_copacabana", {Ingredient("charcoal", 1), Ingredient("marble", 1)}, TECH.TURFMAKER_ONE,
 	{
-		hint_msg    = "NEEDTURFMAKER",
+		hint_msg    = "NEEDSTURFMAKER",
 		numtogive   = AMOUNT_GIVEN_MODDED,
 		atlas       = ModAtlas,
 		image       = "turf_copacabana.tex",
@@ -576,9 +616,9 @@ AddRecipe2("turf_copacabana", {Ingredient("charcoal", 1), Ingredient("marble", 1
 	{"DECOR"}
 )
 
-AddRecipe2("turf_driftwoodfloor", {Ingredient("boards", 1)}, TECH.TURFMAKER_ONE,
+AddRecipe2("turf_driftwoodfloor", {Ingredient("driftwood_log", 4)}, TECH.TURFMAKER_ONE,
 	{
-		hint_msg    = "NEEDTURFMAKER",
+		hint_msg    = "NEEDSTURFMAKER",
 		numtogive   = AMOUNT_GIVEN_MODDED,
 		atlas       = ModAtlas,
 		image       = "turf_driftwoodfloor.tex",
@@ -586,9 +626,29 @@ AddRecipe2("turf_driftwoodfloor", {Ingredient("boards", 1)}, TECH.TURFMAKER_ONE,
 	{"DECOR"}
 )
 
+AddRecipe2("turf_livinglog", {Ingredient("livinglog", 2)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg    = "NEEDSTURFMAKER",
+		numtogive   = AMOUNT_GIVEN_MODDED,
+		atlas       = ModAtlas,
+		image       = "turf_livinglog.tex",
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_hardwood", {Ingredient("boards", 1), Ingredient("rope", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg    = "NEEDSTURFMAKER",
+		numtogive   = AMOUNT_GIVEN_MODDED,
+		atlas       = ModAtlas,
+		image       = "turf_hardwood.tex",
+	},
+	{"DECOR"}
+)
+
 AddRecipe2("turf_lunarrift", {Ingredient("moonrocknugget", 1), Ingredient("moonglass", 1)}, TECH.TURFMAKER_ONE,
 	{
-		hint_msg    = "NEEDTURFMAKER",
+		hint_msg    = "NEEDSTURFMAKER",
 		numtogive   = AMOUNT_GIVEN_MODDED,
 		atlas       = ModAtlas,
 		image       = "turf_lunarrift.tex",
@@ -598,7 +658,7 @@ AddRecipe2("turf_lunarrift", {Ingredient("moonrocknugget", 1), Ingredient("moong
 
 AddRecipe2("turf_vaultmossy", {Ingredient("thulecite_pieces", 1), Ingredient("moonrocknugget", 1)}, TECH.TURFMAKER_ONE,
 	{
-		hint_msg    = "NEEDTURFMAKER",
+		hint_msg    = "NEEDSTURFMAKER",
 		numtogive   = AMOUNT_GIVEN_MODDED,
 		atlas       = ModAtlas,
 		image       = "turf_vaultmossy.tex",
@@ -608,7 +668,7 @@ AddRecipe2("turf_vaultmossy", {Ingredient("thulecite_pieces", 1), Ingredient("mo
 
 AddRecipe2("turf_wagpunkfloor", {Ingredient("cutstone", 1), Ingredient("wagpunk_bits", 1)}, TECH.TURFMAKER_ONE,
 	{
-		hint_msg    = "NEEDTURFMAKER",
+		hint_msg    = "NEEDSTURFMAKER",
 		numtogive   = AMOUNT_GIVEN_MODDED,
 		atlas       = DefaultAtlas3,
 		image       = "wagpunk_floor_kit.tex",
@@ -618,7 +678,7 @@ AddRecipe2("turf_wagpunkfloor", {Ingredient("cutstone", 1), Ingredient("wagpunk_
 
 AddRecipe2("turf_chilledfloor", {Ingredient("ice", 1), Ingredient("rocks", 1)}, TECH.TURFMAKER_ONE,
 	{
-		hint_msg    = "NEEDTURFMAKER",
+		hint_msg    = "NEEDSTURFMAKER",
 		numtogive   = AMOUNT_GIVEN_MODDED,
 		atlas       = ModAtlas,
 		image       = "turf_chilledfloor.tex",
@@ -626,10 +686,110 @@ AddRecipe2("turf_chilledfloor", {Ingredient("ice", 1), Ingredient("rocks", 1)}, 
 	{"DECOR"}
 )
 
--- Interior Turf Recipes.
-AddRecipe2("turf_woodpanel", {Ingredient("turf_woodfloor", 1)}, TECH.TURFMAKER_ONE,
+AddRecipe2("turf_whitecracked", {Ingredient("rocks", 1), Ingredient("flint", 1)}, TECH.TURFMAKER_ONE,
 	{
-		hint_msg    = "NEEDTURFMAKER",
+		hint_msg    = "NEEDSTURFMAKER",
+		numtogive   = AMOUNT_GIVEN_MODDED,
+		atlas       = ModAtlas,
+		image       = "turf_whitecracked.tex",
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_coal", {Ingredient("trap_fumarole", 1), Ingredient("rocks", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg    = "NEEDSTURFMAKER",
+		numtogive   = AMOUNT_GIVEN_MODDED,
+		atlas       = ModAtlas,
+		image       = "turf_coal.tex",
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_hotcoal", {Ingredient("trap_fumarole", 1), Ingredient("charcoal", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg    = "NEEDSTURFMAKER",
+		numtogive   = AMOUNT_GIVEN_MODDED,
+		atlas       = ModAtlas,
+		image       = "turf_hotcoal.tex",
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_greyroad", {Ingredient("cutstone", 1), Ingredient("flint", 2)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg    = "NEEDSTURFMAKER",
+		numtogive   = AMOUNT_GIVEN_MODDED,
+		atlas       = ModAtlas,
+		image       = "turf_greyroad.tex",
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_whitebrick", {Ingredient("cutstone", 1), Ingredient("flint", 2)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg    = "NEEDSTURFMAKER",
+		numtogive   = AMOUNT_GIVEN_MODDED,
+		atlas       = ModAtlas,
+		image       = "turf_whitebrick.tex",
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_redlawn", {Ingredient("cutgrass", 1), Ingredient("nitre", 1), Ingredient("feather_robin", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg    = "NEEDSTURFMAKER",
+		numtogive   = AMOUNT_GIVEN_MODDED,
+		atlas       = ModAtlas,
+		image       = "turf_redlawn.tex",
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_bluelawn", {Ingredient("cutgrass", 1), Ingredient("nitre", 1), Ingredient("feather_robin_winter", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg    = "NEEDSTURFMAKER",
+		numtogive   = AMOUNT_GIVEN_MODDED,
+		atlas       = ModAtlas,
+		image       = "turf_bluelawn.tex",
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_purplerainforest", {Ingredient("pinecone", 1), Ingredient("foliage", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg    = "NEEDSTURFMAKER",
+		numtogive   = AMOUNT_GIVEN_MODDED,
+		atlas       = ModAtlas,
+		image       = "turf_purplerainforest.tex",
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_blueplains", {Ingredient("cutgrass", 1), Ingredient("blue_cap", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg    = "NEEDSTURFMAKER",
+		numtogive   = AMOUNT_GIVEN_MODDED,
+		atlas       = ModAtlas,
+		image       = "turf_blueplains.tex",
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_meadowyellow", {Ingredient("cutgrass", 1), Ingredient("petals", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg    = "NEEDSTURFMAKER",
+		numtogive   = AMOUNT_GIVEN_MODDED,
+		atlas       = ModAtlas,
+		image       = "turf_meadowyellow.tex",
+	},
+	{"DECOR"}
+)
+
+-- Interior Turf Recipes.
+AddRecipe2("turf_woodpanel", {Ingredient("boards", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg    = "NEEDSTURFMAKER",
 		numtogive   = AMOUNT_GIVEN_MODDED,
 		atlas       = ModAtlas,
 		image       = "turf_woodpanel.tex",
@@ -637,9 +797,19 @@ AddRecipe2("turf_woodpanel", {Ingredient("turf_woodfloor", 1)}, TECH.TURFMAKER_O
 	{"DECOR"}
 )
 
-AddRecipe2("turf_marbletile", {Ingredient("marble", 1), Ingredient("cutstone", 1)}, TECH.TURFMAKER_ONE,
+AddRecipe2("turf_driftwoodpanel", {Ingredient("driftwood_log", 4)}, TECH.TURFMAKER_ONE,
 	{
-		hint_msg    = "NEEDTURFMAKER",
+		hint_msg    = "NEEDSTURFMAKER",
+		numtogive   = AMOUNT_GIVEN_MODDED,
+		atlas       = ModAtlas,
+		image       = "turf_driftwoodpanel.tex",
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_marbletile", {Ingredient("marble", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg    = "NEEDSTURFMAKER",
 		numtogive   = AMOUNT_GIVEN_MODDED,
 		atlas       = ModAtlas,
 		image       = "turf_marbletile.tex",
@@ -647,9 +817,9 @@ AddRecipe2("turf_marbletile", {Ingredient("marble", 1), Ingredient("cutstone", 1
 	{"DECOR"}
 )
 
-AddRecipe2("turf_chess", {Ingredient("marble", 1), Ingredient("turf_rocky", 1)}, TECH.TURFMAKER_ONE,
+AddRecipe2("turf_chess", {Ingredient("marble", 1)}, TECH.TURFMAKER_ONE,
 	{
-		hint_msg    = "NEEDTURFMAKER",
+		hint_msg    = "NEEDSTURFMAKER",
 		numtogive   = AMOUNT_GIVEN_MODDED,
 		atlas       = ModAtlas,
 		image       = "turf_chess.tex",
@@ -657,9 +827,9 @@ AddRecipe2("turf_chess", {Ingredient("marble", 1), Ingredient("turf_rocky", 1)},
 	{"DECOR"}
 )
 
-AddRecipe2("turf_slate", {Ingredient("marble", 1), Ingredient("rocks", 1)}, TECH.TURFMAKER_ONE,
+AddRecipe2("turf_slate", {Ingredient("marble", 1)}, TECH.TURFMAKER_ONE,
 	{
-		hint_msg    = "NEEDTURFMAKER",
+		hint_msg    = "NEEDSTURFMAKER",
 		numtogive   = AMOUNT_GIVEN_MODDED,
 		atlas       = ModAtlas,
 		image       = "turf_slate.tex",
@@ -667,9 +837,19 @@ AddRecipe2("turf_slate", {Ingredient("marble", 1), Ingredient("rocks", 1)}, TECH
 	{"DECOR"}
 )
 
-AddRecipe2("turf_metalsheet", {Ingredient("cutstone", 1), Ingredient("rocks", 1)}, TECH.TURFMAKER_ONE,
+AddRecipe2("turf_metalwood", {Ingredient("cutstone", 1), Ingredient("boards", 1)}, TECH.TURFMAKER_ONE,
 	{
-		hint_msg    = "NEEDTURFMAKER",
+		hint_msg    = "NEEDSTURFMAKER",
+		numtogive   = AMOUNT_GIVEN_MODDED,
+		atlas       = ModAtlas,
+		image       = "turf_metalwood.tex",
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_metalsheet", {Ingredient("cutstone", 1), Ingredient("boards", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg    = "NEEDSTURFMAKER",
 		numtogive   = AMOUNT_GIVEN_MODDED,
 		atlas       = ModAtlas,
 		image       = "turf_metalsheet.tex",
@@ -677,9 +857,19 @@ AddRecipe2("turf_metalsheet", {Ingredient("cutstone", 1), Ingredient("rocks", 1)
 	{"DECOR"}
 )
 
-AddRecipe2("turf_garden", {Ingredient("turf_grass", 1), Ingredient("cutstone", 1)}, TECH.TURFMAKER_ONE,
+AddRecipe2("turf_gardenpath", {Ingredient("rocks", 1), Ingredient("cutgrass", 1)}, TECH.TURFMAKER_ONE,
 	{
-		hint_msg    = "NEEDTURFMAKER",
+		hint_msg    = "NEEDSTURFMAKER",
+		numtogive   = AMOUNT_GIVEN_MODDED,
+		atlas       = ModAtlas,
+		image       = "turf_gardenpath.tex",
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_garden", {Ingredient("cutstone", 1), Ingredient("cutgrass", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg    = "NEEDSTURFMAKER",
 		numtogive   = AMOUNT_GIVEN_MODDED,
 		atlas       = ModAtlas,
 		image       = "turf_garden.tex",
@@ -687,9 +877,9 @@ AddRecipe2("turf_garden", {Ingredient("turf_grass", 1), Ingredient("cutstone", 1
 	{"DECOR"}
 )
 
-AddRecipe2("turf_geometric", {Ingredient("turf_checkerfloor", 1), Ingredient("bluegem", 1)}, TECH.TURFMAKER_ONE,
+AddRecipe2("turf_geometric", {Ingredient("marble", 1), Ingredient("feather_robin_winter", 1)}, TECH.TURFMAKER_ONE,
 	{
-		hint_msg    = "NEEDTURFMAKER",
+		hint_msg    = "NEEDSTURFMAKER",
 		numtogive   = AMOUNT_GIVEN_MODDED,
 		atlas       = ModAtlas,
 		image       = "turf_geometric.tex",
@@ -697,9 +887,49 @@ AddRecipe2("turf_geometric", {Ingredient("turf_checkerfloor", 1), Ingredient("bl
 	{"DECOR"}
 )
 
-AddRecipe2("turf_shagcarpet", {Ingredient("turf_carpetfloor", 1), Ingredient("silk", 1)}, TECH.TURFMAKER_ONE,
+AddRecipe2("turf_redgeometric", {Ingredient("marble", 1), Ingredient("feather_robin", 1)}, TECH.TURFMAKER_ONE,
 	{
-		hint_msg    = "NEEDTURFMAKER",
+		hint_msg    = "NEEDSTURFMAKER",
+		numtogive   = AMOUNT_GIVEN_MODDED,
+		atlas       = ModAtlas,
+		image       = "turf_redgeometric.tex",
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_yellowgeometric", {Ingredient("marble", 1), Ingredient("feather_canary", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg    = "NEEDSTURFMAKER",
+		numtogive   = AMOUNT_GIVEN_MODDED,
+		atlas       = ModAtlas,
+		image       = "turf_yellowgeometric.tex",
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_greengeometric", {Ingredient("marble", 1), Ingredient("cutreeds", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg    = "NEEDSTURFMAKER",
+		numtogive   = AMOUNT_GIVEN_MODDED,
+		atlas       = ModAtlas,
+		image       = "turf_greengeometric.tex",
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_bwgeometric", {Ingredient("marble", 1), Ingredient("charcoal", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg    = "NEEDSTURFMAKER",
+		numtogive   = AMOUNT_GIVEN_MODDED,
+		atlas       = ModAtlas,
+		image       = "turf_bwgeometric.tex",
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_shagcarpet", {Ingredient("boards", 1), Ingredient("beefalowool", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg    = "NEEDSTURFMAKER",
 		numtogive   = AMOUNT_GIVEN_MODDED,
 		atlas       = ModAtlas,
 		image       = "turf_shagcarpet.tex",
@@ -707,9 +937,9 @@ AddRecipe2("turf_shagcarpet", {Ingredient("turf_carpetfloor", 1), Ingredient("si
 	{"DECOR"}
 )
 
-AddRecipe2("turf_transitional", {Ingredient("boards", 1), Ingredient("marble", 1)}, TECH.TURFMAKER_ONE,
+AddRecipe2("turf_transitional", {Ingredient("boards", 1), Ingredient("cutstone", 1)}, TECH.TURFMAKER_ONE,
 	{
-		hint_msg    = "NEEDTURFMAKER",
+		hint_msg    = "NEEDSTURFMAKER",
 		numtogive   = AMOUNT_GIVEN_MODDED,
 		atlas       = ModAtlas,
 		image       = "turf_transitional.tex",
@@ -717,9 +947,9 @@ AddRecipe2("turf_transitional", {Ingredient("boards", 1), Ingredient("marble", 1
 	{"DECOR"}
 )
 
-AddRecipe2("turf_herring", {Ingredient("turf_rocky", 1), Ingredient("boneshard", 1)}, TECH.TURFMAKER_ONE,
+AddRecipe2("turf_herring", {Ingredient("boneshard", 1)}, TECH.TURFMAKER_ONE,
 	{
-		hint_msg    = "NEEDTURFMAKER",
+		hint_msg    = "NEEDSTURFMAKER",
 		numtogive   = AMOUNT_GIVEN_MODDED,
 		atlas       = ModAtlas,
 		image       = "turf_herring.tex",
@@ -727,9 +957,9 @@ AddRecipe2("turf_herring", {Ingredient("turf_rocky", 1), Ingredient("boneshard",
 	{"DECOR"}
 )
 
-AddRecipe2("turf_hexagon", {Ingredient("charcoal", 1), Ingredient("marble", 1)}, TECH.TURFMAKER_ONE,
+AddRecipe2("turf_hexagon", {Ingredient("marble", 1)}, TECH.TURFMAKER_ONE,
 	{
-		hint_msg    = "NEEDTURFMAKER",
+		hint_msg    = "NEEDSTURFMAKER",
 		numtogive   = AMOUNT_GIVEN_MODDED,
 		atlas       = ModAtlas,
 		image       = "turf_hexagon.tex",
@@ -737,9 +967,9 @@ AddRecipe2("turf_hexagon", {Ingredient("charcoal", 1), Ingredient("marble", 1)},
 	{"DECOR"}
 )
 
-AddRecipe2("turf_hoof", {Ingredient("cutstone", 1), Ingredient("pigskin", 1)}, TECH.TURFMAKER_ONE,
+AddRecipe2("turf_hoof", {Ingredient("marble", 1)}, TECH.TURFMAKER_ONE,
 	{
-		hint_msg    = "NEEDTURFMAKER",
+		hint_msg    = "NEEDSTURFMAKER",
 		numtogive   = AMOUNT_GIVEN_MODDED,
 		atlas       = ModAtlas,
 		image       = "turf_hoof.tex",
@@ -747,9 +977,9 @@ AddRecipe2("turf_hoof", {Ingredient("cutstone", 1), Ingredient("pigskin", 1)}, T
 	{"DECOR"}
 )
 
-AddRecipe2("turf_octagon", {Ingredient("charcoal", 1), Ingredient("cutstone", 1)}, TECH.TURFMAKER_ONE,
+AddRecipe2("turf_octagon", {Ingredient("marble", 1)}, TECH.TURFMAKER_ONE,
 	{
-		hint_msg    = "NEEDTURFMAKER",
+		hint_msg    = "NEEDSTURFMAKER",
 		numtogive   = AMOUNT_GIVEN_MODDED,
 		atlas       = ModAtlas,
 		image       = "turf_octagon.tex",

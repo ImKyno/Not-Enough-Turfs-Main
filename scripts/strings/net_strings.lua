@@ -1,81 +1,21 @@
+--[[
+STRINGS.NAMES.TURF_
+STRINGS.RECIPE_DESC.TURF_
+--]]
+
 STRINGS.UI.CRAFTING_FILTERS.TERRAFORMER = "Supplementary Turfs"
 
 STRINGS.UI.CRAFTING.RECIPEACTION.TERRAFORMER = "Terraform"
 
-STRINGS.UI.CRAFTING.NEEDTURFMAKER = "Use a Terra Former Tamper to build a prototype!"
-STRINGS.UI.CRAFTING.NEEDSTURFMAKER_ONE = "Use a Terra Former Tamper to build a prototype!"
-STRINGS.UI.CRAFTING.NEEDSTURFMAKER_TWO = "Use a Terra Former Tamper to build a prototype!"
+STRINGS.UI.CRAFTING.NEEDSTURFMAKER = "Use a Terra Firma Shaper to build a prototype!"
+STRINGS.UI.CRAFTING.NEEDSTURFMAKER_ONE = "Use a Terra Firma Shaper to build a prototype!"
+STRINGS.UI.CRAFTING.NEEDSTURFMAKER_TWO = "Use a Terra Firma Shaper to build a prototype!"
 
-STRINGS.NAMES.KYNO_TERRAFORMER = "Terra Former Tamper"
+STRINGS.NAMES.KYNO_TERRAFORMER = "Terra Firma Shaper"
 STRINGS.RECIPE_DESC.KYNO_TERRAFORMER = "Terraform the world one piece at a time."
 
--- Shipwrecked Turfs.
-STRINGS.NAMES.TURF_MAGMAFIELD = "Magma Turf"
-STRINGS.RECIPE_DESC.TURF_MAGMAFIELD = "It's filled with magma."
-
-STRINGS.NAMES.TURF_VOLCANO = "Volcano Turf"
-STRINGS.RECIPE_DESC.TURF_VOLCANO = "Warm to the touch."
-
-STRINGS.NAMES.TURF_VOLCANO_ROCK = "Volcano Rocky Turf"
-STRINGS.RECIPE_DESC.TURF_VOLCANO_ROCK = "Rock bits from the top of a volcano."
-
-STRINGS.NAMES.TURF_ASH = "Ashy Turf"
-STRINGS.RECIPE_DESC.TURF_ASH = "Ashes to ashes."
-
-STRINGS.NAMES.TURF_BEACH = "Beach Turf"
-STRINGS.RECIPE_DESC.TURF_BEACH = "Take a break and enjoy some summer vibes."
-
-STRINGS.NAMES.TURF_MEADOW = "Meadow Turf"
-STRINGS.RECIPE_DESC.TURF_MEADOW = "Green meadows for a pleasant view."
-
-STRINGS.NAMES.TURF_JUNGLE = "Jungle Turf"
-STRINGS.RECIPE_DESC.TURF_JUNGLE = "Welcome to the jungle!"
-
-STRINGS.NAMES.TURF_TIDALMARSH = "Tidal Marsh Turf"
-STRINGS.RECIPE_DESC.TURF_TIDALMARSH = "Flooded swamp grounds."
-
-STRINGS.NAMES.TURF_SNAKESKINFLOOR = "Snakeskin Rug"
-STRINGS.RECIPE_DESC.TURF_SNAKESKINFLOOR = "Really ties the room together."
-
--- Hamlet Turfs.
-STRINGS.NAMES.TURF_COBBLEROAD = "Stone Road Turf"
-STRINGS.RECIPE_DESC.TURF_COBBLEROAD = "The life of a thriving village."
-
-STRINGS.NAMES.TURF_FOUNDATION = "Flat Stone Turf"
-STRINGS.RECIPE_DESC.TURF_FOUNDATION = "The foundation of a solid village."
-
-STRINGS.NAMES.TURF_LAWN = "Lawn Turf"
-STRINGS.RECIPE_DESC.TURF_LAWN = "Fully tamed grass."
-
-STRINGS.NAMES.TURF_PIGRUINS = "Ancient Ruins Stonework"
-STRINGS.RECIPE_DESC.TURF_PIGRUINS = "An ancient stone flooring."
-
-STRINGS.NAMES.TURF_FIELDS = "Cultivated Turf"
-STRINGS.RECIPE_DESC.TURF_FIELDS = "A civilized patch of dirt."
-
-STRINGS.NAMES.TURF_MOSSY_BLOSSOM = "Mossy Turf"
-STRINGS.RECIPE_DESC.TURF_MOSSY_BLOSSOM = "Perfect for planting things."
-
-STRINGS.NAMES.TURF_RAINFOREST = "Rainforest Turf"
-STRINGS.RECIPE_DESC.TURF_RAINFOREST = "Tropical rainy grounds."
-
-STRINGS.NAMES.TURF_DEEPJUNGLE = "Dense Turf"
-STRINGS.RECIPE_DESC.TURF_DEEPJUNGLE = "As dense as the jungle can be."
-
-STRINGS.NAMES.TURF_GASJUNGLE = "Toxic Rainforest Turf"
-STRINGS.RECIPE_DESC.TURF_GASJUNGLE = "There is a deadly venom on it."
-
-STRINGS.NAMES.TURF_PLAINS = "Wild Plains Turf"
-STRINGS.RECIPE_DESC.TURF_PLAINS = "As Wild as it can be."
-
-STRINGS.NAMES.TURF_BOG = "Painted Sand Turf"
-STRINGS.RECIPE_DESC.TURF_BOG = "Painted sand for ornamentation."
-
-STRINGS.NAMES.TURF_ANTCAVE = "Mant Cave Turf"
-STRINGS.RECIPE_DESC.TURF_ANTCAVE = "The pathing of mants."
-
-STRINGS.NAMES.TURF_BATCAVE = "Batilisk Cave Turf"
-STRINGS.RECIPE_DESC.TURF_BATCAVE = "Smells like nitre."
+-- Shipwrecked and Hamlet Turf strings are in postinit/net_strings.lua
+-- Because other mods might already have them and their own strings...
 
 -- Event Turfs.
 STRINGS.NAMES.TURF_PINKSTONE = "Pink Stone Road"
@@ -90,7 +30,7 @@ STRINGS.RECIPE_DESC.TURF_PINKPARK = "A pink-ish grass for vibrand minds."
 STRINGS.NAMES.TURF_GREYFOREST = "Withered Grass Turf"
 STRINGS.RECIPE_DESC.TURF_GREYFOREST = "Trying its best to survive."
 
-STRINGS.NAMES.TURF_BROWNCARPET = "Farm Soil Turf"
+STRINGS.NAMES.TURF_BROWNCARPET = "Farm Soil"
 STRINGS.RECIPE_DESC.TURF_BROWNCARPET = "Plow a plot."
 
 STRINGS.NAMES.TURF_FORGEROCK = "Molten Rocky"
@@ -104,12 +44,12 @@ STRINGS.NAMES.TURF_LEGACYRAINFOREST = "Greeny Rainforest Turf"
 STRINGS.RECIPE_DESC.TURF_LEGACYRAINFOREST = "A tropical turf."
 
 STRINGS.NAMES.TURF_LEGACYDEEPJUNGLE = "Vivid Dense Turf"
-STRINGS.RECIPE_DESC.TURF_LEGACYDEEPJUNGLE = "A legacy hidden beanth red foliage."
+STRINGS.RECIPE_DESC.TURF_LEGACYDEEPJUNGLE = "A legacy hidden beneath red foliage."
 
-STRINGS.NAMES.TURF_LEGACYBOG = "Marsh Sand Turf"
+STRINGS.NAMES.TURF_LEGACYBOG = "Marsh Sandy Turf"
 STRINGS.RECIPE_DESC.TURF_LEGACYBOG = "Swampy sand for ornamentation."
 
-STRINGS.NAMES.TURF_GREENMARSH = "Green Marsh Turf"
+STRINGS.NAMES.TURF_GREENMARSH = "Greeny Marsh Turf"
 STRINGS.RECIPE_DESC.TURF_GREENMARSH = "The colors of spring."
 
 STRINGS.NAMES.TURF_IVYGRASS = "Ivy Grass Turf"
@@ -118,7 +58,7 @@ STRINGS.RECIPE_DESC.TURF_IVYGRASS = "Ground ornamentation."
 STRINGS.NAMES.TURF_SWIRLGRASS = "Swirly Grass"
 STRINGS.RECIPE_DESC.TURF_SWIRLGRASS = "Full of swirls."
 
-STRINGS.NAMES.TURF_SWIRLGRASSMONO = "Swirly Green Grass"
+STRINGS.NAMES.TURF_SWIRLGRASSMONO = "Swirly Greeny Grass"
 STRINGS.RECIPE_DESC.TURF_SWIRLGRASSMONO = "Swirlying around grass fields."
 
 STRINGS.NAMES.TURF_SNOWFALL = "Snowfallen Turf"
@@ -172,9 +112,60 @@ STRINGS.RECIPE_DESC.TURF_WAGPUNKFLOOR = "Now without restrictions!"
 STRINGS.NAMES.TURF_CHILLEDFLOOR = "Chilled Rocky Turf"
 STRINGS.RECIPE_DESC.TURF_CHILLEDFLOOR = "Be careful to not slip and fall!"
 
+STRINGS.NAMES.TURF_CIRCLESCARPET = "Circles Carpeted Flooring"
+STRINGS.RECIPE_DESC.TURF_CIRCLESCARPET = "A fancy circled carpet."
+
+STRINGS.NAMES.TURF_MOROCCARPET = "Fancy Carpeted Flooring"
+STRINGS.RECIPE_DESC.TURF_MOROCCARPET = "Stylish carpet for stylish places."
+
+STRINGS.NAMES.TURF_WHITECRACKED = "Cracked Rocky Turf"
+STRINGS.RECIPE_DESC.TURF_WHITECRACKED = "There's a lot of cracks on it."
+
+STRINGS.NAMES.TURF_COAL = "Coals Turf"
+STRINGS.RECIPE_DESC.TURF_COAL = "A lot of coals to burn!"
+
+STRINGS.NAMES.TURF_HOTCOAL = "Hot Coals Turf"
+STRINGS.RECIPE_DESC.TURF_HOTCOAL = "Careful to not burn everything."
+
+STRINGS.NAMES.TURF_LIVINGLOG = "Living Wooden Flooring"
+STRINGS.RECIPE_DESC.TURF_LIVINGLOG = "The floor has no mouth and must scream."
+
+STRINGS.NAMES.TURF_GREYROAD = "Grey Cobblestones"
+STRINGS.RECIPE_DESC.TURF_GREYROAD = "Build your path that leads elsewhere."
+
+STRINGS.NAMES.TURF_WHITEBRICK = "White Brick Road"
+STRINGS.RECIPE_DESC.TURF_WHITEBRICK = "Shiny white bricks for a morning walk."
+
+STRINGS.NAMES.TURF_REDLAWN = "Red Lawn Turf"
+STRINGS.RECIPE_DESC.TURF_REDLAWN = "Fully tamed red grass."
+
+STRINGS.NAMES.TURF_BLUELAWN = "Blue Lawn Turf"
+STRINGS.RECIPE_DESC.TURF_BLUELAWN = "Fully tamed blue grass."
+
+STRINGS.NAMES.TURF_PURPLERAINFOREST = "Lavender Rainforest Turf"
+STRINGS.RECIPE_DESC.TURF_PURPLERAINFOREST = "Purple lights up the darkest skies."
+
+STRINGS.NAMES.TURF_BLUEPLAINS = "Cerulean Plains Turf"
+STRINGS.RECIPE_DESC.TURF_BLUEPLAINS = "A pinch of blue to fit your mood."
+
+STRINGS.NAMES.TURF_GLOOMYCARPET = "Gloomy Carpeted Flooring"
+STRINGS.RECIPE_DESC.TURF_GLOOMYCARPET = "Gothic themed carpet for gothic people."
+
+STRINGS.NAMES.TURF_UPHOLDERCARPET = "Regal Carpeted Flooring"
+STRINGS.RECIPE_DESC.TURF_UPHOLDERCARPET = "Fancy and shiny carpet for beautiful environments."
+
+STRINGS.NAMES.TURF_MEADOWYELLOW = "Sunburst Meadow Turf"
+STRINGS.RECIPE_DESC.TURF_MEADOWYELLOW = "The sun has blessed this ground."
+
+STRINGS.NAMES.TURF_HARDWOOD = "Hardwood Planks"
+STRINGS.RECIPE_DESC.TURF_HARDWOOD = "Made from the strongest boards."
+
 -- Interior Turfs.
 STRINGS.NAMES.TURF_WOODPANEL = "Wood Panel Flooring"
 STRINGS.RECIPE_DESC.TURF_WOODPANEL = "Goes up less easy."
+
+STRINGS.NAMES.TURF_DRIFTWOODPANEL = "Driftwood Panel Flooring"
+STRINGS.RECIPE_DESC.TURF_DRIFTWOODPANEL = "You can still smell the ocean."
 
 STRINGS.NAMES.TURF_MARBLETILE = "Marble Flooring"
 STRINGS.RECIPE_DESC.TURF_MARBLETILE = "Buffed to a mirror polish."
@@ -185,14 +176,32 @@ STRINGS.RECIPE_DESC.TURF_CHESS = "Hear the echo of quality."
 STRINGS.NAMES.TURF_SLATE = "Slate Flooring"
 STRINGS.RECIPE_DESC.TURF_SLATE = "Good enough for a city hall."
 
+STRINGS.NAMES.TURF_METALWOOD = "Scrappy Metal Flooring"
+STRINGS.RECIPE_DESC.TURF_METALWOOD = "Wood and metal patches."
+
 STRINGS.NAMES.TURF_METALSHEET = "Sheet Metal Flooring"
 STRINGS.RECIPE_DESC.TURF_METALSHEET = "Industrial metal."
+
+STRINGS.NAMES.TURF_GARDENPATH = "Garden Pathway"
+STRINGS.RECIPE_DESC.TURF_GARDENPATH = "Nicely placed rocks for a vibrant garden."
 
 STRINGS.NAMES.TURF_GARDEN = "Garden Stone Flooring"
 STRINGS.RECIPE_DESC.TURF_GARDEN = "A soft mossy feel."
 
-STRINGS.NAMES.TURF_GEOMETRIC = "Geometric Tiles Flooring"
+STRINGS.NAMES.TURF_GEOMETRIC = "Sapphire Geometric Tiles"
 STRINGS.RECIPE_DESC.TURF_GEOMETRIC = "Like a swimming pool."
+
+STRINGS.NAMES.TURF_REDGEOMETRIC = "Ruby Geometric Tiles"
+STRINGS.RECIPE_DESC.TURF_REDGEOMETRIC = "Like a red evening in the south."
+
+STRINGS.NAMES.TURF_YELLOWGEOMETRIC = "Topaz Geometric Tiles"
+STRINGS.RECIPE_DESC.TURF_YELLOWGEOMETRIC = "Like a honeycomb full of honey."
+
+STRINGS.NAMES.TURF_GREENGEOMETRIC = "Emerald Geometric Tiles"
+STRINGS.RECIPE_DESC.TURF_GREENGEOMETRIC = "Like a stylish vitral."
+
+STRINGS.NAMES.TURF_BWGEOMETRIC = "Quartz Geometric Tiles"
+STRINGS.RECIPE_DESC.TURF_BWGEOMETRIC = "For when you are feeling a bit of noir in the air."
 
 STRINGS.NAMES.TURF_SHAGCARPET = "Shag Carpet Flooring"
 STRINGS.RECIPE_DESC.TURF_SHAGCARPET = "Fuzzy."

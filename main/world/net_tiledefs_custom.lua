@@ -27,6 +27,22 @@ local CUSTOM_TURFS =
 	"VAULTMOSSY",
 	"WAGPUNKFLOOR",
 	"CHILLEDFLOOR",
+	"CIRCLESCARPET",
+	"MOROCCARPET",
+	"WHITECRACKED",
+	"COAL",
+	"HOTCOAL",
+	"LIVINGLOG",
+	"GREYROAD",
+	"WHITEBRICK",
+	"REDLAWN",
+	"BLUELAWN",
+	"PURPLERAINFOREST",
+	"BLUEPLAINS",
+	"GLOOMYCARPET",
+	"UPHOLDERCARPET",
+	"MEADOWYELLOW",
+	"HARDWOOD",
 }
 
 for _, turf in ipairs(CUSTOM_TURFS) do
@@ -230,8 +246,8 @@ AddTile("MODERN_COBBLESTONES", "LAND",
 		old_static_id    = 115,
 	},
 	{
-		name             = "farmsoil",
-		noise_texture    = "levels/textures/custom/custom_noise_modern_cobblestones.tex",
+		name             = "tile_modern_cobblestones",
+		noise_texture    = "images/square.tex",
 		runsound         = "dontstarve/movement/run_dirt",
 		walksound        = "dontstarve/movement/walk_dirt",
 		snowsound        = "dontstarve/movement/run_ice",
@@ -670,5 +686,423 @@ AddTile("CHILLEDFLOOR", "LAND",
 		anim             = "chilledfloor",
 		bank_build       = "kyno_turfs_custom",
 		pickupsound      = "rock",
+	}
+)
+
+AddTile("CIRCLESCARPET", "LAND",
+	{
+		ground_name      = "CUSTOM_CIRCLESCARPET",
+	},
+	{
+		name             = "carpet",
+		noise_texture    = "levels/textures/custom/custom_noise_circlescarpet.tex",
+		runsound         = "dontstarve/movement/run_carpet",
+		walksound        = "dontstarve/movement/walk_carpet",
+		snowsound        = "dontstarve/movement/run_snow",
+		mudsound         = "dontstarve/movement/run_mud",
+		flooring         = true,
+		hard             = true,
+	},
+	{
+		name             = "map_edge",
+		noise_texture    = "levels/textures/custom/custom_mini_noise_circlescarpet.tex",
+	},
+	{
+		name             = "circlescarpet",
+		anim             = "circlescarpet",
+		bank_build       = "kyno_turfs_custom2",
+		pickupsound      = "cloth",
+	}
+)
+
+AddTile("MOROCCARPET", "LAND",
+	{
+		ground_name      = "CUSTOM_MOROCCARPET",
+	},
+	{
+		name             = "carpet",
+		noise_texture    = "levels/textures/custom/custom_noise_moroccarpet.tex",
+		runsound         = "dontstarve/movement/run_carpet",
+		walksound        = "dontstarve/movement/walk_carpet",
+		snowsound        = "dontstarve/movement/run_snow",
+		mudsound         = "dontstarve/movement/run_mud",
+		flooring         = true,
+		hard             = true,
+	},
+	{
+		name             = "map_edge",
+		noise_texture    = "levels/textures/custom/custom_mini_noise_moroccarpet.tex",
+	},
+	{
+		name             = "moroccarpet",
+		anim             = "moroccarpet",
+		bank_build       = "kyno_turfs_custom2",
+		pickupsound      = "cloth",
+	}
+)
+
+AddTile("WHITECRACKED", "LAND",
+	{
+		ground_name      = "CUSTOM_WHITECRACKED",
+	},
+	{
+		name             = "cave",
+		noise_texture    = "levels/textures/custom/custom_noise_whitecracked.tex",
+		runsound         = "dontstarve/movement/run_dirt",
+		walksound        = "dontstarve/movement/walk_dirt",
+		snowsound        = "dontstarve/movement/run_ice",
+		mudsound         = "dontstarve/movement/run_mud",
+		flooring         = true,
+		hard             = true,
+	},
+	{
+		name             = "map_edge",
+		noise_texture    = "levels/textures/custom/custom_mini_noise_whitecracked.tex",
+	},
+	{
+		name             = "whitecracked",
+		anim             = "whitecracked",
+		bank_build       = "kyno_turfs_custom2",
+		pickupsound      = "rock",
+	}
+)
+
+AddTile("COAL", "LAND",
+	{
+		ground_name      = "CUSTOM_COAL",
+	},
+	{
+		name             = "cave",
+		noise_texture    = "levels/textures/custom/custom_noise_coal.tex",
+		runsound         = "dontstarve/movement/run_marble",
+		walksound        = "dontstarve/movement/walk_marble",
+		snowsound        = "dontstarve/movement/run_ice",
+		mudsound         = "dontstarve/movement/run_mud",
+		flooring         = true,
+		hard             = true,
+	},
+	{
+		name             = "map_edge",
+		noise_texture    = "levels/textures/custom/custom_mini_noise_coal.tex",
+	},
+	{
+		name             = "coal",
+		anim             = "coal",
+		bank_build       = "kyno_turfs_custom2",
+		pickupsound      = "rock",
+	}
+)
+
+AddTile("HOTCOAL", "LAND",
+	{
+		ground_name      = "CUSTOM_HOTCOAL",
+	},
+	{
+		name             = "cave",
+		noise_texture    = "levels/textures/custom/custom_noise_hotcoal.tex",
+		runsound         = "dontstarve/movement/run_marble",
+		walksound        = "dontstarve/movement/walk_marble",
+		snowsound        = "dontstarve/movement/run_ice",
+		mudsound         = "dontstarve/movement/run_mud",
+		flooring         = true,
+		hard             = true,
+	},
+	{
+		name             = "map_edge",
+		noise_texture    = "levels/textures/custom/custom_mini_noise_hotcoal.tex",
+	},
+	{
+		name             = "hotcoal",
+		anim             = "hotcoal",
+		bank_build       = "kyno_turfs_custom2",
+		pickupsound      = "rock",
+	}
+)
+
+AddTile("LIVINGLOG", "LAND",
+	{
+		ground_name      = "CUSTOM_LIVINGLOG",
+	},
+	{
+		name             = "blocky",
+		noise_texture    = "levels/textures/custom/custom_noise_livinglog.tex",
+		runsound         = "dontstarve/movement/run_cavesbridge",
+		walksound        = "dontstarve/movement/walk_cavesbridge",
+		snowsound        = "dontstarve/movement/run_ice",
+		mudsound         = "dontstarve/movement/run_mud",
+		flooring         = true,
+		hard             = true,
+	},
+	{
+		name             = "map_edge",
+		noise_texture    = "levels/textures/custom/custom_mini_noise_livinglog.tex",
+	},
+	{
+		name             = "livinglog",
+		anim             = "livinglog",
+		bank_build       = "kyno_turfs_custom2",
+		pickupsound      = "wood",
+	}
+)
+
+AddTile("GREYROAD", "LAND",
+	{
+		ground_name     = "CUSTOM_GREYROAD",
+	},
+	{
+		name            = "cave",
+		noise_texture   = "levels/textures/custom/custom_noise_greyroad.tex",
+		runsound        = "dontstarve/movement/run_dirt",
+		walksound       = "dontstarve/movement/walk_dirt",
+		snowsound       = "dontstarve/movement/run_ice",
+		mudsound        = "dontstarve/movement/run_mud",
+		flooring        = true,
+		hard            = true,
+		roadways        = true,
+	},
+	{
+		name            = "map_edge",
+		noise_texture   = "levels/textures/custom/custom_mini_noise_greyroad.tex",
+	},
+	{
+		name            = "greyroad",
+		anim            = "greyroad",
+		bank_build      = "kyno_turfs_custom2",
+		pickupsound     = "rock",
+	}
+)
+
+AddTile("WHITEBRICK", "LAND",
+	{
+		ground_name     = "CUSTOM_WHITEBRICK",
+	},
+	{
+		name            = "tile_cobbleroad",
+		noise_texture   = "levels/textures/custom/custom_noise_whitebrick.tex",
+		runsound        = "dontstarve/movement/run_dirt",
+		walksound       = "dontstarve/movement/walk_dirt",
+		snowsound       = "dontstarve/movement/run_ice",
+		mudsound        = "dontstarve/movement/run_mud",
+		flooring        = true,
+		hard            = true,
+		roadways        = true,
+	},
+	{
+		name            = "map_edge",
+		noise_texture   = "levels/textures/custom/custom_mini_noise_whitebrick.tex",
+	},
+	{
+		name            = "whitebrick",
+		anim            = "whitebrick",
+		bank_build      = "kyno_turfs_custom2",
+		pickupsound     = "rock",
+	}
+)
+
+AddTile("REDLAWN", "LAND",
+	{
+		ground_name     = "CUSTOM_REDLAWN",
+	},
+	{
+		name            = "tile_lawn",
+		noise_texture   = "levels/textures/custom/custom_noise_redlawn.tex",
+		runsound        = "dontstarve/movement/run_grass",
+		walksound       = "dontstarve/movement/walk_grass",
+		snowsound       = "dontstarve/movement/run_snow",
+		mudsound        = "dontstarve/movement/run_mud",
+		flooring        = true,
+		hard            = true,
+	},
+	{
+		name            = "map_edge",
+		noise_texture   = "levels/textures/custom/custom_mini_noise_redlawn.tex",
+	},
+	{
+		name            = "redlawn",
+		anim            = "redlawn",
+		bank_build      = "kyno_turfs_custom2",
+		pickupsound     = "vegetation_grassy",
+	}
+)
+
+AddTile("BLUELAWN", "LAND",
+	{
+		ground_name     = "CUSTOM_BLUELAWN",
+	},
+	{
+		name            = "tile_lawn",
+		noise_texture   = "levels/textures/custom/custom_noise_bluelawn.tex",
+		runsound        = "dontstarve/movement/run_grass",
+		walksound       = "dontstarve/movement/walk_grass",
+		snowsound       = "dontstarve/movement/run_snow",
+		mudsound        = "dontstarve/movement/run_mud",
+		flooring        = true,
+		hard            = true,
+	},
+	{
+		name            = "map_edge",
+		noise_texture   = "levels/textures/custom/custom_mini_noise_bluelawn.tex",
+	},
+	{
+		name            = "bluelawn",
+		anim            = "bluelawn",
+		bank_build      = "kyno_turfs_custom2",
+		pickupsound     = "vegetation_grassy",
+	}
+)
+
+AddTile("PURPLERAINFOREST", "LAND",
+	{
+		ground_name     = "CUSTOM_PURPLERAINFOREST",
+	},
+	{
+		name            = "tile_rainforest",
+		noise_texture   = "levels/textures/custom/custom_noise_purplerainforest.tex",
+		runsound        = "dontstarve/movement/run_tallgrass",
+		walksound       = "dontstarve/movement/walk_tallgrass",
+		snowsound       = "dontstarve/movement/run_snow",
+		mudsound        = "dontstarve/movement/run_mud",
+		flooring        = false,
+		hard            = false,
+	},
+	{
+		name            = "map_edge",
+		noise_texture   = "levels/textures/custom/custom_mini_noise_purplerainforest.tex",
+	},
+	{
+		name            = "purplerainforest",
+		anim            = "purplerainforest",
+		bank_build      = "kyno_turfs_custom2",
+		pickupsound     = "vegetation_grassy",
+	}
+)
+
+AddTile("BLUEPLAINS", "LAND",
+	{
+		ground_name     = "CUSTOM_BLUEPLAINS",
+	},
+	{
+		name            = "tile_jungle",
+		noise_texture   = "levels/textures/custom/custom_noise_blueplains.tex",
+		runsound        = "dontstarve/movement/run_grass",
+		walksound       = "dontstarve/movement/walk_grass",
+		snowsound       = "dontstarve/movement/run_snow",
+		mudsound        = "dontstarve/movement/run_mud",
+		flooring        = false,
+		hard            = false,
+	},
+	{
+		name            = "map_edge",
+		noise_texture   = "levels/textures/custom/custom_mini_noise_blueplains.tex",
+	},
+	{
+		name            = "blueplains",
+		anim            = "blueplains",
+		bank_build      = "kyno_turfs_custom2",
+		pickupsound     = "vegetation_grassy",
+	}
+)
+
+AddTile("GLOOMYCARPET", "LAND",
+	{
+		ground_name      = "CUSTOM_GLOOMYCARPET",
+	},
+	{
+		name             = "carpet",
+		noise_texture    = "levels/textures/custom/custom_noise_gloomycarpet.tex",
+		runsound         = "dontstarve/movement/run_carpet",
+		walksound        = "dontstarve/movement/walk_carpet",
+		snowsound        = "dontstarve/movement/run_snow",
+		mudsound         = "dontstarve/movement/run_mud",
+		flooring         = true,
+		hard             = true,
+	},
+	{
+		name             = "map_edge",
+		noise_texture    = "levels/textures/custom/custom_mini_noise_gloomycarpet.tex",
+	},
+	{
+		name             = "gloomycarpet",
+		anim             = "gloomycarpet",
+		bank_build       = "kyno_turfs_custom2",
+		pickupsound      = "cloth",
+	}
+)
+
+AddTile("UPHOLDERCARPET", "LAND",
+	{
+		ground_name      = "CUSTOM_UPHOLDERCARPET",
+	},
+	{
+		name             = "carpet",
+		noise_texture    = "levels/textures/custom/custom_noise_upholdercarpet.tex",
+		runsound         = "dontstarve/movement/run_carpet",
+		walksound        = "dontstarve/movement/walk_carpet",
+		snowsound        = "dontstarve/movement/run_snow",
+		mudsound         = "dontstarve/movement/run_mud",
+		flooring         = true,
+		hard             = true,
+	},
+	{
+		name             = "map_edge",
+		noise_texture    = "levels/textures/custom/custom_mini_noise_upholdercarpet.tex",
+	},
+	{
+		name             = "upholdercarpet",
+		anim             = "upholdercarpet",
+		bank_build       = "kyno_turfs_custom2",
+		pickupsound      = "cloth",
+	}
+)
+
+AddTile("MEADOWYELLOW", "LAND",
+	{
+		ground_name     = "CUSTOM_MEADOWYELLOW",
+	},
+	{
+		name            = "tile_jungle",
+		noise_texture   = "levels/textures/custom/custom_noise_meadowyellow.tex",
+		runsound        = "dontstarve/movement/run_tallgrass",
+		walksound       = "dontstarve/movement/walk_tallgrass",
+		snowsound       = "dontstarve/movement/run_snow",
+		mudsound        = "dontstarve/movement/run_mud",
+		flooring        = false,
+		hard            = false,
+	},
+	{
+		name            = "map_edge",
+		noise_texture   = "levels/textures/custom/custom_mini_noise_meadowyellow.tex",
+	},
+	{
+		name            = "meadowyellow",
+		anim            = "meadowyellow",
+		bank_build      = "kyno_turfs_custom2",
+		pickupsound     = "vegetation_grassy",
+	}
+)
+
+AddTile("HARDWOOD", "LAND",
+	{
+		ground_name      = "CUSTOM_HARDWOOD",
+	},
+	{
+		name             = "blocky",
+		noise_texture    = "levels/textures/custom/custom_noise_hardwood.tex",
+		runsound         = "dontstarve/movement/run_cavesbridge",
+		walksound        = "dontstarve/movement/walk_cavesbridge",
+		snowsound        = "dontstarve/movement/run_ice",
+		mudsound         = "dontstarve/movement/run_mud",
+		flooring         = true,
+		hard             = true,
+	},
+	{
+		name             = "map_edge",
+		noise_texture    = "levels/textures/custom/custom_mini_noise_hardwood.tex",
+	},
+	{
+		name             = "hardwood",
+		anim             = "hardwood",
+		bank_build       = "kyno_turfs_custom2",
+		pickupsound      = "wood",
 	}
 )

@@ -4,7 +4,12 @@ local WORLD_TILES = _G.WORLD_TILES
 modimport("main/misc/net_tuning")
 
 -- Don't create these turfs if these two mods are enabled.
-if TUNING.NET_IS_IAS_ENABLED and TUNING.NET_IS_IAC_ENABLED then
+if TUNING.NET_IS_IAS_ENABLED or WORLD_TILES.BEACH ~= nil then
+	if TUNING.NET_DEBUG_MODE then
+		print("Not Enough Turfs Mod - WARNING: Some turfs already exists.")
+		print("Not Enough Turfs Mod - Skipping AddTile() for Shipwrecked Turfs.")
+	end
+
 	return
 end
 

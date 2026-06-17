@@ -1,6 +1,8 @@
 local _G      = GLOBAL
 local require = _G.require
 
+require("net_util")
+
 local INIT_STRINGS = 
 {
 	"strings",
