@@ -5,7 +5,7 @@ local function WurtPostinit(inst)
 	if not _G.TheWorld.ismastersim then
 		return inst
 	end
-	
+
 	if inst.components.locomotor ~= nil then
 		inst.components.locomotor:SetFasterOnGroundTile(WORLD_TILES.TIDALMARSH, true)
 		inst.components.locomotor:SetFasterOnGroundTile(WORLD_TILES.GREENMARSH, true)

@@ -124,6 +124,17 @@ local MODDED_TURFS =
 	turf_upholdercarpet      = "CARPET",
 	turf_meadowyellow        = "GRASS",
 	turf_hardwood            = "WOOD",
+	turf_aridrocky           = "ROCKY",
+	turf_aridgrass           = "GRASS",
+	turf_sinkholeyellow      = "CAVE",
+	turf_sinkholered         = "CAVE",
+	turf_sinkholeblue        = "CAVE",
+	turf_sinkholepink        = "CAVE",
+	turf_sinkholepurple      = "CAVE",
+	turf_savannagreen        = "GRASS",
+	turf_stickywebbing       = "WEBBED",
+	turf_stickyhoney         = "STICKY",
+	turf_stickyicker         = "STICKY",
 
 	turf_woodpanel           = "WOOD",
 	turf_driftwoodpanel      = "WOOD",
@@ -192,3 +203,12 @@ for turf, data in pairs(MODDED_TURFS) do
 		end)
 	end
 end
+
+-- Returns empty bottle when crafted.
+AddPrefabPostInit("turf_stickyicker", function(inst)
+	if not _G.TheWorld.ismastersim then
+		return inst
+	end
+
+	_G.MakeCraftingMaterialRecycler(inst, { gelblob_bottle = "messagebottleempty" })
+end)

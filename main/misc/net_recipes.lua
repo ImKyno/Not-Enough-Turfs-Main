@@ -536,7 +536,7 @@ AddRecipe2("turf_orangecarpet", {Ingredient("boards", 1), Ingredient("beefalowoo
 	{"DECOR"}
 )
 
-AddRecipe2("turf_gloomycarpet", {Ingredient("boards", 1), Ingredient("beefalowool", 1), Ingredient("charcoal", 1)}, TECH.TURFMAKER_ONE,
+AddRecipe2("turf_gloomycarpet", {Ingredient("boards", 1), Ingredient("beefalowool", 1), Ingredient("beardhair", 1)}, TECH.TURFMAKER_ONE,
 	{
 		hint_msg    = "NEEDSTURFMAKER",
 		numtogive   = AMOUNT_GIVEN_MODDED,
@@ -782,6 +782,116 @@ AddRecipe2("turf_meadowyellow", {Ingredient("cutgrass", 1), Ingredient("petals",
 		numtogive   = AMOUNT_GIVEN_MODDED,
 		atlas       = ModAtlas,
 		image       = "turf_meadowyellow.tex",
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_aridrocky", {Ingredient("rocks", 1), Ingredient("boneshard", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg    = "NEEDSTURFMAKER",
+		numtogive   = AMOUNT_GIVEN_MODDED,
+		atlas       = ModAtlas,
+		image       = "turf_aridrocky.tex",
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_aridgrass", {Ingredient("cutgrass", 1), Ingredient("spoiled_food", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg    = "NEEDSTURFMAKER",
+		numtogive   = AMOUNT_GIVEN_MODDED,
+		atlas       = ModAtlas,
+		image       = "turf_aridgrass.tex",
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_sinkholeyellow", {Ingredient("cutgrass", 1), Ingredient("twigs", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg    = "NEEDSTURFMAKER",
+		numtogive   = AMOUNT_GIVEN_MODDED,
+		atlas       = ModAtlas,
+		image       = "turf_sinkholeyellow.tex",
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_sinkholered", {Ingredient("cutgrass", 1), Ingredient("feather_robin", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg    = "NEEDSTURFMAKER",
+		numtogive   = AMOUNT_GIVEN_MODDED,
+		atlas       = ModAtlas,
+		image       = "turf_sinkholered.tex",
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_sinkholeblue", {Ingredient("cutgrass", 1), Ingredient("feather_robin_winter", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg    = "NEEDSTURFMAKER",
+		numtogive   = AMOUNT_GIVEN_MODDED,
+		atlas       = ModAtlas,
+		image       = "turf_sinkholeblue.tex",
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_sinkholepink", {Ingredient("cutgrass", 1), Ingredient("spidergland", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg    = "NEEDSTURFMAKER",
+		numtogive   = AMOUNT_GIVEN_MODDED,
+		atlas       = ModAtlas,
+		image       = "turf_sinkholepink.tex",
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_sinkholepurple", {Ingredient("cutgrass", 1), Ingredient("foliage", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg    = "NEEDSTURFMAKER",
+		numtogive   = AMOUNT_GIVEN_MODDED,
+		atlas       = ModAtlas,
+		image       = "turf_sinkholepurple.tex",
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_savannagreen", {Ingredient("cutgrass", 1), Ingredient("cutreeds", 1), Ingredient("poop", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg    = "NEEDSTURFMAKER",
+		numtogive   = AMOUNT_GIVEN_MODDED,
+		atlas       = ModAtlas,
+		image       = "turf_savannagreen.tex",
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_stickywebbing", {Ingredient("boards", 1), Ingredient("silk", 6)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg    = "NEEDSTURFMAKER",
+		numtogive   = AMOUNT_GIVEN_MODDED,
+		atlas       = ModAtlas,
+		image       = "turf_stickywebbing.tex",
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_stickyhoney", {Ingredient("boards", 1), Ingredient("honey", 6)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg    = "NEEDSTURFMAKER",
+		numtogive   = AMOUNT_GIVEN_MODDED,
+		atlas       = ModAtlas,
+		image       = "turf_stickyhoney.tex",
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_stickyicker", {Ingredient("boards", 1), Ingredient("gelblob_bottle", 3)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg    = "NEEDSTURFMAKER",
+		numtogive   = AMOUNT_GIVEN_MODDED,
+		atlas       = ModAtlas,
+		image       = "turf_stickyicker.tex",
 	},
 	{"DECOR"}
 )

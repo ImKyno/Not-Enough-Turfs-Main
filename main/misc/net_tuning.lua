@@ -1,9 +1,13 @@
-local _G         = GLOBAL
-local require    = _G.require
-local TechTree   = require("techtree")
+local _G          = GLOBAL
+local require     = _G.require
+local WORLD_TILES = _G.WORLD_TILES
+local TechTree    = require("techtree")
 
 -- Mod Tunings.
 TUNING.NET_DEBUG_MODE = true
+
+TUNING.NET_WORLD_TILES_SLOWDOWN_MULT_SMALL = 0.50
+TUNING.NET_WORLD_TILES_SLOWDOWN_MULT_LARGE = 0.75
 
 TUNING.NET_IS_HOF_ENABLED = _G.KnownModIndex:IsModEnabled("workshop-2334209327") -- Heap of Foods.
 TUNING.NET_IS_ABC_ENABLED = _G.KnownModIndex:IsModEnabled("workshop-3322803908") -- Above the Clouds.

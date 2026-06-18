@@ -61,7 +61,7 @@ STRINGS.RECIPE_DESC.TURF_SWIRLGRASS = "Full of swirls."
 STRINGS.NAMES.TURF_SWIRLGRASSMONO = "Swirly Greeny Grass"
 STRINGS.RECIPE_DESC.TURF_SWIRLGRASSMONO = "Swirlying around grass fields."
 
-STRINGS.NAMES.TURF_SNOWFALL = "Snowfallen Turf"
+STRINGS.NAMES.TURF_SNOWFALL = "Snowfallen Ground"
 STRINGS.RECIPE_DESC.TURF_SNOWFALL = "Winter is coming!"
 
 STRINGS.NAMES.TURF_REDCARPET = "Red Carpeted Flooring"
@@ -121,10 +121,10 @@ STRINGS.RECIPE_DESC.TURF_MOROCCARPET = "Stylish carpet for stylish places."
 STRINGS.NAMES.TURF_WHITECRACKED = "Cracked Rocky Turf"
 STRINGS.RECIPE_DESC.TURF_WHITECRACKED = "There's a lot of cracks on it."
 
-STRINGS.NAMES.TURF_COAL = "Coals Turf"
+STRINGS.NAMES.TURF_COAL = "Coals Ground"
 STRINGS.RECIPE_DESC.TURF_COAL = "A lot of coals to burn!"
 
-STRINGS.NAMES.TURF_HOTCOAL = "Hot Coals Turf"
+STRINGS.NAMES.TURF_HOTCOAL = "Hot Coals Ground"
 STRINGS.RECIPE_DESC.TURF_HOTCOAL = "Careful to not burn everything."
 
 STRINGS.NAMES.TURF_LIVINGLOG = "Living Wooden Flooring"
@@ -159,6 +159,39 @@ STRINGS.RECIPE_DESC.TURF_MEADOWYELLOW = "The sun has blessed this ground."
 
 STRINGS.NAMES.TURF_HARDWOOD = "Hardwood Planks"
 STRINGS.RECIPE_DESC.TURF_HARDWOOD = "Made from the strongest boards."
+
+STRINGS.NAMES.TURF_ARIDROCKY = "Arid Rocky Turf"
+STRINGS.RECIPE_DESC.TURF_ARIDROCKY = "Hardened stone rocks from the desert."
+
+STRINGS.NAMES.TURF_ARIDGRASS = "Arid Grass Turf"
+STRINGS.RECIPE_DESC.TURF_ARIDGRASS = "It barely has any motivation to keep going."
+
+STRINGS.NAMES.TURF_SINKHOLEYELLOW = "Arid Slimy Turf"
+STRINGS.RECIPE_DESC.TURF_SINKHOLEYELLOW = "A chunk of dry grass."
+
+STRINGS.NAMES.TURF_SINKHOLERED = "Crimson Slimy Turf"
+STRINGS.RECIPE_DESC.TURF_SINKHOLERED = "A chunk of painted grass."
+
+STRINGS.NAMES.TURF_SINKHOLEBLUE = "Azure Slimy Turf"
+STRINGS.RECIPE_DESC.TURF_SINKHOLEBLUE = "A chunk of sky blue grass."
+
+STRINGS.NAMES.TURF_SINKHOLEPINK = "Peach Slimy Turf"
+STRINGS.RECIPE_DESC.TURF_SINKHOLEPINK = "A chunk of pinkish grass."
+
+STRINGS.NAMES.TURF_SINKHOLEPURPLE = "Lavender Slimy Turf"
+STRINGS.RECIPE_DESC.TURF_SINKHOLEPURPLE = "A chunk of grass from the sunless skies."
+
+STRINGS.NAMES.TURF_SAVANNAGREEN = "Verdant Savanna Turf"
+STRINGS.RECIPE_DESC.TURF_SAVANNAGREEN = "A patch of vibrant savanna grass."
+
+STRINGS.NAMES.TURF_STICKYWEBBING = "Sticky Webbing Ground"
+STRINGS.RECIPE_DESC.TURF_STICKYWEBBING = "Sticky situation."
+
+STRINGS.NAMES.TURF_STICKYHONEY = "Sticky Honey Ground"
+STRINGS.RECIPE_DESC.TURF_STICKYHONEY = "Don't lick the ground."
+
+STRINGS.NAMES.TURF_STICKYICKER = "Sticky Icker Ground"
+STRINGS.RECIPE_DESC.TURF_STICKYICKER = "Sticking icker to the ground makes for a good trap."
 
 -- Interior Turfs.
 STRINGS.NAMES.TURF_WOODPANEL = "Wood Panel Flooring"
