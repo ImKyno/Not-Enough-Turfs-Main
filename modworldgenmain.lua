@@ -10,6 +10,7 @@ local INIT_TILEDEFS =
 	"interior",
 	"events",
 	"custom",
+	"docks",
 }
 
 for _, v in pairs(INIT_TILEDEFS) do

@@ -121,3 +121,7 @@ SafeChangeTileRenderOrder(WORLD_TILES.SINKHOLERED,          WORLD_TILES.SINKHOLE
 SafeChangeTileRenderOrder(WORLD_TILES.SINKHOLEBLUE,         WORLD_TILES.SINKHOLERED,        true)
 SafeChangeTileRenderOrder(WORLD_TILES.SINKHOLEPINK,         WORLD_TILES.SINKHOLEBLUE,       true)
 SafeChangeTileRenderOrder(WORLD_TILES.SINKHOLEPURPLE,       WORLD_TILES.SINKHOLEPINK,       true)
+
+-- Docks priority.
+SafeChangeTileRenderOrder(WORLD_TILES.DOCKS_DRIFTWOOD,      WORLD_TILES.MONKEY_DOCK,        true)
+SafeChangeTileRenderOrder(WORLD_TILES.DOCKS_COBBLESTONES,   WORLD_TILES.DOCKS_DRIFTWOOD,    true)

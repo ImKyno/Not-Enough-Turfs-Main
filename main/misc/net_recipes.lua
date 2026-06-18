@@ -1096,3 +1096,23 @@ AddRecipe2("turf_octagon", {Ingredient("marble", 1)}, TECH.TURFMAKER_ONE,
 	},
 	{"DECOR"}
 )
+
+AddRecipe2("dock_kit_driftwood", {Ingredient("driftwood_log", 16), Ingredient("cutstone", 1), 
+Ingredient("stinger", 2), Ingredient("palmcone_scale", 1)}, TECH.LOST,
+	{
+		numtogive   = AMOUNT_GIVEN_MODDED,
+		atlas       = ModAtlas,
+		image       = "dock_kit_driftwood.tex",
+	},
+	{"DECOR", "SEAFARING", "STRUCTURES"}
+)
+
+AddRecipe2("dock_kit_cobblestones", {Ingredient("boards", 1), Ingredient("cutstone", 4), 
+Ingredient("stinger", 2), Ingredient("flint", 1)}, TECH.LOST,
+	{
+		numtogive   = AMOUNT_GIVEN_MODDED,
+		atlas       = ModAtlas,
+		image       = "dock_kit_cobblestones.tex",
+	},
+	{"DECOR", "SEAFARING", "STRUCTURES"}
+)

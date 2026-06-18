@@ -253,3 +253,9 @@ STRINGS.RECIPE_DESC.TURF_HOOF = "Very avant-garde, for pigs."
 
 STRINGS.NAMES.TURF_OCTAGON = "Octagon Flooring"
 STRINGS.RECIPE_DESC.TURF_OCTAGON = "Just elegance."
+
+STRINGS.NAMES.DOCK_KIT_DRIFTWOOD = "Driftwood Dock Kit"
+STRINGS.RECIPE_DESC.DOCK_KIT_DRIFTWOOD = "Get ready for your pier review."
+
+STRINGS.NAMES.DOCK_KIT_COBBLESTONES = "Cobblestones Dock Kit"
+STRINGS.RECIPE_DESC.DOCK_KIT_COBBLESTONES = "Build your own dock to elsewhere."

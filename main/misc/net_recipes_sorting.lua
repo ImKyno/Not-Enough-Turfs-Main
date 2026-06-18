@@ -148,3 +148,11 @@ SortAfter("turf_herring",             "turf_transitional",        "DECOR")
 SortAfter("turf_hexagon",             "turf_herring",             "DECOR")
 SortAfter("turf_hoof",                "turf_hexagon",             "DECOR")
 SortAfter("turf_octagon",             "turf_hoof",                "DECOR")
+
+-- Docks
+SortAfter("dock_kit_driftwood",       "dock_kit",                 "DECOR")
+SortAfter("dock_kit_driftwood",       "dock_kit",                 "SEAFARING")
+SortAfter("dock_kit_driftwood",       "dock_kit",                 "STRUCTURES")
+SortAfter("dock_kit_cobblestones",    "dock_kit_driftwood",       "DECOR")
+SortAfter("dock_kit_cobblestones",    "dock_kit_driftwood",       "SEAFARING")
+SortAfter("dock_kit_cobblestones",    "dock_kit_driftwood",       "STRUCTURES")

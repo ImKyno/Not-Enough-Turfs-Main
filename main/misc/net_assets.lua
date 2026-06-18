@@ -12,6 +12,9 @@ Assets =
 	Asset("ANIM", "anim/kyno_turfs_custom2.zip"),
 	Asset("ANIM", "anim/kyno_turfs_custom3.zip"),
 
+	Asset("ANIM", "anim/kyno_dock_kit_driftwood.zip"),
+	Asset("ANIM", "anim/kyno_dock_kit_cobblestones.zip"),
+
 	Asset("IMAGE", "images/tabimages/net_tabimages.tex"),
 	Asset("ATLAS", "images/tabimages/net_tabimages.xml"),
 
@@ -28,6 +31,9 @@ AddMinimapAtlas("images/minimapimages/net_minimapimages.xml")
 local NET_ICONS =
 {
 	"kyno_terraformer",
+
+	"dock_kit_driftwood",
+	"dock_kit_cobblestones",
 
 	"turf_magmafield",
 	"turf_volcano",
@@ -82,6 +88,8 @@ local NET_ICONS =
 	"turf_modern_cobblestones",
 	"turf_copacabana",
 	"turf_driftwoodfloor",
+	"turf_wagpunkfloor",
+	"turf_lunarrift",
 	"turf_vaultmossy",
 	"turf_chilledfloor",
 	"turf_circlescarpet",

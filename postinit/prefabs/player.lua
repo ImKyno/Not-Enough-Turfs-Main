@@ -80,30 +80,32 @@ local function TileTemperaturePostInit(inst)
 		return inst
 	end
 
-	local areaaware = inst.components.areaaware
-
-	if areaaware == nil then
-		return
+	-- Uhhh dock tiles doesn't get speed boost from tile roadways, have to manually add them...
+	if inst.components.locomotor ~= nil then
+		inst.components.locomotor:SetFasterOnGroundTile(WORLD_TILES.DOCKS_DRIFTWOOD,    true)
+		inst.components.locomotor:SetFasterOnGroundTile(WORLD_TILES.DOCKS_COBBLESTONES, true)
 	end
 
-	for tile, modifier in pairs(TILE_TEMP_MODIFIERS) do
-		areaaware:StartWatchingTile(tile)
+	if inst.components.areaaware ~= nil then
+		for tile, modifier in pairs(TILE_TEMP_MODIFIERS) do
+			inst.components.areaaware:StartWatchingTile(tile)
 
-		inst:ListenForEvent("on_" .. _G.INVERTED_WORLD_TILES[tile] .. "_tile", function(inst, entered)
-			local temperature = inst.components.temperature
+			inst:ListenForEvent("on_" .. _G.INVERTED_WORLD_TILES[tile] .. "_tile", function(inst, entered)
+				local temperature = inst.components.temperature
 
-			if temperature == nil then
-				return
-			end
+				if temperature == nil then
+					return
+				end
 
-			local key = "tile_temperature_" .. tostring(tile)
+				local key = "tile_temperature_" .. tostring(tile)
 
-			if entered then
-				temperature:SetModifier(key, modifier)
-			else
-				temperature:RemoveModifier(key)
-			end
-		end)
+				if entered then
+					temperature:SetModifier(key, modifier)
+				else
+					temperature:RemoveModifier(key)
+				end
+			end)
+		end
 	end
 end
 

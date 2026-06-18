@@ -43,11 +43,14 @@ local VANILLA_TURFS =
 	"turf_vent",
 	"turf_woodfloor",
 	"wurt_turf_marsh",
+	"dock_kit",
 }
 
 for turf, data in pairs(VANILLA_TURFS) do
 	AddRecipePostInit(data, function(recipe)
-		recipe.numtogive = AMOUNT_GIVEN_VANILLA
+		if recipe.numtogive ~= nil then
+			recipe.numtogive = AMOUNT_GIVEN_VANILLA
+		end
 	end)
 end
 
