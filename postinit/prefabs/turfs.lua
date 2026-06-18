@@ -138,6 +138,8 @@ local MODDED_TURFS =
 	turf_stickywebbing       = "WEBBED",
 	turf_stickyhoney         = "STICKY",
 	turf_stickyicker         = "STICKY",
+	turf_fakedocks           = "WOOD",
+	turf_fakedocks_driftwood = "WOOD",
 
 	turf_woodpanel           = "WOOD",
 	turf_driftwoodpanel      = "WOOD",

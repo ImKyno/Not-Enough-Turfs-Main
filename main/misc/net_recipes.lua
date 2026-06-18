@@ -646,6 +646,26 @@ AddRecipe2("turf_hardwood", {Ingredient("boards", 1), Ingredient("rope", 1)}, TE
 	{"DECOR"}
 )
 
+AddRecipe2("turf_fakedocks", {Ingredient("boards", 1), Ingredient("stinger", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg    = "NEEDSTURFMAKER",
+		numtogive   = AMOUNT_GIVEN_MODDED,
+		atlas       = ModAtlas,
+		image       = "turf_fakedocks.tex",
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_fakedocks_driftwood", {Ingredient("driftwood_log", 4), Ingredient("stinger", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg    = "NEEDSTURFMAKER",
+		numtogive   = AMOUNT_GIVEN_MODDED,
+		atlas       = ModAtlas,
+		image       = "turf_fakedocks_driftwood.tex",
+	},
+	{"DECOR"}
+)
+
 AddRecipe2("turf_lunarrift", {Ingredient("moonrocknugget", 1), Ingredient("moonglass", 1)}, TECH.TURFMAKER_ONE,
 	{
 		hint_msg    = "NEEDSTURFMAKER",

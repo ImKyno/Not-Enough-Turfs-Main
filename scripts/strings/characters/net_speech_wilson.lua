@@ -19,3 +19,4 @@ WILSON.DESCRIBE.TURF_TYPE_ANCIENT = "A relic from a long-forgotten civilization.
 WILSON.DESCRIBE.TURF_TYPE_FROZEN = "The cold has completely claimed this ground."
 WILSON.DESCRIBE.TURF_TYPE_METAL = "A floor made from worked metal."
 WILSON.DESCRIBE.TURF_TYPE_GARDEN = "A well-tended patch of cultivated land."
+WILSON.DESCRIBE.TURF_TYPE_STICKY = "Every step takes a little extra effort."

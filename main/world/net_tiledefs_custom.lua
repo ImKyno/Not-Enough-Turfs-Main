@@ -1403,3 +1403,55 @@ AddTile("STICKYICKER", "LAND",
 		pickupsound      = "squidgy",
 	}
 )
+
+AddTile("FAKEDOCKS", "LAND",
+	{
+		ground_name      = "CUSTOM_FAKEDOCKS",
+	},
+	{
+		name             = "cave",
+		noise_texture    = "levels/textures/custom/custom_noise_fakedocks.tex",
+		runsound         = "dontstarve/movement/run_dock",
+		walksound        = "dontstarve/movement/walk_dock",
+		snowsound        = "dontstarve/movement/walk_dock",
+		mudsound         = "dontstarve/movement/walk_dock",
+		flooring         = true,
+		hard             = true,
+	},
+	{
+		name             = "map_edge",
+		noise_texture    = "levels/textures/custom/custom_mini_noise_fakedocks.tex",
+	},
+	{
+		name             = "fakedocks",
+		anim             = "fakedocks",
+		bank_build       = "kyno_turfs_custom3",
+		pickupsound      = "wood",
+	}
+)
+
+AddTile("FAKEDOCKS_DRIFTWOOD", "LAND",
+	{
+		ground_name      = "CUSTOM_FAKEDOCKS_DRIFTWOOD",
+	},
+	{
+		name             = "cave",
+		noise_texture    = "levels/textures/custom/custom_noise_fakedocks_driftwood.tex",
+		runsound         = "dontstarve/movement/run_dock",
+		walksound        = "dontstarve/movement/walk_dock",
+		snowsound        = "dontstarve/movement/walk_dock",
+		mudsound         = "dontstarve/movement/walk_dock",
+		flooring         = true,
+		hard             = true,
+	},
+	{
+		name             = "map_edge",
+		noise_texture    = "levels/textures/custom/custom_mini_noise_fakedocks_driftwood.tex",
+	},
+	{
+		name             = "fakedocks_driftwood",
+		anim             = "fakedocks_driftwood",
+		bank_build       = "kyno_turfs_custom3",
+		pickupsound      = "wood",
+	}
+)

@@ -119,6 +119,8 @@ local NET_ICONS =
 	"turf_stickywebbing",
 	"turf_stickyhoney",
 	"turf_stickyicker",
+	"turf_fakedocks",
+	"turf_fakedocks_driftwood",
 
 	"turf_woodpanel",
 	"turf_driftwoodpanel",

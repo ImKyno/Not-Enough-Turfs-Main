@@ -80,12 +80,6 @@ local function TileTemperaturePostInit(inst)
 		return inst
 	end
 
-	-- Uhhh dock tiles doesn't get speed boost from tile roadways, have to manually add them...
-	if inst.components.locomotor ~= nil then
-		inst.components.locomotor:SetFasterOnGroundTile(WORLD_TILES.DOCKS_DRIFTWOOD,    true)
-		inst.components.locomotor:SetFasterOnGroundTile(WORLD_TILES.DOCKS_COBBLESTONES, true)
-	end
-
 	if inst.components.areaaware ~= nil then
 		for tile, modifier in pairs(TILE_TEMP_MODIFIERS) do
 			inst.components.areaaware:StartWatchingTile(tile)

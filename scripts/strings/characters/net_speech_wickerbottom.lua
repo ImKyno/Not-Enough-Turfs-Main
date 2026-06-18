@@ -19,3 +19,4 @@ WICKERBOTTOM.DESCRIBE.TURF_TYPE_ANCIENT = "An architectural remnant of significa
 WICKERBOTTOM.DESCRIBE.TURF_TYPE_FROZEN = "The soil appears permanently frozen."
 WICKERBOTTOM.DESCRIBE.TURF_TYPE_METAL = "An engineered flooring material of remarkable durability."
 WICKERBOTTOM.DESCRIBE.TURF_TYPE_GARDEN = "Evidence of careful horticultural management."
+WICKERBOTTOM.DESCRIBE.TURF_TYPE_STICKY = "An unusually adhesive terrain."

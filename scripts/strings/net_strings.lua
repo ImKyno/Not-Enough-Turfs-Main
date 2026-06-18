@@ -193,6 +193,12 @@ STRINGS.RECIPE_DESC.TURF_STICKYHONEY = "Don't lick the ground."
 STRINGS.NAMES.TURF_STICKYICKER = "Sticky Icker Ground"
 STRINGS.RECIPE_DESC.TURF_STICKYICKER = "Sticking icker to the ground makes for a good trap."
 
+STRINGS.NAMES.TURF_FAKEDOCKS = "Scrappy Wooden Flooring"
+STRINGS.RECIPE_DESC.TURF_FAKEDOCKS = "Build your own junkyard!"
+
+STRINGS.NAMES.TURF_FAKEDOCKS_DRIFTWOOD = "Scrappy Driftwood Flooring"
+STRINGS.RECIPE_DESC.TURF_FAKEDOCKS_DRIFTWOOD = "Build your own driftwood playground."
+
 -- Interior Turfs.
 STRINGS.NAMES.TURF_WOODPANEL = "Wood Panel Flooring"
 STRINGS.RECIPE_DESC.TURF_WOODPANEL = "Goes up less easy."
