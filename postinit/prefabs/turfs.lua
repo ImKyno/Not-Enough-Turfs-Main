@@ -61,6 +61,7 @@ local MODDED_TURFS =
 	turf_magmafield          = "ROCKY",
 	turf_volcano             = "ROCKY",
 	turf_volcano_rock        = "ROCKY",
+	turf_ash                 = "SAND",
 	turf_beach               = "SAND",
 	turf_meadow              = "GRASS",
 	turf_jungle              = "FOREST",
@@ -72,6 +73,7 @@ local MODDED_TURFS =
 	turf_lawn                = "CARPET",
 	turf_pigruins            = "ANCIENT",
 	turf_pigruins_blue       = "ANCIENT",
+	turf_fields              = "GRASS",
 	turf_mossy_blossom       = "SOIL",
 	turf_rainforest          = "FOREST",
 	turf_deepjungle          = "FOREST",
@@ -172,6 +174,7 @@ local IA_TURFS =
 	turf_magmafield          = true,
 	turf_volcano             = true,
 	turf_volcano_rock        = true,
+	turf_ash                 = true,
 	turf_beach               = true,
 	turf_meadow              = true,
 	turf_jungle              = true,
@@ -186,6 +189,7 @@ local ABC_TURFS =
 	turf_lawn                = true,
 	turf_pigruins            = true,
 	turf_pigruins_blue       = true,
+	turf_fields              = true,
 	turf_mossy_blossom       = true,
 	turf_rainforest          = true,
 	turf_deepjungle          = true,
@@ -196,9 +200,18 @@ local ABC_TURFS =
 	turf_batcave             = true,
 }
 
+local HOF_TURFS =
+{
+	turf_tidalmarsh          = true,
+	turf_fields              = true,
+	turf_stonecity           = true,
+	turf_pinkpark            = true,
+}
+
 for turf, data in pairs(MODDED_TURFS) do
 	if not (TUNING.NET_IS_IAS_ENABLED and IA_TURFS[turf]) 
-	and not (TUNING.NET_IS_ABC_ENABLED and ABC_TURFS[turf]) then
+	and not (TUNING.NET_IS_ABC_ENABLED and ABC_TURFS[turf])
+	and not (TUNING.NET_IS_HOF_ENABLED and HOF_TURFS[turf]) then
 		AddPrefabPostInit(turf, function(inst)
 			if not _G.TheWorld.ismastersim then
 				return inst

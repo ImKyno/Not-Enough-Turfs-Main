@@ -80,7 +80,7 @@ AddRecipe2("kyno_terraformer", {Ingredient("moonrocknugget", 1), Ingredient("cut
 )
 
 if TERRAFORM_BARREL then
-	AddRecipe2("kyno_terraform_barrel_item", {Ingredient("gunpowder", 2), Ingredient("boards", 2), Ingredient("rope", 2)}, TECH.SCIENCE_TWO,
+	AddRecipe2("kyno_terraform_barrel_item", {Ingredient("gunpowder", 2), Ingredient("boards", 2), Ingredient("cookiecuttershell", 2)}, TECH.SCIENCE_TWO,
 		{
 			atlas       = ModAtlas,
 			image       = "kyno_terraform_barrel_item.tex",

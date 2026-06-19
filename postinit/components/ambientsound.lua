@@ -3,8 +3,11 @@ local require       = _G.require
 local WORLD_TILES   = _G.WORLD_TILES
 local UpvalueHacker = require("tools/net_upvaluehacker")
 
+local SHIPWRECKED_ENABLED = _G.NETRecipeAlreadyExists("chiminea", "limestone")
+local HAMLET_ENABLED      = _G.NETRecipeAlreadyExists("cork_bat", "corkchest")
+
 -- Don't load ambientsounds if these mods are enabled.
-if TUNING.NET_IS_IAS_ENABLED or TUNING.NET_IS_ABC_ENABLED then
+if SHIPWRECKED_ENABLED or HAMLET_ENABLED then
 	if TUNING.NET_DEBUG_MODE then
 		print("Not Enough Turfs Mod - WARNING: Ambient Sounds already exists.")
 		print("Not Enough Turfs Mod - Skipping Ambient Sounds.")
@@ -12,9 +15,6 @@ if TUNING.NET_IS_IAS_ENABLED or TUNING.NET_IS_ABC_ENABLED then
 
 	return
 end
-
-local SHIPWRECKED_ENABLED = _G.NETRecipeAlreadyExists("chiminea", "limestone")
-local HAMLET_ENABLED      = _G.NETRecipeAlreadyExists("cork_bat", "corkchest")
 
 -- Don't override the ambient sound for these turfs.
 local AMBIENT_SOUND_BLACKLIST =

@@ -6,7 +6,7 @@ require("net_util")
 local INIT_STRINGS = 
 {
 	"strings",
-	-- "strings_scrapbook",
+	"strings_scrapbook",
 }
 
 local INIT_STRINGS_CHARACTERS =

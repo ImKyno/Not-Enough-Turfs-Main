@@ -21,6 +21,9 @@ Assets =
 	Asset("IMAGE", "images/minimapimages/net_minimapimages.tex"),
 	Asset("ATLAS", "images/minimapimages/net_minimapimages.xml"),
 
+	Asset("IMAGE", "images/scrapbookimages/net_scrapbookimages.tex"),
+	Asset("ATLAS", "images/scrapbookimages/net_scrapbookimages.xml"),
+
 	Asset("IMAGE", "images/inventoryimages/net_inventoryimages.tex"),
 	Asset("ATLAS", "images/inventoryimages/net_inventoryimages.xml"),
 	Asset("ATLAS_BUILD", "images/inventoryimages/net_inventoryimages.xml", 256),
@@ -149,7 +152,16 @@ for k, v in pairs(NET_ICONS) do
 	RegisterInventoryItemAtlas("images/inventoryimages/net_inventoryimages.xml", v..".tex")
 end
 
--- Hack for mod items not appearing in Mini Signs.
+local NET_ICONS_SCRAPBOOK =
+{
+	"kyno_terraformer",
+	"kyno_terraform_barrel",
+}
+
+for k, v in pairs(NET_ICONS_SCRAPBOOK) do
+	RegisterScrapbookIconAtlas("images/scrapbookimages/net_scrapbookimages.xml", v..".tex")
+end
+
 local _GetInventoryItemAtlas = _G.GetInventoryItemAtlas
 _G.GetInventoryItemAtlas = function(name, ...)
 	local myatlas = resolvefilepath("images/inventoryimages/net_inventoryimages.xml")
@@ -159,4 +171,15 @@ _G.GetInventoryItemAtlas = function(name, ...)
 	end
 
 	return _GetInventoryItemAtlas(name, ...)
+end
+
+local _GetScrapbookIconAtlas_Internal = _G.GetScrapbookIconAtlas_Internal
+_G.GetScrapbookIconAtlas_Internal = function(name, ...)
+	local myatlas = resolvefilepath("images/scrapbookimages/net_scrapbookimages.xml")
+
+	if _G.TheSim:AtlasContains(myatlas, name) then
+		return myatlas
+	end
+
+	return _GetScrapbookIconAtlas_Internal(name, ...)
 end

@@ -1,4 +1,5 @@
-local _G = GLOBAL
+local _G            = GLOBAL
+local MOD_SCRAPBOOK = GetModConfigData("MOD_SCRAPBOOK")
 
 local INIT_MAIN_MISC =
 {
@@ -7,9 +8,12 @@ local INIT_MAIN_MISC =
     "prefabs",
     "recipes",
     "recipes_sorting",
-    -- "scrapbook",
 }
 
 for _, v in pairs(INIT_MAIN_MISC) do
 	modimport("main/misc/net_"..v)
+end
+
+if MOD_SCRAPBOOK then
+    modimport("main/misc/net_scrapbook")
 end

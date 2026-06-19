@@ -37,6 +37,22 @@ local GENERAL_HOVER            = "General options for the entire Mod."
 local SEPARATOR_LABEL          = "- - - - - - - - - - - - - -"
 local SEPARATOR_HOVER          = "- - - - - - - - - - - - - -"
 
+local MOD_SCRAPBOOK_LABEL      = "Mod Scrapbook"
+local MOD_SCRAPBOOK_HOVER      = "Choose if the Mod's contents should be added to the Scrapbook."
+local MOD_SCRAPBOOK_OPTIONS    =
+{
+	{
+		description            = "Disabled",
+		hover                  = "Default Scrapbook.",
+		data                   = false
+	},
+	{
+		description            = "Enabled",
+		hover                  = "Mod's contents will be added to the Scrapbook.",
+		data                   = true
+	}
+}
+
 local AMOUNT_GIVEN_LABEL       = "Crafting Amount (Vanilla)"
 local AMOUNT_GIVEN_HOVER       = "Choose the amount given when crafting turfs. (Vanilla Turfs)."
 local AMOUNT_GIVEN_OPTIONS     =
@@ -246,6 +262,13 @@ configuration_options          =
 		hover                  = GENERAL_HOVER,
 		options                = NONE_OPTIONS,
 		default                = false
+	},
+	{
+		name                   = "MOD_SCRAPBOOK",
+		label                  = MOD_SCRAPBOOK_LABEL,
+		hover                  = MOD_SCRAPBOOK_HOVER,
+		options                = MOD_SCRAPBOOK_OPTIONS,
+		default                = true
 	},
 	{
 		name                   = "AMOUNT_GIVEN_VANILLA",

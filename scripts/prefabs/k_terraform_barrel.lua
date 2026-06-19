@@ -254,6 +254,7 @@ local function fn()
 	inst.components.terraformer.plow = false
 
 	inst:AddComponent("pickable")
+	inst.components.pickable.picksound = "yotb_2021/common/shrine/place"
 	inst.components.pickable:SetUp("kyno_terraform_barrel_item")
 	inst.components.pickable.onpickedfn = OnPicked
 
@@ -295,6 +296,8 @@ local function itemfn()
 	inst:AddTag("tile_deploy")
 	inst:AddTag("usedeploystring")
 	inst:AddTag("terraform_barrel")
+
+	inst.scrapbook_proxy = "kyno_terraform_barrel"
 
 	inst.pickupsound = "wood"
 	inst._custom_candeploy_fn = OnCanTerraformTile

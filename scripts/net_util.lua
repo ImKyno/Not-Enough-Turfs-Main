@@ -26,7 +26,7 @@ NETAddDockTile(WORLD_TILES.DOCKS_DRIFTWOOD)
 NETAddDockTile(WORLD_TILES.DOCKS_COBBLESTONES)
 
 -- Island Adventures Tiles.
-if TUNING.NET_IS_IAS_ENABLED then
+if NETRecipeAlreadyExists("chiminea", "limestone") then
 	NETAddDockTile(WORLD_TILES.OCEAN_CORAL)
 	NETAddDockTile(WORLD_TILES.OCEAN_CORAL_SHORE)
 	NETAddDockTile(WORLD_TILES.OCEAN_SHALLOW)
@@ -36,7 +36,7 @@ if TUNING.NET_IS_IAS_ENABLED then
 end
 
 -- Above the Clouds Tiles.
-if TUNING.NET_IS_ABC_ENABLED or TUNING.NET_IS_IAS_ENABLED then
+if NETRecipeAlreadyExists("cork_bat", "corkchest") then
 	NETAddDockTile(WORLD_TILES.LILYPOND)
 	NETAddDockTile(WORLD_TILES.LILYPOND_SHORE)
 end
