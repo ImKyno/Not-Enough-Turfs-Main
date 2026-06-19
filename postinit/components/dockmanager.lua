@@ -1,6 +1,7 @@
 local _G               = GLOBAL
 local require          = _G.require
 local WORLD_TILES      = _G.WORLD_TILES
+local UpvalueHacker    = require("tools/net_upvaluehacker")
 
 local CUSTOM_DOCKS     =
 {
@@ -44,9 +45,12 @@ AddComponentPostInit("dockmanager", function(self)
 		local lootdata = CUSTOM_DOCKS[tile]
 
 		if lootdata ~= nil then
+			local under_tile = _G.TheWorld.components.undertile:GetTileUnderneath(tx, ty)
+
 			-- We replace the custom docks with regular ones while breaking because the stupid component
 			-- is hardcoded and we can't add tiles without hacky methods.
 			_G.TheWorld.Map:SetTile(tx, ty, WORLD_TILES.MONKEY_DOCK)
+			_G.TheWorld.components.undertile:SetTileUnderneath(tx, ty, under_tile)
 
 			local result = _DestroyDockAtPoint(self, x, y, z, true)
 

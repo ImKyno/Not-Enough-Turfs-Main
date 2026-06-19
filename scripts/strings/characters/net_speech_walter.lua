@@ -1,5 +1,12 @@
 local WALTER = STRINGS.CHARACTERS.WALTER
 
+WALTER.DESCRIBE.KYNO_TERRAFORM_BARREL =
+{
+	GENERIC = "Okay, rule number one: don’t drop it.",
+	IGNITED = "Everyone, get away from it!",
+}
+WALTER.DESCRIBE.KYNO_TERRAFORM_BARREL_ITEM = "This is way above scouting grade..."
+
 WALTER.DESCRIBE.TURF_TYPE_ROCKY = "Looks like a good place to find minerals."
 WALTER.DESCRIBE.TURF_TYPE_STONE = "Looks like the foundation of an old settlement."
 WALTER.DESCRIBE.TURF_TYPE_GRASS = "A great spot to pitch a tent."

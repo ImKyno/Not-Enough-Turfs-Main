@@ -1,5 +1,12 @@
 local WOODIE = STRINGS.CHARACTERS.WOODIE
 
+WOODIE.DESCRIBE.KYNO_TERRAFORM_BARREL =
+{
+	GENERIC = "That’s a real bad idea sittin’ there, eh?",
+	IGNITED = "Uh oh. That’s not good.",
+}
+WOODIE.DESCRIBE.KYNO_TERRAFORM_BARREL_ITEM = "I do NOT like carrying this thing."
+
 WOODIE.DESCRIBE.TURF_TYPE_ROCKY = "Not much grows out here, eh?"
 WOODIE.DESCRIBE.TURF_TYPE_STONE = "Somebody put a lotta work into this, eh?"
 WOODIE.DESCRIBE.TURF_TYPE_GRASS = "Now this feels like home, eh?"

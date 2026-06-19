@@ -1,5 +1,12 @@
 local WEBBER = STRINGS.CHARACTERS.WEBBER
 
+WEBBER.DESCRIBE.KYNO_TERRAFORM_BARREL =
+{
+	GENERIC = "We really shouldn't stand too close to that...",
+	IGNITED = "RUN!!!",
+}
+WEBBER.DESCRIBE.KYNO_TERRAFORM_BARREL_ITEM = "We hope this doesn't explode on us!"
+
 WEBBER.DESCRIBE.TURF_TYPE_ROCKY = "Ouch! It's rough on our feet."
 WEBBER.DESCRIBE.TURF_TYPE_STONE = "It's smoother than most ground."
 WEBBER.DESCRIBE.TURF_TYPE_GRASS = "It's soft and tickly!"

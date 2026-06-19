@@ -1,5 +1,12 @@
 local WOLFGANG = STRINGS.CHARACTERS.WOLFGANG
 
+WOLFGANG.DESCRIBE.KYNO_TERRAFORM_BARREL =
+{
+	GENERIC = "Tiny barrel is very scary!",
+	IGNITED = "Boom makes Wolfgang jump!",
+}
+WOLFGANG.DESCRIBE.KYNO_TERRAFORM_BARREL_ITEM = "Wolfgang carries dangerous tiny ka-boom."
+
 WOLFGANG.DESCRIBE.TURF_TYPE_ROCKY = "Ground is almost as tough as Wolfgang!"
 WOLFGANG.DESCRIBE.TURF_TYPE_STONE = "Strong ground for strong feet!"
 WOLFGANG.DESCRIBE.TURF_TYPE_GRASS = "Soft ground for mighty feet!"

@@ -2,9 +2,6 @@ local _G         = GLOBAL
 local STRINGS    = _G.STRINGS
 local AllRecipes = _G.AllRecipes
 
-print("SW ENABLED", _G.NETRecipeAlreadyExists("chiminea", "limestone"), TUNING.NET_IS_IAS_ENABLED)
-print("HAM ENABLED", _G.NETRecipeAlreadyExists("cork_bat", "corkchest"), TUNING.NET_IS_ABC_ENABLED)
-
 -- Shipwrecked Turfs.
 if not _G.NETRecipeAlreadyExists("chiminea", "limestone") and not TUNING.NET_IS_IAS_ENABLED then
     STRINGS.NAMES.TURF_MAGMAFIELD = "Magma Turf"

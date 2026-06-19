@@ -1,5 +1,12 @@
 local WILSON = STRINGS.CHARACTERS.GENERIC
 
+WILSON.DESCRIBE.KYNO_TERRAFORM_BARREL =
+{
+	GENERIC = "It's filled with gunpowder! I better watch my step around it.",
+	IGNITED = "Bomb voyage!",
+}
+WILSON.DESCRIBE.KYNO_TERRAFORM_BARREL_ITEM = "I need to be careful while carrying this."
+
 WILSON.DESCRIBE.TURF_TYPE_ROCKY = "A rather rugged type of terrain."
 WILSON.DESCRIBE.TURF_TYPE_STONE = "A neatly laid stone surface."
 WILSON.DESCRIBE.TURF_TYPE_GRASS = "A healthy patch of grassy ground."

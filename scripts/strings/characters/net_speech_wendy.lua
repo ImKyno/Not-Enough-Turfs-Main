@@ -1,5 +1,12 @@
 local WENDY = STRINGS.CHARACTERS.WENDY
 
+WENDY.DESCRIBE.KYNO_TERRAFORM_BARREL =
+{
+	GENERIC = "It promises destruction in a quiet, inevitable way.",
+	IGNITED = "Even silence ends in explosion.",
+}
+WENDY.DESCRIBE.KYNO_TERRAFORM_BARREL_ITEM = "A fragile vessel of ruin."
+
 WENDY.DESCRIBE.TURF_TYPE_ROCKY = "The earth wears a coat of stone."
 WENDY.DESCRIBE.TURF_TYPE_STONE = "Cold, silent, and enduring."
 WENDY.DESCRIBE.TURF_TYPE_GRASS = "A fragile blanket over the earth."

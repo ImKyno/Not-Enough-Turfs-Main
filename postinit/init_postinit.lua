@@ -3,6 +3,7 @@ local _G = GLOBAL
 local INIT_POSTINIT =
 {
 	"sim",
+	"actions",
 	"strings",
 }
 

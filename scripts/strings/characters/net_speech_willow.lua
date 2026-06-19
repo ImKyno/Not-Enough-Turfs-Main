@@ -1,5 +1,12 @@
 local WILLOW = STRINGS.CHARACTERS.WILLOW
 
+WILLOW.DESCRIBE.KYNO_TERRAFORM_BARREL =
+{
+	GENERIC = "This thing looks like fun waiting to happen.",
+	IGNITED = "Yes! FINALLY!",
+}
+WILLOW.DESCRIBE.KYNO_TERRAFORM_BARREL_ITEM = "Careful? You mean exciting, right?"
+
 WILLOW.DESCRIBE.TURF_TYPE_ROCKY = "Just a bunch of boring rocks."
 WILLOW.DESCRIBE.TURF_TYPE_STONE = "It won't catch fire."
 WILLOW.DESCRIBE.TURF_TYPE_GRASS = "Nature's kindling."

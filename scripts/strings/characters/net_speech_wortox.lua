@@ -1,5 +1,12 @@
 local WORTOX = STRINGS.CHARACTERS.WORTOX
 
+WORTOX.DESCRIBE.KYNO_TERRAFORM_BARREL =
+{
+	GENERIC = "Oh my, what delightful chaos you promise, hyuyu!",
+	IGNITED = "Now THAT is entertainment!",
+}
+WORTOX.DESCRIBE.KYNO_TERRAFORM_BARREL_ITEM = "Careful, careful... or boom, hyuyu!"
+
 WORTOX.DESCRIBE.TURF_TYPE_ROCKY = "The ground seems rather grumpy, hyuyu!"
 WORTOX.DESCRIBE.TURF_TYPE_STONE = "Someone tamed the wilderness, hyuyu!"
 WORTOX.DESCRIBE.TURF_TYPE_GRASS = "The ground grows a fuzzy coat, hyuyu!"

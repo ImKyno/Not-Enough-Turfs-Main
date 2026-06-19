@@ -1,5 +1,12 @@
 local WANDA = STRINGS.CHARACTERS.WANDA
 
+WANDA.DESCRIBE.KYNO_TERRAFORM_BARREL =
+{
+	GENERIC = "One mistake away from disaster.",
+	IGNITED = "And there it goes... I saw that coming.",
+}
+WANDA.DESCRIBE.KYNO_TERRAFORM_BARREL_ITEM = "I’d rather not carry future regrets."
+
 WANDA.DESCRIBE.TURF_TYPE_ROCKY = "A timeless expanse of stone."
 WANDA.DESCRIBE.TURF_TYPE_STONE = "Stone tends to outlast its builders."
 WANDA.DESCRIBE.TURF_TYPE_GRASS = "It grows, withers, and grows again."

@@ -1,5 +1,12 @@
 local WINONA = STRINGS.CHARACTERS.WINONA
 
+WINONA.DESCRIBE.KYNO_TERRAFORM_BARREL =
+{
+	GENERIC = "That’s a serious safety hazard.",
+	IGNITED = "And that’s why we don’t skip inspections.",
+}
+WINONA.DESCRIBE.KYNO_TERRAFORM_BARREL_ITEM = "I’m not comfortable carrying this around."
+
 WINONA.DESCRIBE.TURF_TYPE_ROCKY = "Solid footing. I can work with that."
 WINONA.DESCRIBE.TURF_TYPE_STONE = "Good craftsmanship. Nice and sturdy."
 WINONA.DESCRIBE.TURF_TYPE_GRASS = "Can't get much more natural than this."

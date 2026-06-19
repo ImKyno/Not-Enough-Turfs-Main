@@ -56,6 +56,8 @@ end
 
 local MODDED_TURFS =
 {
+	dock_kit_cobblestones    = "ROAD",
+
 	turf_magmafield          = "ROCKY",
 	turf_volcano             = "ROCKY",
 	turf_volcano_rock        = "ROCKY",

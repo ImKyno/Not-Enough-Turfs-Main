@@ -47,6 +47,7 @@ if TUNING.NET_DEBUG_MODE then
 	{
 		{ name = "AMOUNT_GIVEN",      default = 4     },
 		{ name = "AMOUNT_GIVEN_MOD",  default = 4     },
+		{ name = "TERRAFORMBARREL",   default = false },
 
 		{ name = "TURF1_SLOWDOWN",    default = false },
 		{ name = "TURF2_SLOWDOWN",    default = false },

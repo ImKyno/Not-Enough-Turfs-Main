@@ -1,5 +1,12 @@
 local WURT = STRINGS.CHARACTERS.WURT
 
+WURT.DESCRIBE.KYNO_TERRAFORM_BARREL =
+{
+	GENERIC = "Big boom barrel, florp!",
+	IGNITED = "OH NOOO!",
+}
+WURT.DESCRIBE.KYNO_TERRAFORM_BARREL_ITEM = "Me scared of this, florp..."
+
 WURT.DESCRIBE.TURF_TYPE_ROCKY = "Too many rocks, florp."
 WURT.DESCRIBE.TURF_TYPE_STONE = "Fancy rock floor, florp."
 WURT.DESCRIBE.TURF_TYPE_GRASS = "Soft on feet, florp."

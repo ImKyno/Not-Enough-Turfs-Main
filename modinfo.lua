@@ -89,6 +89,22 @@ local AMOUNT_GIVEN_MOD_OPTIONS =
 	}
 }
 
+local TERRAFORMBARREL_LABEL    = "Gunpowder Barrel"
+local TERRAFORMBARREL_HOVER    = "Choose if Gunpowder Barrel can be crafted and used by everyone."
+local TERRAFORMBARREL_OPTIONS  =
+{
+	{
+		description            = "Disabled",
+		hover                  = "Gunpowder Barrel can't be crafted and used to terraform the world.",
+		data                   = false
+	},
+	{
+		description            = "Enabled",
+		hover                  = "Gunpowder Barrel can be crafted and used to terraform the world.",
+		data                   = true
+	}
+}
+
 local TURFEFFECTS_LABEL        = "Turf Effects Options"
 local TURFEFFECTS_HOVER        = "General options for Turf Effects."
 
@@ -244,6 +260,13 @@ configuration_options          =
 		hover                  = AMOUNT_GIVEN_MOD_HOVER,
 		options                = AMOUNT_GIVEN_OPTIONS,
 		default                = 4
+	},
+	{
+		name                   = "TERRAFORM_BARREL",
+		label                  = TERRAFORMBARREL_LABEL,
+		hover                  = TERRAFORMBARREL_HOVER,
+		options                = TERRAFORMBARREL_OPTIONS,
+		default                = false
 	},
 	{
 		name                   = "TURFEFFECTS",

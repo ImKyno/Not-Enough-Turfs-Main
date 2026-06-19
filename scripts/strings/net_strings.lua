@@ -14,6 +14,11 @@ STRINGS.UI.CRAFTING.NEEDSTURFMAKER_TWO = "Use a Terra Firma Shaper to build a pr
 STRINGS.NAMES.KYNO_TERRAFORMER = "Terra Firma Shaper"
 STRINGS.RECIPE_DESC.KYNO_TERRAFORMER = "Terraform the world one piece at a time."
 
+STRINGS.KYNO_TERRAFORM_BARREL_ACTION = "Disarm %s"
+STRINGS.NAMES.KYNO_TERRAFORM_BARREL = "Gunpowder Barrel"
+STRINGS.NAMES.KYNO_TERRAFORM_BARREL_ITEM = "Gunpowder Barrel"
+STRINGS.RECIPE_DESC.KYNO_TERRAFORM_BARREL_ITEM = "Strong enough to terraform the landscape."
+
 -- Shipwrecked and Hamlet Turf strings are in postinit/net_strings.lua
 -- Because other mods might already have them and their own strings...
 

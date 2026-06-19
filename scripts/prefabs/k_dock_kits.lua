@@ -1,3 +1,5 @@
+require("net_util")
+
 local DOCK_KIT_COMMON = require("prefabs/k_dock_kit_common")
 
 local assets =
@@ -16,55 +18,20 @@ local prefabs =
 	"dock_damage",
 }
 
-local VALID_TILES =
-{
-	[WORLD_TILES.FARMING_SOIL]        = true,
-	[WORLD_TILES.MONKEY_DOCK]         = true,
-	[WORLD_TILES.DOCKS_DRIFTWOOD]     = true,
-	[WORLD_TILES.DOCKS_COBBLESTONES]  = true,
-}
-
--- Shipwrecked Tiles.
-if TUNING.NET_IS_IAS_ENABLED then
-	for _, tile in ipairs({
-		WORLD_TILES.OCEAN_SHALLOW,
-		WORLD_TILES.OCEAN_SHALLOW_SHORE,
-		WORLD_TILES.MANGROVE,
-		WORLD_TILES.MANGROVE_SHORE,
-		WORLD_TILES.OCEAN_CORAL,
-		WORLD_TILES.OCEAN_CORAL_SHORE,
-	}) do
-		if tile ~= nil then
-			VALID_TILES[tile] = true
-		end
-	end
-end
-
--- Hamlet Tiles.
-if TUNING.NET_IS_IAS_ENABLED or TUNING.NET_IS_ABC_ENABLED then
-    for _, tile in ipairs({
-        WORLD_TILES.LILYPOND,
-        WORLD_TILES.LILYPOND_SHORE,
-    }) do
-        if tile ~= nil then
-            VALID_TILES[tile] = true
-        end
-    end
-end
-
 local function IsPermanentOrDockFilterFn(tileid)
 	if tileid == nil then
 		return false
 	end
 
-	return IsLandTile(tileid) and (not TileGroupManager:IsTemporaryTile(tileid) or VALID_TILES[tileid])
+	return IsLandTile(tileid) and (not TileGroupManager:IsTemporaryTile(tileid) or NET_VALID_DOCK_TILES[tileid])
 end
 
 local function CLIENT_CanDeployDockKit(inst, pt, mouseover, deployer, rotation)
 	local x, y, z = pt:Get()
 	local tile = TheWorld.Map:GetTileAtPoint(x, 0, z)
 
-	if tile ~= WORLD_TILES.OCEAN_COASTAL_SHORE and tile ~= WORLD_TILES.OCEAN_COASTAL then
+	-- if tile ~= WORLD_TILES.OCEAN_COASTAL_SHORE and tile ~= WORLD_TILES.OCEAN_COASTAL then
+	if tile == nil or not NET_VALID_DOCK_TILES[tile] then
 		return false
 	end
 

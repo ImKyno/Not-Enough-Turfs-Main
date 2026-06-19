@@ -31,6 +31,7 @@ AddMinimapAtlas("images/minimapimages/net_minimapimages.xml")
 local NET_ICONS =
 {
 	"kyno_terraformer",
+	"kyno_terraform_barrel_item",
 
 	"dock_kit_driftwood",
 	"dock_kit_cobblestones",

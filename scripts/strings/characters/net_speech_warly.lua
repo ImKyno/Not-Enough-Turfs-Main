@@ -1,5 +1,12 @@
 local WARLY = STRINGS.CHARACTERS.WARLY
 
+WARLY.DESCRIBE.KYNO_TERRAFORM_BARREL =
+{
+	GENERIC = "I prefer my ingredients not explosive.",
+	IGNITED = "Absolutely not part of the recipe!",
+}
+WARLY.DESCRIBE.KYNO_TERRAFORM_BARREL_ITEM = "This is not kitchen-safe."
+
 WARLY.DESCRIBE.TURF_TYPE_ROCKY = "Not exactly fertile soil."
 WARLY.DESCRIBE.TURF_TYPE_STONE = "A clean surface for civilized living."
 WARLY.DESCRIBE.TURF_TYPE_GRASS = "A promising place to grow ingredients."

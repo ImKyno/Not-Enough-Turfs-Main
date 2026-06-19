@@ -1,5 +1,13 @@
 local WAXWELL = STRINGS.CHARACTERS.WAXWELL
 
+WAXWELL.DESCRIBE.KYNO_TERRAFORM_BARREL =
+{
+	GENERIC = "A crude instrument of controlled destruction.",
+	IGNITED = "How predictably dramatic.",
+}
+
+WAXWELL.DESCRIBE.KYNO_TERRAFORM_BARREL_ITEM = "Even I know better than to drop this."
+
 WAXWELL.DESCRIBE.TURF_TYPE_ROCKY = "Crude and unrefined. How fitting."
 WAXWELL.DESCRIBE.TURF_TYPE_STONE = "A small improvement over dirt."
 WAXWELL.DESCRIBE.TURF_TYPE_GRASS = "A little too rustic for my tastes."

@@ -1,5 +1,12 @@
 local WICKERBOTTOM = STRINGS.CHARACTERS.WICKERBOTTOM
 
+WICKERBOTTOM.DESCRIBE.KYNO_TERRAFORM_BARREL =
+{
+	GENERIC = "A volatile container of compressed explosive material.",
+	IGNITED = "The chemical reaction is now irreversible.",
+}
+WICKERBOTTOM.DESCRIBE.KYNO_TERRAFORM_BARREL_ITEM = "It requires extremely careful handling."
+
 WICKERBOTTOM.DESCRIBE.TURF_TYPE_ROCKY = "A terrain dominated by exposed stone."
 WICKERBOTTOM.DESCRIBE.TURF_TYPE_STONE = "A carefully constructed stone pavement."
 WICKERBOTTOM.DESCRIBE.TURF_TYPE_GRASS = "A common grassland ecosystem."

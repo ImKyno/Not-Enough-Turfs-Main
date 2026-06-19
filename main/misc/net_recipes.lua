@@ -8,6 +8,7 @@ local TechTree             = require("techtree")
 local RecipeFilter         = require("recipes_filter")
 
 local AMOUNT_GIVEN_MODDED  = GetModConfigData("AMOUNT_GIVEN_MODDED")
+local TERRAFORM_BARREL     = GetModConfigData("TERRAFORM_BARREL")
 
 local ModAtlas             = "images/inventoryimages/net_inventoryimages.xml"
 local DefaultAtlas3        = "images/inventoryimages3.xml"
@@ -77,6 +78,18 @@ AddRecipe2("kyno_terraformer", {Ingredient("moonrocknugget", 1), Ingredient("cut
 	},
 	{"PROTOTYPERS", "DECOR", "STRUCTURES"}
 )
+
+if TERRAFORM_BARREL then
+	AddRecipe2("kyno_terraform_barrel_item", {Ingredient("gunpowder", 2), Ingredient("boards", 2), Ingredient("rope", 2)}, TECH.SCIENCE_TWO,
+		{
+			atlas       = ModAtlas,
+			image       = "kyno_terraform_barrel_item.tex",
+		},
+		{"WEAPONS"}
+	)
+
+	AddDeconstructRecipe("kyno_terraform_barrel", {Ingredient("gunpowder", 2), Ingredient("boards", 2), Ingredient("rope", 2)})
+end
 
 -- Shipwrecked Turf Recipes.
 if not _G.NETRecipeAlreadyExists("chiminea", "limestone") and not TUNING.NET_IS_IAS_ENABLED then

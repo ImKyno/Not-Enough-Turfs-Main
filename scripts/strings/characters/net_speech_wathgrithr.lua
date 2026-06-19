@@ -1,5 +1,12 @@
 local WATHGRITHR = STRINGS.CHARACTERS.WATHGRITHR
 
+WATHGRITHR.DESCRIBE.KYNO_TERRAFORM_BARREL =
+{
+	GENERIC = "A vessel of glorious explosive fate!",
+	IGNITED = "EXPLOSIOOOOOON!",
+}
+WATHGRITHR.DESCRIBE.KYNO_TERRAFORM_BARREL_ITEM = "I shall carry this weapon of doom with honor!"
+
 WATHGRITHR.DESCRIBE.TURF_TYPE_ROCKY = "A stony battlefield worthy of warriors!"
 WATHGRITHR.DESCRIBE.TURF_TYPE_STONE = "Stone fit for a mighty stronghold!"
 WATHGRITHR.DESCRIBE.TURF_TYPE_GRASS = "The earth wears a verdant cloak!"
