@@ -60,8 +60,6 @@ local NET_PROTOTYPERS       =
 		icon_atlas          = CraftingFilterAtlas,
 		icon_image          = "kyno_tab_turfs.tex",
 		is_crafting_station = false,
-		action_str          = "TERRAFORMER",
-		filter_text         = _G.STRINGS.UI.CRAFTING_FILTERS.TERRAFORMER,
 	},
 }
 

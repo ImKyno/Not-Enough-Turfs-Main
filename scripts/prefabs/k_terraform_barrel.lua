@@ -131,9 +131,7 @@ local function OnExplode(inst)
 	local pt = inst:GetPosition()
 	local tile = TheWorld.Map:GetTileAtPoint(pt.x, pt.y, pt.z)
 
-	if tile == WORLD_TILES.DIRT then
-		OnForceTerraform(inst, pt, tile)
-	elseif TheWorld:HasTag("island") and tile == WORLD_TILES.BEACH then -- Our beach turf can be dug.
+	if tile == WORLD_TILES.DIRT or (TheWorld:HasTag("island") and tile == WORLD_TILES.BEACH) then
 		OnForceTerraform(inst, pt, tile)
 	else
 		if inst.components.terraformer ~= nil then
@@ -167,23 +165,23 @@ end
 -- Item function.
 local function OnCanTerraformTile(inst, pt, mouseover, deployer)
 	local x, z = pt.x, pt.z
-	local map = TheWorld.Map
-	local tile = map:GetTileAtPoint(x, 0, z)
+	local tile = TheWorld.Map:GetTileAtPoint(x, 0, z)
 
-	-- Same bypass as above to place on turfs that can't be dug.
-	if tile == WORLD_TILES.DIRT then
+	--[[
+	if tile == WORLD_TILES.DIRT or (TheWorld:HasTag("island") and tile == WORLD_TILES.BEACH) then
 		return true
 	end
 
-	if TheWorld:HasTag("island") and tile == WORLD_TILES.BEACH then
-		return true
-	end
-
-	if not map:CanTerraformAtPoint(x, 0, z)
+	if not TheWorld.Map:CanTerraformAtPoint(x, 0, z)
 	or tile == WORLD_TILES.FARMING_SOIL
 	or tile == WORLD_TILES.MONKEY_DOCK
 	or tile == WORLD_TILES.DOCKS_DRIFTWOOD
 	or tile == WORLD_TILES.DOCKS_COBBLESTONES then
+		return false
+	end
+	]]--
+
+	if not TheWorld.Map:CanPlantAtPoint(x, 0, z) or TheWorld.Map:GetTileAtPoint(x, 0, z) == WORLD_TILES.FARMING_SOIL then
 		return false
 	end
 
