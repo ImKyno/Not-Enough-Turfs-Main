@@ -1,11 +1,11 @@
 name                           = "Not Enough Turfs"
-version                        = "1.1-B"
+version                        = "1.2-B"
 
 description                    =
 [[
 󰀪 Adds over 100 brand new Turfs to craft and use in your world!
 
-󰀌 Mod Version: 1.1-B
+󰀌 Mod Version: 1.2-B
 󰀧 Update: Returfed!
 ]]
 
@@ -17,7 +17,7 @@ dst_compatible                 = true
 all_clients_require_mod        = true
 client_only_mod                = false
 
-server_filter_tags             = {"Not Enough Turfs", "NET", "Turfs", "Entertainment", "Kyno"}
+server_filter_tags             = { "Not Enough Turfs", "NET", "Turfs", "Entertainment", "Kyno" }
 
 icon                           = "ModiconNET.tex"
 icon_atlas                     = "ModiconNET.xml"

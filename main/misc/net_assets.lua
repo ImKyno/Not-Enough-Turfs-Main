@@ -149,7 +149,8 @@ local NET_ICONS =
 }
 
 for k, v in pairs(NET_ICONS) do
-	RegisterInventoryItemAtlas("images/inventoryimages/net_inventoryimages.xml", v..".tex")
+	RegisterInventoryItemAtlas(resolvefilepath("images/inventoryimages/net_inventoryimages.xml"), v..".tex")
+	RegisterInventoryItemAtlas(resolvefilepath("images/inventoryimages/net_inventoryimages.xml"), _G.hash(v..".tex"))
 end
 
 local NET_ICONS_SCRAPBOOK =
@@ -160,26 +161,4 @@ local NET_ICONS_SCRAPBOOK =
 
 for k, v in pairs(NET_ICONS_SCRAPBOOK) do
 	RegisterScrapbookIconAtlas("images/scrapbookimages/net_scrapbookimages.xml", v..".tex")
-end
-
-local _GetInventoryItemAtlas = _G.GetInventoryItemAtlas
-_G.GetInventoryItemAtlas = function(name, ...)
-	local myatlas = resolvefilepath("images/inventoryimages/net_inventoryimages.xml")
-
-	if _G.TheSim:AtlasContains(myatlas, name) then
-		return myatlas
-	end
-
-	return _GetInventoryItemAtlas(name, ...)
-end
-
-local _GetScrapbookIconAtlas_Internal = _G.GetScrapbookIconAtlas_Internal
-_G.GetScrapbookIconAtlas_Internal = function(name, ...)
-	local myatlas = resolvefilepath("images/scrapbookimages/net_scrapbookimages.xml")
-
-	if _G.TheSim:AtlasContains(myatlas, name) then
-		return myatlas
-	end
-
-	return _GetScrapbookIconAtlas_Internal(name, ...)
 end
