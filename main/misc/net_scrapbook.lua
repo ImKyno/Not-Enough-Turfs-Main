@@ -180,6 +180,39 @@ local CUSTOM3_TURFS =
 	["turf_stickyicker"]         = { tiletype = "STICKY"  },
 	["turf_fakedocks"]           = { tiletype = "WOOD"    },
 	["turf_fakedocks_driftwood"] = { tiletype = "WOOD"    },
+	["turf_woodgreen"]           = { tiletype = "WOOD"    },
+	["turf_woodred"]             = { tiletype = "WOOD"    },
+	["turf_woodpurple"]          = { tiletype = "WOOD"    },
+	["turf_woodblack"]           = { tiletype = "WOOD"    },
+	["turf_mossybrick"]          = { tiletype = "STONE"   },
+	["turf_goldroad"]            = { tiletype = "ROAD"    },
+	["turf_mosaic_white"]        = { tiletype = "STONE"   },
+	["turf_mosaic_black"]        = { tiletype = "STONE"   },
+	["turf_redgrass"]            = { tiletype = "FOREST"  },
+	["turf_purplegrass"]         = { tiletype = "FOREST"  },
+	["turf_turquoise_deciduous"] = { tiletype = "GRASS"   },
+	["turf_manure"]              = { tiletype = "MUDDY"   },
+	["turf_rosecarpet"]          = { tiletype = "CARPET"  },
+	["turf_limecarpet"]          = { tiletype = "CARPET"  },
+	["turf_flowercarpet"]        = { tiletype = "CARPET"  },
+	["turf_darkrosecarpet"]      = { tiletype = "CARPET"  },
+	["turf_mudwet"]              = { tiletype = "MUDDY"   },
+	["turf_quicksand"]           = { tiletype = "SAND"    },
+	["turf_frozenfloor"]         = { tiletype = "FROZEN"  },
+	["turf_thulecite"]           = { tiletype = "ANCIENT" },
+	["turf_thulecite2"]          = { tiletype = "ANCIENT" },
+	["turf_thulecite3"]          = { tiletype = "ANCIENT" },
+	["turf_toadstoolrug"]        = { tiletype = "TOAD"    },
+}
+
+local CUSTOM4_TURFS =
+{
+	["turf_frozenfloor"]         = { tiletype = "FROZEN"  },
+	["turf_thulecite"]           = { tiletype = "ANCIENT" },
+	["turf_thulecite2"]          = { tiletype = "ANCIENT" },
+	["turf_thulecite3"]          = { tiletype = "ANCIENT" },
+	["turf_toadstoolrug"]        = { tiletype = "CARPET"  },
+	["turf_moonrockfloor"]       = { tiletype = "STONE"   },
 }
 
 local INTERIOR_TURFS =
@@ -367,6 +400,27 @@ for name, data in pairs(CUSTOM3_TURFS) do
 	}
 end
 
+for name, data in pairs(CUSTOM4_TURFS) do
+	NET_SCRAPBOOK_TURFS[name] =
+	{
+		name        = name,
+		speechname  = "turf_type_"..string.lower(data.tiletype),
+		type        = "item",
+		subcat      = "modturf",
+		tex         = name..".tex",
+		prefab      = name,
+		fueltype    = "BURNABLE",
+		fuelvalue   = TUNING.TINY_FUEL,
+		stacksize   = TUNING.STACK_SIZE_MEDITEM,
+		burnable    = true,
+		bank        = "kyno_turfs_custom4",
+		build       = "kyno_turfs_custom4",
+		anim        = name:gsub("^turf_", ""),
+		deps        = { "kyno_terraformer" },
+		specialinfo = "TURF",
+	}
+end
+
 for name, data in pairs(INTERIOR_TURFS) do
 	NET_SCRAPBOOK_TURFS[name] =
 	{
@@ -415,6 +469,13 @@ end
 
 if GetModConfigData("TURF3_SLOWDOWN") then
 	OVERRIDES_TURFS.turf_stickyicker =
+	{
+		specialinfo = "TURF_STICKY",
+	}
+end
+
+if GetModConfigData("TURF4_SLOWDOWN") then
+	OVERRIDES_TURFS.turf_quicksand =
 	{
 		specialinfo = "TURF_STICKY",
 	}

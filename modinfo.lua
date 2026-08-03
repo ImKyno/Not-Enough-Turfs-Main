@@ -202,6 +202,32 @@ local TURF3_SLOWDOWN_OPTIONS   =
 	}
 }
 
+local TURF4_SLOWDOWN_LABEL     = "Quicksand Ground Slowdown"
+local TURF4_SLOWDOWN_HOVER     = "Choose if Quicksand Ground can slowdown entities."
+local TURF4_SLOWDOWN_OPTIONS   =
+{
+	{
+		description            = "Disabled",
+		hover                  = "Quicksand will not have movement speed modifier.",
+		data                   = false
+	},
+	{
+		description            = "30% Slowdown",
+		hover                  = "Quicksand will reduce movement speed by 30%.",
+		data                   = 0.30
+	},
+	{
+		description            = "40% Slowdown",
+		hover                  = "Quicksand will reduce movement speed by 40%.",
+		data                   = 0.40
+	},
+	{
+		description            = "50% Slowdown",
+		hover                  = "Quicksand will reduce movement speed by 50%.",
+		data                   = 0.50
+	}
+}
+
 local TURF1_TEMPERATURE_LABEL     = "Snowfallen Ground Temperature"
 local TURF1_TEMPERATURE_HOVER     = "Choose if Snowfallen Ground can decrease the player's temperature."
 local TURF1_TEMPERATURE_OPTIONS   =
@@ -317,6 +343,13 @@ configuration_options          =
 		label                  = TURF3_SLOWDOWN_LABEL,
 		hover                  = TURF3_SLOWDOWN_HOVER,
 		options                = TURF3_SLOWDOWN_OPTIONS,
+		default                = false
+	},
+	{
+		name                   = "TURF4_SLOWDOWN",
+		label                  = TURF4_SLOWDOWN_LABEL,
+		hover                  = TURF4_SLOWDOWN_HOVER,
+		options                = TURF4_SLOWDOWN_OPTIONS,
 		default                = false
 	},
 	{

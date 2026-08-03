@@ -44,6 +44,12 @@ local IMMUNE_SLOWDOWN_TAGS =
 		shadowminion    = true,
 		shadowcreature  = true,
 	},
+
+	[WORLD_TILES.QUICKSAND] =
+	{
+		shadowminion    = true,
+		shadowcreature  = true,
+	},
 }
 
 local WORLD_TILES_CONFIG =
@@ -51,6 +57,7 @@ local WORLD_TILES_CONFIG =
 	{ WORLD_TILES.STICKYWEBBING, "TURF1_SLOWDOWN" },
 	{ WORLD_TILES.STICKYHONEY,   "TURF2_SLOWDOWN" },
 	{ WORLD_TILES.STICKYICKER,   "TURF3_SLOWDOWN" },
+	{ WORLD_TILES.QUICKSAND,     "TURF4_SLOWDOWN" },
 }
 
 local SLOWDOWN_WORLD_TILES = {}

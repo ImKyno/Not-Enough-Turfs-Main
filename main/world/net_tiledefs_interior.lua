@@ -232,6 +232,7 @@ AddTile("GARDENPATH", "LAND",
 		mudsound        = "dontstarve/movement/run_mud",
 		flooring        = false,
 		hard            = false,
+		roadways        = true,
 	},
 	{
 		name            = "map_edge",

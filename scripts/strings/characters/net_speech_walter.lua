@@ -27,3 +27,5 @@ WALTER.DESCRIBE.TURF_TYPE_FROZEN = "Looks like it's been frozen for a long time.
 WALTER.DESCRIBE.TURF_TYPE_METAL = "Feels like something from an old workshop."
 WALTER.DESCRIBE.TURF_TYPE_GARDEN = "A garden always makes a place feel like home."
 WALTER.DESCRIBE.TURF_TYPE_STICKY = "Feels like walking through spilled syrup."
+WALTER.DESCRIBE.TURF_TYPE_MUDDY = "It's all wet and soggy."
+WALTER.DESCRIBE.TURF_TYPE_TOAD = "This is such a cool carpet!"

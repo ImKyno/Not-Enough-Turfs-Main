@@ -27,3 +27,5 @@ WINONA.DESCRIBE.TURF_TYPE_FROZEN = "Careful. One wrong step and you're on your b
 WINONA.DESCRIBE.TURF_TYPE_METAL = "Now that's a solid piece of work."
 WINONA.DESCRIBE.TURF_TYPE_GARDEN = "Looks like somebody put in the work."
 WINONA.DESCRIBE.TURF_TYPE_STICKY = "Watch your footing."
+WINONA.DESCRIBE.TURF_TYPE_MUDDY = "Not very solid for building contraptions."
+WINONA.DESCRIBE.TURF_TYPE_TOAD = "All this work for some nice rugs. I can take it."

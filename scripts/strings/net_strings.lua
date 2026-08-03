@@ -204,6 +204,81 @@ STRINGS.RECIPE_DESC.TURF_FAKEDOCKS = "Build your own junkyard!"
 STRINGS.NAMES.TURF_FAKEDOCKS_DRIFTWOOD = "Scrappy Driftwood Flooring"
 STRINGS.RECIPE_DESC.TURF_FAKEDOCKS_DRIFTWOOD = "Build your own driftwood playground."
 
+STRINGS.NAMES.TURF_WOODGREEN = "Greenwood Flooring"
+STRINGS.RECIPE_DESC.TURF_WOODGREEN = "A touch of nature."
+
+STRINGS.NAMES.TURF_WOODRED = "Redwood Flooring"
+STRINGS.RECIPE_DESC.TURF_WOODRED = "A red bath of wood."
+
+STRINGS.NAMES.TURF_WOODBLUE = "Cerulean Wooden Floring"
+STRINGS.RECIPE_DESC.TURF_WOODBLUE = "A pinch of blue to the wooden surface."
+
+STRINGS.NAMES.TURF_WOODPURPLE = "Lavender Wooden Flooring"
+STRINGS.RECIPE_DESC.TURF_WOODPURPLE = "Midnight wooden planks for the darkest nights."
+
+STRINGS.NAMES.TURF_WOODBLACK = "Darkwood Flooring"
+STRINGS.RECIPE_DESC.TURF_WOODBLACK = "The darkest planks for a gloomy environment."
+
+STRINGS.NAMES.TURF_MOSSYBRICK = "Mossy Brick Flooring"
+STRINGS.RECIPE_DESC.TURF_MOSSYBRICK = "Moss and stone goes well along the way."
+
+STRINGS.NAMES.TURF_GOLDROAD = "Golden Path"
+STRINGS.RECIPE_DESC.TURF_GOLDROAD = "The golden age begins now."
+
+STRINGS.NAMES.TURF_MOSAIC_WHITE = "White Mosaic Flooring"
+STRINGS.RECIPE_DESC.TURF_MOSAIC_WHITE = "Elegantly broken rock. In white."
+
+STRINGS.NAMES.TURF_MOSAIC_BLACK = "Black Mosaic Flooring"
+STRINGS.RECIPE_DESC.TURF_MOSAIC_BLACK = "Elegantly broken rock. In black."
+
+STRINGS.NAMES.TURF_REDGRASS = "Crimson Forest Turf"
+STRINGS.RECIPE_DESC.TURF_REDGRASS = "The crimson court has arrived."
+
+STRINGS.NAMES.TURF_PURPLEGRASS = "Twilight Forest Turf"
+STRINGS.RECIPE_DESC.TURF_PURPLEGRASS = "You're just missing the portal and some diamonds now."
+
+STRINGS.NAMES.TURF_TURQUOISE_DECIDUOUS = "Turquoise Grass Turf"
+STRINGS.RECIPE_DESC.TURF_TURQUOISE_DECIDUOUS = "The color of madness."
+
+STRINGS.NAMES.TURF_MANURE = "Manure Turf"
+STRINGS.RECIPE_DESC.TURF_MANURE = "Why not make your base stinkier than before?"
+
+STRINGS.NAMES.TURF_ROSECARPET = "Roseate Carpet"
+STRINGS.RECIPE_DESC.TURF_ROSECARPET = "Remind yourself that she is always watching."
+
+STRINGS.NAMES.TURF_LIMECARPET = "Lime Lush Carpet"
+STRINGS.RECIPE_DESC.TURF_LIMECARPET = "Confined spring vibes to lighten up your place."
+
+STRINGS.NAMES.TURF_FLOWERCARPET = "Pretty Pink Carpet"
+STRINGS.RECIPE_DESC.TURF_FLOWERCARPET = "Very pretty."
+
+STRINGS.NAMES.TURF_DARKROSECARPET = "Stygian Roseate Carpet"
+STRINGS.RECIPE_DESC.TURF_DARKROSECARPET = "The black rose shall bloom once more."
+
+STRINGS.NAMES.TURF_MUDWET = "Damp Muddy Turf"
+STRINGS.RECIPE_DESC.TURF_MUDWET = "It's a moist-have!"
+
+STRINGS.NAMES.TURF_QUICKSAND = "Quicksand Ground"
+STRINGS.RECIPE_DESC.TURF_QUICKSAND = "Watch your step for the shifting sands."
+
+STRINGS.NAMES.TURF_FROZENFLOOR = "Frozen Path"
+STRINGS.RECIPE_DESC.TURF_FROZENFLOOR = "What a cool ground."
+
+STRINGS.NAMES.TURF_THULECITE = "Thulecite Stonework"
+STRINGS.RECIPE_DESC.TURF_THULECITE = "Ancient stonework."
+
+STRINGS.NAMES.TURF_THULECITE2 = "Thulecite Stonework"
+STRINGS.RECIPE_DESC.TURF_THULECITE2 = "Ancient stonework. In blue."
+
+STRINGS.NAMES.TURF_THULECITE3 = "Thulecite Stonework"
+STRINGS.RECIPE_DESC.TURF_THULECITE3 = "Ancient stonework. In black."
+
+STRINGS.NAMES.TURF_TOADSTOOLRUG = "Shroom Skin Rug"
+STRINGS.RECIPE_DESC.TURF_TOADSTOOLRUG = "Super soft. Smells like mushrooms and venom."
+
+STRINGS.NAMES.TURF_MOONROCKFLOOR = "Moon Rock Stonework"
+STRINGS.RECIPE_DESC.TURF_MOONROCKFLOOR = "Flooring from the beyond."
+
 -- Interior Turfs.
 STRINGS.NAMES.TURF_WOODPANEL = "Wood Panel Flooring"
 STRINGS.RECIPE_DESC.TURF_WOODPANEL = "Goes up less easy."
