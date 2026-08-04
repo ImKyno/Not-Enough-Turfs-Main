@@ -198,7 +198,6 @@ local CUSTOM3_TURFS =
 	["turf_darkrosecarpet"]      = { tiletype = "CARPET"  },
 	["turf_mudwet"]              = { tiletype = "MUDDY"   },
 	["turf_quicksand"]           = { tiletype = "SAND"    },
-	["turf_frozenfloor"]         = { tiletype = "FROZEN"  },
 	["turf_thulecite"]           = { tiletype = "ANCIENT" },
 	["turf_thulecite2"]          = { tiletype = "ANCIENT" },
 	["turf_thulecite3"]          = { tiletype = "ANCIENT" },
@@ -207,12 +206,29 @@ local CUSTOM3_TURFS =
 
 local CUSTOM4_TURFS =
 {
-	["turf_frozenfloor"]         = { tiletype = "FROZEN"  },
 	["turf_thulecite"]           = { tiletype = "ANCIENT" },
 	["turf_thulecite2"]          = { tiletype = "ANCIENT" },
 	["turf_thulecite3"]          = { tiletype = "ANCIENT" },
 	["turf_toadstoolrug"]        = { tiletype = "CARPET"  },
 	["turf_moonrockfloor"]       = { tiletype = "STONE"   },
+	["turf_beefalorug"]          = { tiletype = "CARPET"  },
+	["turf_slurperrug"]          = { tiletype = "CARPET"  },
+	["turf_camocarpet"]          = { tiletype = "CARPET"  },
+	["turf_camogreencarpet"]     = { tiletype = "CARPET"  },
+	["turf_strawcarpet"]         = { tiletype = "CARPET"  },
+	["turf_linescarpet"]         = { tiletype = "CARPET"  },
+	["turf_linescarpet2"]        = { tiletype = "CARPET"  },
+	["turf_linescarpet3"]        = { tiletype = "CARPET"  },
+	["turf_wavescarpet"]         = { tiletype = "CARPET"  },
+	["turf_screwcarpet"]         = { tiletype = "CARPET"  },
+	["turf_dryrock"]             = { tiletype = "ROCKY"   },
+	["turf_marbleoctagon"]       = { tiletype = "MARBLE"  },
+	["turf_smallbricks"]         = { tiletype = "ROAD"    },
+	["turf_squaredtiles"]        = { tiletype = "ROAD"    },
+	["turf_pooltiles"]           = { tiletype = "STONE"   },
+	["turf_gravel"]              = { tiletype = "ROAD"    },
+	["turf_flowered"]            = { tiletype = "CARPET"  },
+	["turf_flowered2"]           = { tiletype = "CARPET"  },
 }
 
 local INTERIOR_TURFS =
@@ -237,6 +253,19 @@ local INTERIOR_TURFS =
 	["turf_hexagon"]             = { tiletype = "MARBLE"  },
 	["turf_hoof"]                = { tiletype = "MARBLE"  },
 	["turf_octagon"]             = { tiletype = "MARBLE"  },
+	["turf_marbleslate"]         = { tiletype = "MARBLE"  },
+	["turf_marbleflower"]        = { tiletype = "MARBLE"  },
+	["turf_clovertiles"]         = { tiletype = "MARBLE"  },
+	["turf_parquet"]             = { tiletype = "MARBLE"  },
+}
+
+local INTERIOR2_TURFS =
+{
+
+	["turf_absmarble"]           = { tiletype = "MARBLE"  },
+	["turf_mosaicfloor"]         = { tiletype = "MARBLE"  },
+	["turf_checkermosaic"]       = { tiletype = "MARBLE"  },
+	["turf_marbleblue"]          = { tiletype = "MARBLE"  },
 }
 
 local HOF_TURFS =
@@ -436,6 +465,27 @@ for name, data in pairs(INTERIOR_TURFS) do
 		burnable    = true,
 		bank        = "kyno_turfs_interior",
 		build       = "kyno_turfs_interior",
+		anim        = name:gsub("^turf_", ""),
+		deps        = { "kyno_terraformer" },
+		specialinfo = "TURF",
+	}
+end
+
+for name, data in pairs(INTERIOR2_TURFS) do
+	NET_SCRAPBOOK_TURFS[name] =
+	{
+		name        = name,
+		speechname  = "turf_type_"..string.lower(data.tiletype),
+		type        = "item",
+		subcat      = "modturf",
+		tex         = name..".tex",
+		prefab      = name,
+		fueltype    = "BURNABLE",
+		fuelvalue   = TUNING.TINY_FUEL,
+		stacksize   = TUNING.STACK_SIZE_MEDITEM,
+		burnable    = true,
+		bank        = "kyno_turfs_interior2",
+		build       = "kyno_turfs_interior2",
 		anim        = name:gsub("^turf_", ""),
 		deps        = { "kyno_terraformer" },
 		specialinfo = "TURF",

@@ -405,14 +405,6 @@ AddRecipe2("turf_snowfall", {Ingredient("rocks", 1),Ingredient("ice", TEMPERATUR
 	{"DECOR"}
 )
 
-AddRecipe2("turf_frozenfloor", {Ingredient("cutstone", 1),Ingredient("ice", 2)}, TECH.TURFMAKER_ONE,
-	{
-		hint_msg  = "NEEDSTURFMAKER",
-		numtogive = AMOUNT_GIVEN_MODDED,
-	},
-	{"DECOR"}
-)
-
 AddRecipe2("turf_redcarpet", {Ingredient("boards", 1), Ingredient("beefalowool", 1), Ingredient("feather_robin", 1)}, TECH.TURFMAKER_ONE,
 	{
 		hint_msg  = "NEEDSTURFMAKER",
@@ -542,6 +534,102 @@ AddRecipe2("turf_flowercarpet", {Ingredient("boards", 1), Ingredient("beefalowoo
 )
 
 AddRecipe2("turf_darkrosecarpet", {Ingredient("boards", 1), Ingredient("beefalowool", 1), Ingredient("petals_evil", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg  = "NEEDSTURFMAKER",
+		numtogive = AMOUNT_GIVEN_MODDED,
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_camogreencarpet", {Ingredient("boards", 1), Ingredient("beefalowool", 1), Ingredient("cutreeds", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg  = "NEEDSTURFMAKER",
+		numtogive = AMOUNT_GIVEN_MODDED,
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_camocarpet", {Ingredient("boards", 1), Ingredient("beefalowool", 1), Ingredient("charcoal", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg  = "NEEDSTURFMAKER",
+		numtogive = AMOUNT_GIVEN_MODDED,
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_strawcarpet", {Ingredient("boards", 1), Ingredient("beefalowool", 1), Ingredient("cutgrass", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg  = "NEEDSTURFMAKER",
+		numtogive = AMOUNT_GIVEN_MODDED,
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_linescarpet", {Ingredient("boards", 1), Ingredient("beefalowool", 1), Ingredient("blue_cap", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg  = "NEEDSTURFMAKER",
+		numtogive = AMOUNT_GIVEN_MODDED,
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_linescarpet2", {Ingredient("boards", 1), Ingredient("beefalowool", 1), Ingredient("green_cap", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg  = "NEEDSTURFMAKER",
+		numtogive = AMOUNT_GIVEN_MODDED,
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_linescarpet3", {Ingredient("boards", 1), Ingredient("beefalowool", 1), Ingredient("pumpkin", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg  = "NEEDSTURFMAKER",
+		numtogive = AMOUNT_GIVEN_MODDED,
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_wavescarpet", {Ingredient("boards", 1), Ingredient("beefalowool", 1), Ingredient("pumpkin", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg  = "NEEDSTURFMAKER",
+		numtogive = AMOUNT_GIVEN_MODDED,
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_screwcarpet", {Ingredient("boards", 1), Ingredient("beefalowool", 1), Ingredient("silk", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg  = "NEEDSTURFMAKER",
+		numtogive = AMOUNT_GIVEN_MODDED,
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_flowered", {Ingredient("boards", 1), Ingredient("beefalowool", 1), Ingredient("petals", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg  = "NEEDSTURFMAKER",
+		numtogive = AMOUNT_GIVEN_MODDED,
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_flowered2", {Ingredient("boards", 1), Ingredient("beefalowool", 1), Ingredient("petals", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg  = "NEEDSTURFMAKER",
+		numtogive = AMOUNT_GIVEN_MODDED,
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_beefalorug", {Ingredient("boards", 1), Ingredient("beefalowool", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg  = "NEEDSTURFMAKER",
+		numtogive = AMOUNT_GIVEN_MODDED,
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_slurperrug", {Ingredient("boards", 1), Ingredient("slurper_pelt", 1)}, TECH.TURFMAKER_ONE,
 	{
 		hint_msg  = "NEEDSTURFMAKER",
 		numtogive = AMOUNT_GIVEN_MODDED,
@@ -773,6 +861,46 @@ AddRecipe2("turf_goldroad", {Ingredient("cutstone", 1), Ingredient("goldnugget",
 	{"DECOR"}
 )
 
+AddRecipe2("turf_smallbricks", {Ingredient("cutstone", 1), Ingredient("flint", 2)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg  = "NEEDSTURFMAKER",
+		numtogive = AMOUNT_GIVEN_MODDED,
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_squaredtiles", {Ingredient("cutstone", 1), Ingredient("flint", 2)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg  = "NEEDSTURFMAKER",
+		numtogive = AMOUNT_GIVEN_MODDED,
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_pooltiles", {Ingredient("rocks", 1), Ingredient("flint", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg  = "NEEDSTURFMAKER",
+		numtogive = AMOUNT_GIVEN_MODDED,
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_marbleoctagon", {Ingredient("marble", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg  = "NEEDSTURFMAKER",
+		numtogive = AMOUNT_GIVEN_MODDED,
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_gravel", {Ingredient("rocks", 1), Ingredient("flint", 1), Ingredient("nitre", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg  = "NEEDSTURFMAKER",
+		numtogive = AMOUNT_GIVEN_MODDED,
+	},
+	{"DECOR"}
+)
+
 AddRecipe2("turf_mosaic_white", {Ingredient("marble", 1), Ingredient("rocks", 1)}, TECH.TURFMAKER_ONE,
 	{
 		hint_msg  = "NEEDSTURFMAKER",
@@ -822,6 +950,14 @@ AddRecipe2("turf_blueplains", {Ingredient("cutgrass", 1), Ingredient("blue_cap",
 )
 
 AddRecipe2("turf_meadowyellow", {Ingredient("cutgrass", 1), Ingredient("petals", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg  = "NEEDSTURFMAKER",
+		numtogive = AMOUNT_GIVEN_MODDED,
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_dryrock", {Ingredient("rocks", 1), Ingredient("nitre", 1)}, TECH.TURFMAKER_ONE,
 	{
 		hint_msg  = "NEEDSTURFMAKER",
 		numtogive = AMOUNT_GIVEN_MODDED,
@@ -1119,6 +1255,70 @@ AddRecipe2("turf_hoof", {Ingredient("marble", 1)}, TECH.TURFMAKER_ONE,
 )
 
 AddRecipe2("turf_octagon", {Ingredient("marble", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg  = "NEEDSTURFMAKER",
+		numtogive = AMOUNT_GIVEN_MODDED,
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_marbleslate", {Ingredient("cutstone", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg  = "NEEDSTURFMAKER",
+		numtogive = AMOUNT_GIVEN_MODDED,
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_marbleflower", {Ingredient("marble", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg  = "NEEDSTURFMAKER",
+		numtogive = AMOUNT_GIVEN_MODDED,
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_clovertiles", {Ingredient("marble", 1), Ingredient("goldnugget", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg  = "NEEDSTURFMAKER",
+		numtogive = AMOUNT_GIVEN_MODDED,
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_parquet", {Ingredient("boards", 1), Ingredient("marble", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg  = "NEEDSTURFMAKER",
+		numtogive = AMOUNT_GIVEN_MODDED,
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_absmarble", {Ingredient("marble", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg  = "NEEDSTURFMAKER",
+		numtogive = AMOUNT_GIVEN_MODDED,
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_mosaicfloor", {Ingredient("marble", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg  = "NEEDSTURFMAKER",
+		numtogive = AMOUNT_GIVEN_MODDED,
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_checkermosaic", {Ingredient("marble", 1), Ingredient("spoiled_food", 1)}, TECH.TURFMAKER_ONE,
+	{
+		hint_msg  = "NEEDSTURFMAKER",
+		numtogive = AMOUNT_GIVEN_MODDED,
+	},
+	{"DECOR"}
+)
+
+AddRecipe2("turf_marbleblue", {Ingredient("marble", 1), Ingredient("rocks", 1)}, TECH.TURFMAKER_ONE,
 	{
 		hint_msg  = "NEEDSTURFMAKER",
 		numtogive = AMOUNT_GIVEN_MODDED,

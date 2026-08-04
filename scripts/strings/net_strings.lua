@@ -222,7 +222,7 @@ STRINGS.RECIPE_DESC.TURF_WOODBLACK = "The darkest planks for a gloomy environmen
 STRINGS.NAMES.TURF_MOSSYBRICK = "Mossy Brick Flooring"
 STRINGS.RECIPE_DESC.TURF_MOSSYBRICK = "Moss and stone goes well along the way."
 
-STRINGS.NAMES.TURF_GOLDROAD = "Golden Path"
+STRINGS.NAMES.TURF_GOLDROAD = "Golden Pathway"
 STRINGS.RECIPE_DESC.TURF_GOLDROAD = "The golden age begins now."
 
 STRINGS.NAMES.TURF_MOSAIC_WHITE = "White Mosaic Flooring"
@@ -261,9 +261,6 @@ STRINGS.RECIPE_DESC.TURF_MUDWET = "It's a moist-have!"
 STRINGS.NAMES.TURF_QUICKSAND = "Quicksand Ground"
 STRINGS.RECIPE_DESC.TURF_QUICKSAND = "Watch your step for the shifting sands."
 
-STRINGS.NAMES.TURF_FROZENFLOOR = "Frozen Path"
-STRINGS.RECIPE_DESC.TURF_FROZENFLOOR = "What a cool ground."
-
 STRINGS.NAMES.TURF_THULECITE = "Thulecite Stonework"
 STRINGS.RECIPE_DESC.TURF_THULECITE = "Ancient stonework."
 
@@ -278,6 +275,60 @@ STRINGS.RECIPE_DESC.TURF_TOADSTOOLRUG = "Super soft. Smells like mushrooms and v
 
 STRINGS.NAMES.TURF_MOONROCKFLOOR = "Moon Rock Stonework"
 STRINGS.RECIPE_DESC.TURF_MOONROCKFLOOR = "Flooring from the beyond."
+
+STRINGS.NAMES.TURF_BEEFALORUG = "Beefalo Fur Rug"
+STRINGS.RECIPE_DESC.TURF_BEEFALORUG = "Warm, snuggly, smelly."
+
+STRINGS.NAMES.TURF_SLURPERRUG = "Slurper Fur Rug"
+STRINGS.RECIPE_DESC.TURF_SLURPERRUG = "A roll of slurper fur."
+
+STRINGS.NAMES.TURF_CAMOCARPET = "Dark Camouflage Carpeted Flooring"
+STRINGS.RECIPE_DESC.TURF_CAMOCARPET = "Bravo six, going dark."
+
+STRINGS.NAMES.TURF_CAMOGREENCARPET = "Camouflage Carpeted Flooring"
+STRINGS.RECIPE_DESC.TURF_CAMOGREENCARPET = "You don't see this carpet coming."
+
+STRINGS.NAMES.TURF_STRAWCARPET = "Straw Lines Carpeted Flooring"
+STRINGS.RECIPE_DESC.TURF_STRAWCARPET = "Yellow straws all over the floor."
+
+STRINGS.NAMES.TURF_LINESCARPET = "Blue Lines Carpeted Flooring"
+STRINGS.RECIPE_DESC.TURF_LINESCARPET = "As blue as the ocean."
+
+STRINGS.NAMES.TURF_LINESCARPET2 = "Green Lines Carpeted Flooring"
+STRINGS.RECIPE_DESC.TURF_LINESCARPET2 = "The color of tranquility."
+
+STRINGS.NAMES.TURF_LINESCARPET3 = "Orange Lines Carpeted Flooring"
+STRINGS.RECIPE_DESC.TURF_LINESCARPET3 = "Afternoon colors of the autumn."
+
+STRINGS.NAMES.TURF_WAVESCARPET = "Waves Carpeted Flooring"
+STRINGS.RECIPE_DESC.TURF_WAVESCARPET = "Follow the waves!"
+
+STRINGS.NAMES.TURF_SCREWCARPET = "Screws Carpeted Flooring"
+STRINGS.RECIPE_DESC.TURF_SCREWCARPET = "Missing a bolt or two."
+
+STRINGS.NAMES.TURF_DRYROCK = "Dry Rocky Turf"
+STRINGS.RECIPE_DESC.TURF_DRYROCK = "Your own piece of dry, cracked, barren ground."
+
+STRINGS.NAMES.TURF_MARBLEOCTAGON = "Vintage Marble Turf"
+STRINGS.RECIPE_DESC.TURF_MARBLEOCTAGON = "Old fashioned marble flooring."
+
+STRINGS.NAMES.TURF_SMALLBRICKS = "Concrete Road"
+STRINGS.RECIPE_DESC.TURF_SMALLBRICKS = "Tiny bricks for convenient paving."
+
+STRINGS.NAMES.TURF_SQUAREDTILES = "Squared Rocky Pathway"
+STRINGS.RECIPE_DESC.TURF_SQUAREDTILES = "Such tile, much squares."
+
+STRINGS.NAMES.TURF_POOLTILES = "Lagoon Rocky Turf"
+STRINGS.RECIPE_DESC.TURF_POOLTILES = "The perfect surrounding ground for lagoons."
+
+STRINGS.NAMES.TURF_GRAVEL = "Gravel Pathway"
+STRINGS.RECIPE_DESC.TURF_GRAVEL = "Gravel and flint mashed together."
+
+STRINGS.NAMES.TURF_FLOWERED = "Floral Carpeted Flooring"
+STRINGS.RECIPE_DESC.TURF_FLOWERED = "You can still feel the fragance."
+
+STRINGS.NAMES.TURF_FLOWERED2 = "Blossom Carpeted Flooring"
+STRINGS.RECIPE_DESC.TURF_FLOWERED2 = "These flowers will adorn your place."
 
 -- Interior Turfs.
 STRINGS.NAMES.TURF_WOODPANEL = "Wood Panel Flooring"
@@ -339,6 +390,30 @@ STRINGS.RECIPE_DESC.TURF_HOOF = "Very avant-garde, for pigs."
 
 STRINGS.NAMES.TURF_OCTAGON = "Octagon Flooring"
 STRINGS.RECIPE_DESC.TURF_OCTAGON = "Just elegance."
+
+STRINGS.NAMES.TURF_MARBLESLATE = "Concrete Slate Flooring"
+STRINGS.RECIPE_DESC.TURF_MARBLESLATE = "Seamless city rock flooring."
+
+STRINGS.NAMES.TURF_MARBLEFLOWER = "Vintage Flooring"
+STRINGS.RECIPE_DESC.TURF_MARBLEFLOWER = "Old fashioned seamless pattern."
+
+STRINGS.NAMES.TURF_CLOVERTILES = "Lucky Clover Flooring"
+STRINGS.RECIPE_DESC.TURF_CLOVERTILES = "It ain't luck. It's destiny."
+
+STRINGS.NAMES.TURF_PARQUET = "Parquet Flooring"
+STRINGS.RECIPE_DESC.TURF_PARQUET = "Refined and fashioned flooring."
+
+STRINGS.NAMES.TURF_ABSMARBLE = "Marble Circles Flooring"
+STRINGS.RECIPE_DESC.TURF_ABSMARBLE = "Patterns everywhere!"
+
+STRINGS.NAMES.TURF_MOSAICFLOOR = "Mosaic Flooring"
+STRINGS.RECIPE_DESC.TURF_MOSAICFLOOR = "Cracked bits and pieces of rocks."
+
+STRINGS.NAMES.TURF_CHECKERMOSAIC = "Moldy Checker Flooring"
+STRINGS.RECIPE_DESC.TURF_CHECKERMOSAIC = "Covered in moss."
+
+STRINGS.NAMES.TURF_MARBLEBLUE = "Aegean Marble Flooring"
+STRINGS.RECIPE_DESC.TURF_MARBLEBLUE = "A fine marbled piece of ground."
 
 -- Docks (Items).
 STRINGS.NAMES.DOCK_KIT_DRIFTWOOD = "Driftwood Dock Kit"

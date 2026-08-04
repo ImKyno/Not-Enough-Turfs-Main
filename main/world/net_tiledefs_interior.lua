@@ -23,6 +23,14 @@ local INTERIOR_TURFS =
 	"HEXAGON",
 	"HOOF",
 	"OCTAGON",
+	"MARBLESLATE",
+	"MARBLEFLOWER",
+	"CLOVERTILES",
+	"PARQUET",
+	"ABSMARBLE",
+	"MOSAICFLOOR",
+	"CHECKERMOSAIC",
+	"MARBLEBLUE",
 }
 
 for _, turf in ipairs(INTERIOR_TURFS) do
@@ -563,6 +571,214 @@ AddTile("OCTAGON", "LAND",
 		name            = "octagon",
 		anim            = "octagon",
 		bank_build      = "kyno_turfs_interior",
+		pickupsound     = "rock",
+	}
+)
+
+AddTile("MARBLESLATE", "LAND",
+	{
+		ground_name     = "INTERIOR_MARBLESLATE",
+	},
+	{
+		name            = "blocky",
+		noise_texture   = "levels/textures/interior/interior_noise_marbleslate.tex",
+		runsound        = "dontstarve/movement/run_marble",
+		walksound       = "dontstarve/movement/walk_marble",
+		snowsound       = "dontstarve/movement/run_ice",
+		mudsound        = "dontstarve/movement/run_mud",
+		flooring        = true,
+		hard            = true,
+	},
+	{
+		name            = "map_edge",
+		noise_texture   = "levels/textures/interior/interior_mini_noise_marbleslate.tex",
+	},
+	{
+		name            = "marbleslate",
+		anim            = "marbleslate",
+		bank_build      = "kyno_turfs_interior",
+		pickupsound     = "rock",
+	}
+)
+
+AddTile("MARBLEFLOWER", "LAND",
+	{
+		ground_name     = "INTERIOR_MARBLEFLOWER",
+	},
+	{
+		name            = "blocky",
+		noise_texture   = "levels/textures/interior/interior_noise_marbleflower.tex",
+		runsound        = "dontstarve/movement/run_marble",
+		walksound       = "dontstarve/movement/walk_marble",
+		snowsound       = "dontstarve/movement/run_ice",
+		mudsound        = "dontstarve/movement/run_mud",
+		flooring        = true,
+		hard            = true,
+	},
+	{
+		name            = "map_edge",
+		noise_texture   = "levels/textures/interior/interior_mini_noise_marbleflower.tex",
+	},
+	{
+		name            = "marbleflower",
+		anim            = "marbleflower",
+		bank_build      = "kyno_turfs_interior",
+		pickupsound     = "rock",
+	}
+)
+
+AddTile("CLOVERTILES", "LAND",
+	{
+		ground_name     = "INTERIOR_CLOVERTILES",
+	},
+	{
+		name            = "blocky",
+		noise_texture   = "levels/textures/interior/interior_noise_clovertiles.tex",
+		runsound        = "dontstarve/movement/run_marble",
+		walksound       = "dontstarve/movement/walk_marble",
+		snowsound       = "dontstarve/movement/run_ice",
+		mudsound        = "dontstarve/movement/run_mud",
+		flooring        = true,
+		hard            = true,
+	},
+	{
+		name            = "map_edge",
+		noise_texture   = "levels/textures/interior/interior_mini_noise_clovertiles.tex",
+	},
+	{
+		name            = "clovertiles",
+		anim            = "clovertiles",
+		bank_build      = "kyno_turfs_interior",
+		pickupsound     = "rock",
+	}
+)
+
+AddTile("PARQUET", "LAND",
+	{
+		ground_name     = "INTERIOR_PARQUET",
+	},
+	{
+		name            = "blocky",
+		noise_texture   = "levels/textures/interior/interior_noise_parquet.tex",
+		runsound        = "dontstarve/movement/run_marble",
+		walksound       = "dontstarve/movement/walk_marble",
+		snowsound       = "dontstarve/movement/run_ice",
+		mudsound        = "dontstarve/movement/run_mud",
+		flooring        = true,
+		hard            = true,
+	},
+	{
+		name            = "map_edge",
+		noise_texture   = "levels/textures/interior/interior_mini_noise_parquet.tex",
+	},
+	{
+		name            = "parquet",
+		anim            = "parquet",
+		bank_build      = "kyno_turfs_interior",
+		pickupsound     = "rock",
+	}
+)
+
+AddTile("ABSMARBLE", "LAND",
+	{
+		ground_name     = "INTERIOR_ABSMARBLE",
+	},
+	{
+		name            = "blocky",
+		noise_texture   = "levels/textures/interior/interior_noise_absmarble.tex",
+		runsound        = "dontstarve/movement/run_marble",
+		walksound       = "dontstarve/movement/walk_marble",
+		snowsound       = "dontstarve/movement/run_ice",
+		mudsound        = "dontstarve/movement/run_mud",
+		flooring        = true,
+		hard            = true,
+	},
+	{
+		name            = "map_edge",
+		noise_texture   = "levels/textures/interior/interior_mini_noise_absmarble.tex",
+	},
+	{
+		name            = "absmarble",
+		anim            = "absmarble",
+		bank_build      = "kyno_turfs_interior2",
+		pickupsound     = "rock",
+	}
+)
+
+AddTile("MOSAICFLOOR", "LAND",
+	{
+		ground_name     = "INTERIOR_MOSAICFLOOR",
+	},
+	{
+		name            = "blocky",
+		noise_texture   = "levels/textures/interior/interior_noise_mosaicfloor.tex",
+		runsound        = "dontstarve/movement/run_marble",
+		walksound       = "dontstarve/movement/walk_marble",
+		snowsound       = "dontstarve/movement/run_ice",
+		mudsound        = "dontstarve/movement/run_mud",
+		flooring        = true,
+		hard            = true,
+	},
+	{
+		name            = "map_edge",
+		noise_texture   = "levels/textures/interior/interior_mini_noise_mosaicfloor.tex",
+	},
+	{
+		name            = "mosaicfloor",
+		anim            = "mosaicfloor",
+		bank_build      = "kyno_turfs_interior2",
+		pickupsound     = "rock",
+	}
+)
+
+AddTile("CHECKERMOSAIC", "LAND",
+	{
+		ground_name     = "INTERIOR_CHECKERMOSAIC",
+	},
+	{
+		name            = "blocky",
+		noise_texture   = "levels/textures/interior/interior_noise_checkermosaic.tex",
+		runsound        = "dontstarve/movement/run_marble",
+		walksound       = "dontstarve/movement/walk_marble",
+		snowsound       = "dontstarve/movement/run_ice",
+		mudsound        = "dontstarve/movement/run_mud",
+		flooring        = true,
+		hard            = true,
+	},
+	{
+		name            = "map_edge",
+		noise_texture   = "levels/textures/interior/interior_mini_noise_checkermosaic.tex",
+	},
+	{
+		name            = "checkermosaic",
+		anim            = "checkermosaic",
+		bank_build      = "kyno_turfs_interior2",
+		pickupsound     = "rock",
+	}
+)
+
+AddTile("MARBLEBLUE", "LAND",
+	{
+		ground_name     = "INTERIOR_MARBLEBLUE",
+	},
+	{
+		name            = "blocky",
+		noise_texture   = "levels/textures/interior/interior_noise_marbleblue.tex",
+		runsound        = "dontstarve/movement/run_marble",
+		walksound       = "dontstarve/movement/walk_marble",
+		snowsound       = "dontstarve/movement/run_ice",
+		mudsound        = "dontstarve/movement/run_mud",
+		flooring        = true,
+		hard            = true,
+	},
+	{
+		name            = "map_edge",
+		noise_texture   = "levels/textures/interior/interior_mini_noise_marbleblue.tex",
+	},
+	{
+		name            = "marbleblue",
+		anim            = "marbleblue",
+		bank_build      = "kyno_turfs_interior2",
 		pickupsound     = "rock",
 	}
 )
