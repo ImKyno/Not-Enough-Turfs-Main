@@ -1,11 +1,11 @@
 name                           = "Not Enough Turfs"
-version                        = "1.3-B"
+version                        = "1.4-B"
 
 description                    =
 [[
 󰀪 Adds over 100 brand new Turfs to craft and use in your world!
 
-󰀌 Mod Version: 1.3-B
+󰀌 Mod Version: 1.4-B
 󰀧 Update: Returfed!
 ]]
 
