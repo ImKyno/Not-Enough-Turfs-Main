@@ -29,8 +29,8 @@ STRINGS.RECIPE_DESC.TURF_PINKSTONE = "A pink-ish stone roadway."
 STRINGS.NAMES.TURF_STONECITY = "White Stone Road"
 STRINGS.RECIPE_DESC.TURF_STONECITY = "White stones for a stone city."
 
-STRINGS.NAMES.TURF_PINKPARK = "Parkfield Grass"
-STRINGS.RECIPE_DESC.TURF_PINKPARK = "A pink-ish grass for vibrand minds."
+STRINGS.NAMES.TURF_PINKPARK = "Parkfield Grass Turf"
+STRINGS.RECIPE_DESC.TURF_PINKPARK = "A pink-ish grass for vibrant minds."
 
 STRINGS.NAMES.TURF_GREYFOREST = "Withered Grass Turf"
 STRINGS.RECIPE_DESC.TURF_GREYFOREST = "Trying its best to survive."
